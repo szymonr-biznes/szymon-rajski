@@ -84,7 +84,7 @@ export function SocialMediaBackground() {
   }, [])
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-0 overflow-hidden select-none bg-[#F4F1EA]">
+    <div className="pointer-events-none fixed inset-0 -z-0 overflow-hidden select-none bg-background">
       {/* Texture Layer */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
