@@ -30,7 +30,7 @@ export default function KontaktPage() {
               <CardContent className="p-4">
                 <div className="space-y-2">
                   <a
-                    href="mailto:kontakt@Szymon Rajski.pl"
+                    href="mailto:szymonr.biznes@gmail.com"
                     className="flex items-center gap-3 rounded-lg border border-border p-2 transition-colors hover:bg-muted/50"
                   >
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
@@ -38,7 +38,7 @@ export default function KontaktPage() {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Email</p>
-                      <p className="text-sm font-medium text-foreground">kontakt@Szymon Rajski.pl</p>
+                      <p className="text-sm font-medium text-foreground">szymonr.biznes@gmail.com</p>
                     </div>
                   </a>
 
