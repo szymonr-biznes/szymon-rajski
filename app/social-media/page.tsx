@@ -20,6 +20,7 @@ export default function SocialMediaPage() {
             description="Zwiększ zasięgi i bądź na bieżąco ze swoimi obserwującymi"
             services={socialMediaServices}
             categoryLabel="Instagram"
+            basePath="/social-media"
           />
         </main>
         <Footer />

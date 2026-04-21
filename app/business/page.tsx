@@ -19,6 +19,7 @@ export default function BusinessPage() {
           description="Systemy analityczne oraz pozyskiwanie klientów"
           services={businessServices}
           categoryLabel="Komunikacja z klientami"
+          basePath="/business"
         />
       </main>
       <Footer />

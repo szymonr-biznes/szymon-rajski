@@ -148,8 +148,11 @@ function AnimatedCard({ product, index }: { product: typeof products[0]; index: 
                 </div>
 
                 {/* Floating cards side */}
-                <div className={`relative flex items-center justify-center bg-gradient-to-br from-muted/30 to-muted/60 p-6 min-h-[180px] ${!isLeft ? "md:order-1" : ""}`}>
-                  <FloatingCards variant={product.cardVariant} />
+                <div className={`relative flex items-center justify-center p-6 min-h-[220px] ${!isLeft ? "md:order-1" : ""}`}>
+                  <div className="absolute inset-4 rounded-lg border border-border bg-muted/30 overflow-hidden" />
+                  <div className="relative z-10 w-full h-full flex items-center justify-center">
+                    <FloatingCards variant={product.cardVariant} />
+                  </div>
                 </div>
               </div>
             </CardContent>

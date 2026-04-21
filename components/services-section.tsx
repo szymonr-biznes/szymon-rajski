@@ -20,6 +20,7 @@ export const socialMediaServices = [
       "Przykładowy content na 14 dni"
     ],
     formLink: "https://forms.gle/VjGUvQUkfF2wtRJW7",
+    slug: "instagram-growth",
     workflowNodes: [
       { id: "1", icon: "form" as const, x: 35, y: 65, color: "#405DE6" },
       { id: "2", icon: "users" as const, x: 105, y: 20, color: "#C13584" },
@@ -50,6 +51,7 @@ export const socialMediaServices = [
       "Analiza wiadomości"
     ],
     formLink: "https://forms.example.com/instagram-dm",
+    slug: "instagram-dm",
     workflowNodes: [
       { id: "1", icon: "message" as const, x: 35, y: 10, color: "#E1306C" },
       { id: "2", icon: "bolt" as const, x: 115, y: 20, color: "#405DE6" },
@@ -85,6 +87,7 @@ export const businessServices = [
     ],
     formLink: "#",
     comingSoon: true,
+    slug: "leads-system",
     workflowNodes: [
       { id: "1", icon: "search" as const, x: -15, y: 15, color: "#1B50FF" },
       { id: "2", icon: "circle-pile" as const, x: 55, y: 45, color: "#00D9FF" },
@@ -117,6 +120,7 @@ export const businessServices = [
     ],
     formLink: "#",
     comingSoon: true,
+    slug: "cold-email",
     workflowNodes: [
       { id: "1", icon: "users" as const, x: 5, y: 75, color: "#FF00F7" },
       { id: "2", icon: "mail-search" as const, x: 75, y: 75, color: "#FF9100" },
@@ -149,6 +153,7 @@ export const businessServices = [
     ],
     formLink: "#",
     comingSoon: false,
+    slug: "bookings",
     workflowNodes: [
       { id: "1", icon: "globe" as const, x: 0, y: 10, color: "#9100B5" },
       { id: "2", icon: "calendar-check" as const, x: 70, y: 10, color: "#FF9100" },
@@ -181,6 +186,7 @@ export const businessServices = [
     ],
     formLink: "#",
     comingSoon: false,
+    slug: "websites",
     workflowNodes: [
       { id: "1", icon: "search" as const, x: 10, y: 30, color: "#FF9100" },
       { id: "2", icon: "globe" as const, x: 100, y: 50, color: "#9100B5" },
@@ -200,9 +206,10 @@ interface ServicesSectionProps {
   description: string
   services: typeof socialMediaServices | typeof businessServices
   categoryLabel: string
+  basePath?: string
 }
 
-export function ServicesSection({ title, description, services, categoryLabel }: ServicesSectionProps) {
+export function ServicesSection({ title, description, services, categoryLabel, basePath }: ServicesSectionProps) {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -222,7 +229,7 @@ export function ServicesSection({ title, description, services, categoryLabel }:
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             {services.map((service) => (
-              <ServiceCard key={service.id} {...service} />
+              <ServiceCard key={service.id} {...service} basePath={basePath} />
             ))}
           </div>
         </div>

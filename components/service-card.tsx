@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,6 +9,8 @@ import { WorkflowDiagram } from "./workflow-diagram"
 
 interface ServiceCardProps {
   id: string
+  slug?: string
+  basePath?: string
   title: string
   shortDescription: string
   fullDescription: string
@@ -23,6 +26,8 @@ interface ServiceCardProps {
 
 export function ServiceCard({
   id,
+  slug,
+  basePath = "",
   title,
   shortDescription,
   fullDescription,
@@ -87,10 +92,17 @@ export function ServiceCard({
           <div className="mt-auto pt-4">
             {!comingSoon && (
               <Button asChild className="w-full">
-                <a href={formLink} target="_blank" rel="noopener noreferrer">
-                  {formLinkText}
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
+                {slug ? (
+                  <Link href={`${basePath}/${slug}`}>
+                    {formLinkText}
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                ) : (
+                  <a href={formLink} target="_blank" rel="noopener noreferrer">
+                    {formLinkText}
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                )}
               </Button>
             )}
             {comingSoon && (
