@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-export default async function CheckoutPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function DetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const isSocialMedia = socialMediaServices.some(s => s.slug === slug)
   const allServices = [...socialMediaServices, ...businessServices]
@@ -51,85 +51,38 @@ export default async function CheckoutPage({ params }: { params: Promise<{ slug:
               Wróć do ofert
             </Link>
 
-            <Card className="overflow-hidden transition-shadow hover:shadow-md flex flex-col bg-card">
-              <div className="grid md:grid-cols-5">
-                {/* Left Column: Info */}
-                <div className="md:col-span-3 p-8 space-y-6">
+            <Card className="overflow-hidden transition-shadow hover:shadow-md flex flex-col">
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between gap-4">
                   <div>
-                    <CardTitle className="text-2xl font-bold tracking-tight text-foreground">
-                      {service.title}
-                    </CardTitle>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {service.shortDescription}
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <CardTitle className="text-lg">{service.title}</CardTitle>
+                    </div>
+                    <p className="mt-1 text-sm text-muted-foreground">{service.shortDescription}</p>
                   </div>
-
-                  <div className="prose prose-sm dark:prose-invert">
-                    <p className="text-sm text-foreground/80 leading-relaxed">
-                      {service.fullDescription}
-                    </p>
+                  <div className="text-right shrink-0">
+                    <p className="text-xl font-bold text-foreground">{service.price}</p>
+                    <p className="text-xs text-muted-foreground">{service.priceNote}</p>
                   </div>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-1 flex flex-col">
+                <div className="space-y-6 flex-1 flex flex-col">
+                  <p className="text-sm text-foreground leading-relaxed">{service.fullDescription}</p>
 
-                  <div className="space-y-4">
-                    <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
-                    <ul className="space-y-2">
+                  <div className="flex-1">
+                    <p className="mb-2 text-sm font-medium text-foreground">Co otrzymujesz:</p>
+                    <ul className="space-y-1.5">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-
-                {/* Right Column: Payment */}
-                <div className="md:col-span-2 p-6 flex flex-col justify-center">
-                  <div className="relative rounded-lg border border-border bg-muted/30 p-8 flex flex-col justify-between space-y-8 h-full">
-                    <div className="space-y-6">
-                      <div className="text-center md:text-left">
-                        <p className="text-xs text-muted-foreground mb-1 uppercase tracking-widest font-bold">Inwestycja</p>
-                        <p className="text-4xl font-black text-foreground tracking-tight">{service.price}</p>
-                        {service.priceNote && (
-                          <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{service.priceNote}</p>
-                        )}
-                      </div>
-
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <ShieldCheck className="h-4 w-4 text-primary/70" />
-                          <span>Bezpieczna płatność</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <Zap className="h-4 w-4 text-primary/70" />
-                          <span>Błyskawiczna realizacja</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <CreditCard className="h-4 w-4 text-primary/70" />
-                          <span>Faktura VAT na życzenie</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      {isSocialMedia && !service.comingSoon ? (
-                        <CheckoutForm slug={service.slug} />
-                      ) : (
-                        <Button asChild className="w-full text-sm font-semibold group transition-all">
-                          <a href="/contact">
-                            Skontaktuj się osobiście
-                            <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
-                          </a>
-                        </Button>
-                      )}
-
-                      <p className="text-[10px] text-center text-muted-foreground leading-relaxed uppercase tracking-tighter opacity-70">
-                        {isSocialMedia && !service.comingSoon ? "" : "Dla tej usługi płatność odbywa się po ustaleniu szczegółów."}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </CardContent>
             </Card>
           </div>
         </main>

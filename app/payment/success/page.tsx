@@ -15,7 +15,7 @@ export default function SuccessPage() {
         <main className="flex-1 flex items-center justify-center px-6 py-12">
           <div className="mx-auto max-w-2xl w-full">
             <Card className="overflow-hidden bg-card border-border shadow-md">
-              <CardHeader className="pb-4 pt-8 text-center">
+              <CardHeader className="pb-3 pt-8 text-center">
                 <div className="mb-4 flex justify-center">
                   <CheckCircle2 className="h-16 w-16 text-green-500" />
                 </div>
@@ -25,7 +25,7 @@ export default function SuccessPage() {
               </CardHeader>
               <CardContent className="p-8 pt-2 text-center space-y-6">
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie. 
+                  Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.
                   Rozpoczynamy pracę nad Twoją analizą i skontaktujemy się z Tobą mailowo w ciągu 24h.
                 </p>
 

@@ -17,8 +17,8 @@ interface ServiceCardProps {
   price: string
   priceNote?: string
   features: string[]
-  formLink: string
-  formLinkText?: string
+  howItWorks: string[]
+  buttonText?: string
   comingSoon?: boolean
   workflowNodes?: { id: string; icon: string; x: number; y: number; color: string }[]
   workflowConnections?: { from: string; to: string }[]
@@ -34,8 +34,7 @@ export function ServiceCard({
   price,
   priceNote,
   features,
-  formLink,
-  formLinkText = "Rozpocznij teraz",
+  buttonText = "Rozpocznij teraz",
   comingSoon = false,
   workflowNodes,
   workflowConnections,
@@ -92,17 +91,10 @@ export function ServiceCard({
           <div className="mt-auto pt-4">
             {!comingSoon && (
               <Button asChild className="w-full">
-                {slug ? (
-                  <Link href={`${basePath}/${slug}`}>
-                    {formLinkText}
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </Link>
-                ) : (
-                  <a href={formLink} target="_blank" rel="noopener noreferrer">
-                    {formLinkText}
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                )}
+                <Link href={`${basePath}/${slug}`}>
+                  {buttonText}
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             )}
             {comingSoon && (

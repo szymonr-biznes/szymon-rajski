@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-export default async function CheckoutPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function DetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const isSocialMedia = socialMediaServices.some(s => s.slug === slug)
   const allServices = [...socialMediaServices, ...businessServices]

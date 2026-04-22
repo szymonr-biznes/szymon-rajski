@@ -18,7 +18,11 @@ export const socialMediaServices = [
       "Plan tygodniowy",
       "Przykładowy content na 14 dni"
     ],
-    formLink: "https://forms.gle/VjGUvQUkfF2wtRJW7",
+    howItWorks: [
+      "Wypełniasz formularz",
+      "Analizujemy Twoje konto",
+      "Otrzymujesz gotowy plan"
+    ],
     slug: "instagram-growth",
     workflowNodes: [
       { id: "1", icon: "form" as const, x: 35, y: 65, color: "#405DE6" },
@@ -46,11 +50,15 @@ export const socialMediaServices = [
     priceNote: "miesięczne",
     features: [
       "Automatyczne odpowiedzi 24/7",
-      "Konfigurowalne szablony wiadomości",
+      "Możliwość konfiguracji odpowiedzi",
       "Triggery dla Twoich słów kluczowych",
-      "Analiza wiadomości"
+      "Analiza wiadomości",
     ],
-    formLink: "https://forms.example.com/instagram-dm",
+    howItWorks: [
+      "Integruję Twoje konto z aplikacją Meta",
+      "Konfiguruję system odpowiedzi",
+      "Wypełniasz szablon, który zawsze możesz edytować"
+    ],
     slug: "instagram-dm",
     workflowNodes: [
       { id: "1", icon: "message" as const, x: 35, y: 10, color: "#E1306C" },
@@ -86,7 +94,12 @@ export const businessServices = [
       "Raporty konwersji",
       "Dodatki na żądanie"
     ],
-    formLink: "#",
+    howItWorks: [
+      "Wyznaczamy Twoją grupę docelową",
+      "System wyszukuje idealne osoby",
+      "Prowadzimy komunikację i negocjacje",
+      "Przekazujemy Ci gotowe leady"
+    ],
     comingSoon: true,
     slug: "leads-system",
     workflowNodes: [
@@ -120,7 +133,11 @@ export const businessServices = [
       "Raporty skuteczności",
       "Dodatki na żądanie"
     ],
-    formLink: "#",
+    howItWorks: [
+      "Analizujemy zachowanie każdego klienta",
+      "System dopracowuje strategie pod niego",
+      "Każdy klient dostaje spersonalizowaną ofertę"
+    ],
     comingSoon: true,
     slug: "cold-email",
     workflowNodes: [
@@ -150,11 +167,17 @@ export const businessServices = [
     features: [
       "Strona internetowa z systemem rezerwacji",
       "Podział na różnych specjalistów lub usługi",
-      "Obsługa płatności online z Przelewy24 i Blik",
+      "Obsługa płatności online, w tym systemu Blik",
+      "Dane rezerwacji gotowe do integracji",
       "Automatyczne przypomnienia SMS/email",
       "Modyfikacje na żądanie"
     ],
-    formLink: "#",
+    howItWorks: [
+      "Tworzymy stronę internetową z systemem rezerwacji",
+      "Integrujemy płatności online",
+      "Integrujemy zapisy wizyt z Twoim systemem",
+      "Ustawiamy automatyczne przypomnienia dla klientów"
+    ],
     comingSoon: false,
     slug: "bookings",
     workflowNodes: [
@@ -188,7 +211,13 @@ export const businessServices = [
       "Łatwa nawigacja",
       "Modyfikacje na żądanie"
     ],
-    formLink: "#",
+    howItWorks: [
+      "Wybierasz kolorystykę i treść",
+      "Tworzymy stronę internetową",
+      "Otrzymujesz własną domenę",
+      "Przesyłamy link do gotowej strony",
+      "Modyfikacje wprowadzamy na bieżąco"
+    ],
     comingSoon: false,
     slug: "websites",
     workflowNodes: [
