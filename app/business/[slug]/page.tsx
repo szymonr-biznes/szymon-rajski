@@ -36,14 +36,14 @@ export default async function CheckoutPage({ params }: { params: Promise<{ slug:
   return (
     <div className="flex min-h-screen flex-col">
       {isSocialMedia ? <SocialMediaBackground /> : <ParallaxBackground />}
-      
+
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
-        
+
         <main className="flex-1 py-12 px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
-            <Link 
-              href="/business" 
+            <Link
+              href="/business"
               className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors bg-background/50 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border shadow-sm"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -111,15 +111,15 @@ export default async function CheckoutPage({ params }: { params: Promise<{ slug:
                     </div>
 
                     <div className="space-y-4">
-                      <Button asChild className="w-full text-sm font-semibold group transition-all">
-                        <a href={service.formLink} target="_blank" rel="noopener noreferrer">
-                          Finalizuj zamówienie
+                      <Button disabled asChild className="w-full text-sm font-semibold group transition-all">
+                        <a href="/contact">
+                          Skontaktuj się osobiście
                           <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
                         </a>
                       </Button>
-                      
+
                       <p className="text-[10px] text-center text-muted-foreground leading-relaxed uppercase tracking-tighter opacity-70">
-                        Zostaniesz przekierowany do bezpiecznego formularza.
+                        {/* Zostaniesz przekierowany do bezpiecznego formularza. */}
                       </p>
                     </div>
                   </div>
