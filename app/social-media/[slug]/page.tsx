@@ -67,43 +67,41 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                 </div>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
-                <div className="grid md:grid-cols-5 gap-8 flex-1">
-                  {/* Left Column: Info */}
-                  <div className="md:col-span-3 space-y-6 flex flex-col">
-                    <p className="text-sm text-foreground leading-relaxed">{service.fullDescription}</p>
+                <div className="space-y-6 flex-1 flex flex-col">
+                  <p className="text-sm text-foreground leading-relaxed">{service.fullDescription}</p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 flex-1">
-                      <div className="space-y-4">
-                        <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
-                        <ul className="space-y-2">
-                          {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 flex-1">
+                    {/* Column 1: Co otrzymujesz */}
+                    <div className="space-y-4 bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border border-green-100 dark:border-green-900/50">
+                      <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
+                      <ul className="space-y-3">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                            <span className="leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Column 2: Jak działamy */}
+                    {service.howItWorks && service.howItWorks.length > 0 ? (
+                      <div className="space-y-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-100 dark:border-blue-900/50">
+                        <p className="text-sm font-medium text-foreground">Jak działamy:</p>
+                        <ul className="space-y-3">
+                          {service.howItWorks.map((step, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                               <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                              <span className="leading-relaxed">{feature}</span>
+                              <span className="leading-relaxed">{step}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
+                    ) : <div />}
 
-                      {service.howItWorks && service.howItWorks.length > 0 && (
-                        <div className="space-y-4">
-                          <p className="text-sm font-medium text-foreground">Jak działamy:</p>
-                          <ul className="space-y-2">
-                            {service.howItWorks.map((step, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                                <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                                <span className="leading-relaxed">{step}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Right Column: Payment Guarantees */}
-                  <div className="md:col-span-2 flex flex-col">
-                    <div className="relative rounded-lg border border-border bg-muted/30 p-6 sm:p-8 flex flex-col space-y-8 h-full">
+                    {/* Column 3: Dodatkowe informacje */}
+                    <div className="space-y-4 bg-muted/30 p-6 rounded-xl border border-border flex flex-col">
+                      <p className="text-sm font-medium text-foreground">Dodatkowe informacje:</p>
                       <div className="space-y-4 flex-1">
                         <div className="flex items-center gap-3 text-sm text-muted-foreground">
                           <ShieldCheck className="h-4 w-4 text-primary/70 shrink-0" />
@@ -118,16 +116,16 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                           <span>Faktura VAT na życzenie</span>
                         </div>
                       </div>
-
-                      <div className="space-y-4 mt-auto">
-                        <Button disabled asChild className="w-full text-sm font-semibold group transition-all">
-                          <a href="/contact">
-                            Skontaktuj się osobiście
-                            <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
-                          </a>
-                        </Button>
-                      </div>
                     </div>
+                  </div>
+
+                  <div className="pt-6">
+                    <Button disabled asChild className="w-full text-sm font-semibold group transition-all">
+                      <a href="/contact">
+                        Skontaktuj się
+                        <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </CardContent>

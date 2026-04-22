@@ -51,9 +51,8 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
             </Link>
 
             <Card className="overflow-hidden transition-shadow hover:shadow-md flex flex-col bg-card">
-              <div className="grid md:grid-cols-5">
-                {/* Left Column: Info */}
-                <div className="md:col-span-3 p-8 space-y-6">
+              <CardHeader className="pb-3 px-8 pt-8">
+                <div className="flex items-start justify-between gap-4">
                   <div>
                     <CardTitle className="text-2xl font-bold tracking-tight text-foreground">
                       {service.title}
@@ -62,19 +61,29 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                       {service.shortDescription}
                     </p>
                   </div>
-
+                  <div className="text-right shrink-0">
+                    <p className="text-xl font-bold text-foreground">{service.price}</p>
+                    {service.priceNote && (
+                      <p className="text-xs text-muted-foreground">{service.priceNote}</p>
+                    )}
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="px-8 pb-8 flex flex-col">
+                <div className="space-y-6 flex flex-col">
                   <div className="prose prose-sm dark:prose-invert">
                     <p className="text-sm text-foreground/80 leading-relaxed">
                       {service.fullDescription}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-                    <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                    {/* Column 1: Co otrzymujesz */}
+                    <div className="space-y-4 bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border border-green-100 dark:border-green-900/50">
                       <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                             <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                             <span className="leading-relaxed">{feature}</span>
                           </li>
@@ -82,65 +91,51 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                       </ul>
                     </div>
 
-                    {service.howItWorks && service.howItWorks.length > 0 && (
-                      <div className="space-y-4">
+                    {/* Column 2: Jak działamy */}
+                    {service.howItWorks && service.howItWorks.length > 0 ? (
+                      <div className="space-y-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-100 dark:border-blue-900/50">
                         <p className="text-sm font-medium text-foreground">Jak działamy:</p>
-                        <ul className="space-y-2">
+                        <ul className="space-y-3">
                           {service.howItWorks.map((step, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                               <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                               <span className="leading-relaxed">{step}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-                    )}
-                  </div>
-                </div>
+                    ) : <div />}
 
-                {/* Right Column: Payment */}
-                <div className="md:col-span-2 p-6 flex flex-col justify-center">
-                  <div className="relative rounded-lg border border-border bg-muted/30 p-8 flex flex-col justify-between space-y-8 h-full">
-                    <div className="space-y-6">
-                      <div className="text-center md:text-left">
-                        <p className="text-xs text-muted-foreground mb-1 uppercase tracking-widest font-bold">Inwestycja</p>
-                        <p className="text-4xl font-black text-foreground tracking-tight">{service.price}</p>
-                        {service.priceNote && (
-                          <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{service.priceNote}</p>
-                        )}
-                      </div>
-
-                      <div className="space-y-3">
+                    {/* Column 3: Dodatkowe informacje */}
+                    <div className="space-y-4 bg-muted/30 p-6 rounded-xl border border-border flex flex-col">
+                      <p className="text-sm font-medium text-foreground">Dodatkowe informacje:</p>
+                      <div className="space-y-4 flex-1">
                         <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <ShieldCheck className="h-4 w-4 text-primary/70" />
+                          <ShieldCheck className="h-4 w-4 text-primary/70 shrink-0" />
                           <span>Bezpieczna płatność</span>
                         </div>
                         <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <Zap className="h-4 w-4 text-primary/70" />
+                          <Zap className="h-4 w-4 text-primary/70 shrink-0" />
                           <span>Błyskawiczna realizacja</span>
                         </div>
                         <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <CreditCard className="h-4 w-4 text-primary/70" />
+                          <CreditCard className="h-4 w-4 text-primary/70 shrink-0" />
                           <span>Faktura VAT na życzenie</span>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="space-y-4">
-                      <Button disabled asChild className="w-full text-sm font-semibold group transition-all">
-                        <a href="/contact">
-                          Skontaktuj się osobiście
-                          <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                      </Button>
-
-                      <p className="text-[10px] text-center text-muted-foreground leading-relaxed uppercase tracking-tighter opacity-70">
-                        {/* Zostaniesz przekierowany do bezpiecznego formularza. */}
-                      </p>
-                    </div>
+                  <div className="pt-6">
+                    <Button disabled asChild className="w-full text-sm font-semibold group transition-all">
+                      <a href="/contact">
+                        Skontaktuj się
+                        <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
-              </div>
+              </CardContent>
             </Card>
           </div>
         </main>
