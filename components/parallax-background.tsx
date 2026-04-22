@@ -36,7 +36,7 @@ export function ParallaxBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      
+
       const parallaxOffset = scrollRef.current * 0.15
       const cols = Math.ceil(canvas.width / spacing) + 2
       const rows = Math.ceil(canvas.height / spacing) + 8
@@ -50,7 +50,7 @@ export function ParallaxBackground() {
           const wave1 = Math.sin(time + col * waveLength + row * 0.05) * amplitude
           const wave2 = Math.sin(time * 0.7 + col * waveLength * 1.3 + row * 0.08) * (amplitude * 0.5)
           const wave3 = Math.cos(time * 0.5 + col * waveLength * 0.7) * (amplitude * 0.3)
-          
+
           const waveOffset = wave1 + wave2 + wave3
 
           const x = baseX

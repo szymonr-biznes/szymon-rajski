@@ -23,7 +23,9 @@ export const socialMediaServices = [
       { text: "Analizujemy Twoje konto", icon: "search" },
       { text: "Otrzymujesz gotowy plan", icon: "check-circle" }
     ],
+    comingSoon: false,
     slug: "instagram-growth",
+    type: "buy",
     workflowNodes: [
       { id: "1", icon: "form" as const, x: 35, y: 65, color: "#405DE6" },
       { id: "2", icon: "users" as const, x: 105, y: 20, color: "#C13584" },
@@ -59,7 +61,9 @@ export const socialMediaServices = [
       { text: "Konfiguruję system odpowiedzi", icon: "wrench" },
       { text: "Wypełniasz szablon, który zawsze możesz edytować", icon: "edit-3" }
     ],
+    comingSoon: false,
     slug: "instagram-dm",
+    type: "buy",
     workflowNodes: [
       { id: "1", icon: "message" as const, x: 35, y: 10, color: "#E1306C" },
       { id: "2", icon: "bolt" as const, x: 115, y: 20, color: "#405DE6" },
@@ -102,6 +106,7 @@ export const businessServices = [
     ],
     comingSoon: true,
     slug: "leads-system",
+    type: "negotiate",
     workflowNodes: [
       { id: "1", icon: "search" as const, x: -15, y: 15, color: "#1B50FF" },
       { id: "2", icon: "circle-pile" as const, x: 55, y: 45, color: "#00D9FF" },
@@ -140,6 +145,7 @@ export const businessServices = [
     ],
     comingSoon: true,
     slug: "cold-email",
+    type: "negotiate",
     workflowNodes: [
       { id: "1", icon: "users" as const, x: 5, y: 75, color: "#FF00F7" },
       { id: "2", icon: "mail-search" as const, x: 75, y: 75, color: "#FF9100" },
@@ -180,6 +186,7 @@ export const businessServices = [
     ],
     comingSoon: false,
     slug: "bookings",
+    type: "negotiate",
     workflowNodes: [
       { id: "1", icon: "globe" as const, x: 0, y: 10, color: "#9100B5" },
       { id: "2", icon: "calendar-check" as const, x: 70, y: 10, color: "#FF9100" },
@@ -220,6 +227,7 @@ export const businessServices = [
     ],
     comingSoon: false,
     slug: "websites",
+    type: "negotiate",
     workflowNodes: [
       { id: "1", icon: "search" as const, x: 10, y: 30, color: "#FF9100" },
       { id: "2", icon: "globe" as const, x: 100, y: 50, color: "#9100B5" },

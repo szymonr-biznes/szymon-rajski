@@ -10,6 +10,7 @@ import { WorkflowDiagram } from "@/components/workflow-diagram"
 import { SocialMediaBackground } from "@/components/social-media-background"
 import { ParallaxBackground } from "@/components/parallax-background"
 import { DynamicIcon } from "@/components/dynamic-icon"
+import CheckoutForm from "@/components/checkout-form"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -128,12 +129,19 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                   </div>
 
                   <div className="pt-6">
-                    <Button disabled asChild className="w-full text-sm font-semibold group transition-all">
-                      <a href="/contact">
-                        Skontaktuj się
-                        <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
-                      </a>
-                    </Button>
+                    {(service as any).type === "buy" ? (
+                      <div className="bg-muted/20 p-6 rounded-xl border border-border">
+                        <h3 className="text-lg font-semibold mb-4">Złóż zamówienie</h3>
+                        <CheckoutForm slug={service.slug} />
+                      </div>
+                    ) : (
+                      <Button disabled={service.comingSoon} asChild className="w-full text-sm font-semibold group transition-all">
+                        <Link href="/contact">
+                          Umów się na spotkanie
+                          <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardContent>
