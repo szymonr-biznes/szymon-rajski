@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { socialMediaServices, businessServices } from "@/components/services-section"
+import { socialMediaServices, businessServices } from "@/lib/services"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check, ArrowLeft, ShieldCheck, Zap, CreditCard, Star, Clock, Heart } from "lucide-react"
@@ -9,6 +9,7 @@ import Link from "next/link"
 import { WorkflowDiagram } from "@/components/workflow-diagram"
 import { SocialMediaBackground } from "@/components/social-media-background"
 import { ParallaxBackground } from "@/components/parallax-background"
+import CheckoutForm from "@/components/checkout-form"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -111,15 +112,19 @@ export default async function CheckoutPage({ params }: { params: Promise<{ slug:
                     </div>
 
                     <div className="space-y-4">
-                      <Button disabled asChild className="w-full text-sm font-semibold group transition-all">
-                        <a href="/contact">
-                          Skontaktuj się osobiście
-                          <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                      </Button>
+                      {isSocialMedia && !service.comingSoon ? (
+                        <CheckoutForm slug={service.slug} />
+                      ) : (
+                        <Button asChild className="w-full text-sm font-semibold group transition-all">
+                          <a href="/contact">
+                            Skontaktuj się osobiście
+                            <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
+                          </a>
+                        </Button>
+                      )}
 
                       <p className="text-[10px] text-center text-muted-foreground leading-relaxed uppercase tracking-tighter opacity-70">
-                        {/* Zostaniesz przekierowany do bezpiecznego formularza. */}
+                        {isSocialMedia && !service.comingSoon ? "" : "Dla tej usługi płatność odbywa się po ustaleniu szczegółów."}
                       </p>
                     </div>
                   </div>

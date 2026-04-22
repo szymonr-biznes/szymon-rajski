@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
-import { ServicesSection, businessServices } from "@/components/services-section"
+import { ServicesSection } from "@/components/services-section"
+import { businessServices } from "@/lib/services"
 import { Footer } from "@/components/footer"
 import { ParallaxBackground } from "@/components/parallax-background"
 

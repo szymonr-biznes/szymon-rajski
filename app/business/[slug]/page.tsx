@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { socialMediaServices, businessServices } from "@/components/services-section"
+import { socialMediaServices, businessServices } from "@/lib/services"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check, ArrowLeft, ShieldCheck, Zap, CreditCard, Star, Clock, Heart } from "lucide-react"
