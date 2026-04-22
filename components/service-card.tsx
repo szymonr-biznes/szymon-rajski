@@ -1,8 +1,6 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { WorkflowDiagram } from "./workflow-diagram"
@@ -33,9 +31,7 @@ export function ServiceCard({
   fullDescription,
   price,
   priceNote,
-  features,
-  howItWorks,
-  buttonText = "Rozpocznij teraz",
+  buttonText = "Pokaż szczegóły",
   comingSoon = false,
   workflowNodes,
   workflowConnections,
@@ -77,40 +73,11 @@ export function ServiceCard({
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 flex-1">
-            <div className="space-y-4">
-              <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
-              <ul className="space-y-2">
-                {features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    <span className="leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {howItWorks && howItWorks.length > 0 && (
-              <div className="space-y-4">
-                <p className="text-sm font-medium text-foreground">Jak działamy:</p>
-                <ul className="space-y-2">
-                  {howItWorks.map((step, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span className="leading-relaxed">{step}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-
           <div className="mt-auto pt-4">
             {!comingSoon && (
               <Button asChild className="w-full">
                 <Link href={`${basePath}/${slug}`}>
                   {buttonText}
-                  <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             )}
