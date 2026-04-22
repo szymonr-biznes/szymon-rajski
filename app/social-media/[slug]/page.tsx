@@ -70,16 +70,32 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                 <div className="space-y-6 flex-1 flex flex-col">
                   <p className="text-sm text-foreground leading-relaxed">{service.fullDescription}</p>
 
-                  <div className="flex-1">
-                    <p className="mb-2 text-sm font-medium text-foreground">Co otrzymujesz:</p>
-                    <ul className="space-y-1.5">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 flex-1">
+                    <div className="space-y-4">
+                      <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                            <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                            <span className="leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {service.howItWorks && service.howItWorks.length > 0 && (
+                      <div className="space-y-4">
+                        <p className="text-sm font-medium text-foreground">Jak działamy:</p>
+                        <ul className="space-y-2">
+                          {service.howItWorks.map((step, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                              <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                              <span className="leading-relaxed">{step}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </CardContent>
