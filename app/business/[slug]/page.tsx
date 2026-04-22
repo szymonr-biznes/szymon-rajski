@@ -9,6 +9,7 @@ import Link from "next/link"
 import { WorkflowDiagram } from "@/components/workflow-diagram"
 import { SocialMediaBackground } from "@/components/social-media-background"
 import { ParallaxBackground } from "@/components/parallax-background"
+import { DynamicIcon } from "@/components/dynamic-icon"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -83,9 +84,9 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                       <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
                       <ul className="space-y-3">
                         {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                            <span className="leading-relaxed">{feature}</span>
+                          <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground">
+                            <DynamicIcon name={feature.icon} className="h-4 w-4 text-primary/70 shrink-0" />
+                            <span className="leading-relaxed">{feature.text}</span>
                           </li>
                         ))}
                       </ul>
@@ -97,9 +98,9 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                         <p className="text-sm font-medium text-foreground">Jak działamy:</p>
                         <ul className="space-y-3">
                           {service.howItWorks.map((step, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                              <span className="leading-relaxed">{step}</span>
+                            <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground">
+                              <DynamicIcon name={step.icon} className="h-4 w-4 text-primary/70 shrink-0" />
+                              <span className="leading-relaxed">{step.text}</span>
                             </li>
                           ))}
                         </ul>

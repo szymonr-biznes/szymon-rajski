@@ -11,17 +11,17 @@ export const socialMediaServices = [
     amount: 9900,
     priceNote: "analiza",
     features: [
-      "Analiza konta",
-      "Audyt treści",
-      "Mocne i słabe strony konkurencji",
-      "Gotowe hooki, CTA oraz pomysły",
-      "Plan tygodniowy",
-      "Przykładowy content na 14 dni"
+      { text: "Analiza konta", icon: "line-chart" },
+      { text: "Audyt treści", icon: "search-check" },
+      { text: "Mocne i słabe strony konkurencji", icon: "swords" },
+      { text: "Gotowe hooki oraz CTA", icon: "lightbulb" },
+      { text: "Plan tygodniowy", icon: "calendar" },
+      { text: "Przykładowy content na 14 dni", icon: "layout-template" }
     ],
     howItWorks: [
-      "Wypełniasz formularz",
-      "Analizujemy Twoje konto",
-      "Otrzymujesz gotowy plan"
+      { text: "Wypełniasz formularz", icon: "file-text" },
+      { text: "Analizujemy Twoje konto", icon: "search" },
+      { text: "Otrzymujesz gotowy plan", icon: "check-circle" }
     ],
     slug: "instagram-growth",
     workflowNodes: [
@@ -49,15 +49,15 @@ export const socialMediaServices = [
     amount: 14900,
     priceNote: "miesięczne",
     features: [
-      "Automatyczne odpowiedzi 24/7",
-      "Możliwość konfiguracji odpowiedzi",
-      "Triggery dla Twoich słów kluczowych",
-      "Analiza wiadomości",
+      { text: "Automatyczne odpowiedzi 24/7", icon: "clock" },
+      { text: "Możliwość konfiguracji odpowiedzi", icon: "settings-2" },
+      { text: "Triggery dla Twoich słów kluczowych", icon: "zap" },
+      { text: "Analiza wiadomości", icon: "message-circle-code" }
     ],
     howItWorks: [
-      "Integruję Twoje konto z aplikacją Meta",
-      "Konfiguruję system odpowiedzi",
-      "Wypełniasz szablon, który zawsze możesz edytować"
+      { text: "Integruję Twoje konto z aplikacją Meta", icon: "blocks" },
+      { text: "Konfiguruję system odpowiedzi", icon: "wrench" },
+      { text: "Wypełniasz szablon, który zawsze możesz edytować", icon: "edit-3" }
     ],
     slug: "instagram-dm",
     workflowNodes: [
@@ -88,17 +88,17 @@ export const businessServices = [
     amount: 29900,
     priceNote: "miesięczne",
     features: [
-      "Automatyczne wyszukiwanie leadów",
-      "Sekwencje follow-up",
-      "Integracja z LinkedIn i email",
-      "Raporty konwersji",
-      "Dodatki na żądanie"
+      { text: "Automatyczne wyszukiwanie leadów", icon: "search" },
+      { text: "Sekwencje follow-up", icon: "list-restart" },
+      { text: "Integracja z LinkedIn i email", icon: "link" },
+      { text: "Raporty konwersji", icon: "bar-chart-3" },
+      { text: "Dodatki na żądanie", icon: "plus-circle" }
     ],
     howItWorks: [
-      "Wyznaczamy Twoją grupę docelową",
-      "System wyszukuje idealne osoby",
-      "Prowadzimy komunikację i negocjacje",
-      "Przekazujemy Ci gotowe leady"
+      { text: "Wyznaczamy Twoją grupę docelową", icon: "target" },
+      { text: "System wyszukuje idealne osoby", icon: "users" },
+      { text: "Prowadzimy komunikację i negocjacje", icon: "message-square-text" },
+      { text: "Przekazujemy Ci gotowe leady", icon: "check-circle" }
     ],
     comingSoon: true,
     slug: "leads-system",
@@ -127,16 +127,16 @@ export const businessServices = [
     amount: 19900,
     priceNote: "miesięczne",
     features: [
-      "Prowadzenie wielowątkowych rozmów",
-      "Personalizowanie ofert dla klientów",
-      "Szczegółowa analiza zachowań",
-      "Raporty skuteczności",
-      "Dodatki na żądanie"
+      { text: "Prowadzenie wielowątkowych rozmów", icon: "messages-square" },
+      { text: "Personalizowanie ofert dla klientów", icon: "user-cog" },
+      { text: "Szczegółowa analiza zachowań", icon: "activity" },
+      { text: "Raporty skuteczności", icon: "trending-up" },
+      { text: "Dodatki na żądanie", icon: "plus-circle" }
     ],
     howItWorks: [
-      "Analizujemy zachowanie każdego klienta",
-      "System dopracowuje strategie pod niego",
-      "Każdy klient dostaje spersonalizowaną ofertę"
+      { text: "Analizujemy zachowanie każdego klienta", icon: "brain-circuit" },
+      { text: "System dopracowuje strategie pod niego", icon: "puzzle" },
+      { text: "Każdy klient dostaje spersonalizowaną ofertę", icon: "mail" }
     ],
     comingSoon: true,
     slug: "cold-email",
@@ -165,18 +165,18 @@ export const businessServices = [
     amount: 14900,
     priceNote: "miesięczne",
     features: [
-      "Strona internetowa z systemem rezerwacji",
-      "Podział na różnych specjalistów lub usługi",
-      "Obsługa płatności online, w tym systemu Blik",
-      "Dane rezerwacji gotowe do integracji",
-      "Automatyczne przypomnienia SMS/email",
-      "Modyfikacje na żądanie"
+      { text: "Strona internetowa z systemem rezerwacji", icon: "globe" },
+      { text: "Podział na różnych specjalistów lub usługi", icon: "users" },
+      { text: "Obsługa płatności online, w tym systemu Blik", icon: "credit-card" },
+      { text: "Dane rezerwacji gotowe do integracji", icon: "database" },
+      { text: "Automatyczne przypomnienia SMS/email", icon: "bell-ring" },
+      { text: "Modyfikacje na żądanie", icon: "settings" }
     ],
     howItWorks: [
-      "Tworzymy stronę internetową z systemem rezerwacji",
-      "Integrujemy płatności online",
-      "Integrujemy zapisy wizyt z Twoim systemem",
-      "Ustawiamy automatyczne przypomnienia dla klientów"
+      { text: "Tworzymy stronę internetową z systemem rezerwacji", icon: "layout" },
+      { text: "Integrujemy płatności online", icon: "wallet" },
+      { text: "Integrujemy zapisy wizyt z Twoim systemem", icon: "calendar-check" },
+      { text: "Ustawiamy automatyczne przypomnienia dla klientów", icon: "bell" }
     ],
     comingSoon: false,
     slug: "bookings",
@@ -205,18 +205,18 @@ export const businessServices = [
     amount: 3500,
     priceNote: "miesięczne",
     features: [
-      "Nowoczesny design",
-      "Optymalizacja pod urządzenia mobilne",
-      "Szybkie ładowanie strony",
-      "Łatwa nawigacja",
-      "Modyfikacje na żądanie"
+      { text: "Nowoczesny design", icon: "palette" },
+      { text: "Optymalizacja pod urządzenia mobilne", icon: "smartphone" },
+      { text: "Szybkie ładowanie strony", icon: "zap" },
+      { text: "Łatwa nawigacja", icon: "navigation" },
+      { text: "Modyfikacje na żądanie", icon: "pen-tool" }
     ],
     howItWorks: [
-      "Wybierasz kolorystykę i treść",
-      "Tworzymy stronę internetową",
-      "Otrzymujesz własną domenę",
-      "Przesyłamy link do gotowej strony",
-      "Modyfikacje wprowadzamy na bieżąco"
+      { text: "Wybierasz kolorystykę i treść", icon: "paint-bucket" },
+      { text: "Tworzymy stronę internetową", icon: "monitor" },
+      { text: "Otrzymujesz własną domenę", icon: "globe" },
+      { text: "Przesyłamy link do gotowej strony", icon: "link" },
+      { text: "Modyfikacje wprowadzamy na bieżąco", icon: "refresh-cw" }
     ],
     comingSoon: false,
     slug: "websites",

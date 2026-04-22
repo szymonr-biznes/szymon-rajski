@@ -14,8 +14,8 @@ interface ServiceCardProps {
   fullDescription: string
   price: string
   priceNote?: string
-  features: string[]
-  howItWorks: string[]
+  features: { text: string; icon: string }[]
+  howItWorks: { text: string; icon: string }[]
   buttonText?: string
   comingSoon?: boolean
   workflowNodes?: { id: string; icon: string; x: number; y: number; color: string }[]
