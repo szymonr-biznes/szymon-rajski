@@ -219,8 +219,8 @@ export const businessServices = [
     fullDescription: `Profesjonalna strona internetowa z nowoczesnym designem 
      i intuicyjną obsługą na smartfony i komputery, która sprawi, że Twoi klienci
      znajdą potrzebne informacje i zamówią Twoje usługi w szybki sposób.`,
-    price: "Od 699 zł",
-    amount: 69900,
+    price: "Od 299 zł",
+    amount: 29900,
     priceNote: "za stronę",
     features: [
       { text: "Nowoczesny design", icon: "palette" },
