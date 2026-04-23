@@ -31,7 +31,7 @@ function SuccessContent() {
 
         {service && (
           <div className="space-y-1">
-            <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Zakupiona usługa</p>
+            <p className="text-[10px] text-muted-foreground">Zakupiona usługa</p>
             <p className="text-lg font-bold text-foreground">{service.title}</p>
           </div>
         )}
