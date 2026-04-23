@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
       ],
       metadata: { firstName, lastName, email, slug },
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/payment/success?service=${slug}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/payment/cancel`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/payment/cancel?service=${slug}`,
     });
 
     return NextResponse.json({ url: session.url });
