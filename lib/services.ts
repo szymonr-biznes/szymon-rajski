@@ -94,9 +94,9 @@ export const businessServices = [
     fullDescription: `Zaawansowany system outreachu dla małych i średnich firm,
       dzięki któremu pozyskasz nowych klientów szybko i skutecznie bez żadnych
       barier komunikacyjnych.`,
-    price: "Od 299 zł",
-    amount: 29900,
-    priceNote: "miesięczne",
+    price: "Od 2999 zł",
+    amount: 299900,
+    priceNote: "za system",
     features: [
       { text: "Automatyczne wyszukiwanie leadów", icon: "search" },
       { text: "Sekwencje follow-up", icon: "list-restart" },
@@ -135,8 +135,8 @@ export const businessServices = [
     fullDescription: `Niezawodny system cold emailingu, z którym zadbasz o swoich
       klientów w profesjonalny i szybki sposób. Pomaga on prowadzić komunikację w
       sposób uporządkowany, konkretny i bez niepotrzebnych napięć.`,
-    price: "Od 199 zł",
-    amount: 19900,
+    price: "Od 1999 zł",
+    amount: 199900,
     priceNote: "miesięczne",
     features: [
       { text: "Prowadzenie wielowątkowych rozmów", icon: "messages-square" },
@@ -175,9 +175,9 @@ export const businessServices = [
     fullDescription: `System, który obsłuży Twoich klientów bez zbędnego czekania.
       W połączeniu ze stroną internetową, kalendarzem i płatnościami online,
       klienci będą w stanie łatwo zarezerwować termin i dokonać płatności.`,
-    price: "Od 149 zł",
-    amount: 14900,
-    priceNote: "miesięczne",
+    price: "Od 3499 zł",
+    amount: 349900,
+    priceNote: "za system",
     features: [
       { text: "Strona internetowa z systemem rezerwacji", icon: "globe" },
       { text: "Podział na różnych specjalistów lub usługi", icon: "users" },
@@ -219,12 +219,12 @@ export const businessServices = [
     fullDescription: `Profesjonalna strona internetowa z nowoczesnym designem 
      i intuicyjną obsługą na smartfony i komputery, która sprawi, że Twoi klienci
      znajdą potrzebne informacje i zamówią Twoje usługi w szybki sposób.`,
-    price: "Od 35 zł",
-    amount: 3500,
-    priceNote: "miesięczne",
+    price: "Od 699 zł",
+    amount: 69900,
+    priceNote: "za stronę",
     features: [
       { text: "Nowoczesny design", icon: "palette" },
-      { text: "Optymalizacja pod urządzenia mobilne", icon: "smartphone" },
+      { text: "Optymalizacja pod urdądzenia mobilne", icon: "smartphone" },
       { text: "Szybkie ładowanie strony", icon: "zap" },
       { text: "Łatwa nawigacja", icon: "navigation" },
       { text: "Modyfikacje na żądanie", icon: "pen-tool" }
