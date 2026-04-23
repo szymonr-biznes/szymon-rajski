@@ -1,10 +1,65 @@
+"use client"
+
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { CheckCircle2, Home, ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { SocialMediaBackground } from '@/components/social-media-background';
+import { socialMediaServices, businessServices } from '@/lib/services';
+
+function SuccessContent() {
+  const searchParams = useSearchParams();
+  const serviceSlug = searchParams.get('service');
+
+  const allServices = [...socialMediaServices, ...businessServices];
+  // Fallback to the first service just for visual testing if param is missing
+  const service = allServices.find(s => s.slug === serviceSlug) || (process.env.NODE_ENV === 'development' ? allServices[0] : null);
+
+  return (
+    <Card className="overflow-hidden bg-card border-border shadow-md text-center flex flex-col">
+      <CardHeader className="pb-0 text-center">
+        <CardTitle className="text-lg">Płatność zakończona sukcesem</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-6 pt-0">
+        <div className="flex justify-center -mt-2">
+          <CheckCircle2 className="h-8 w-8 text-green-500 animate-in zoom-in duration-700" />
+        </div>
+
+        {service && (
+          <div className="space-y-1">
+            <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Zakupiona usługa</p>
+            <p className="text-lg font-bold text-foreground">{service.title}</p>
+          </div>
+        )}
+
+        <p className="text-sm text-foreground leading-relaxed max-w-md mx-auto">
+          Dziękuję za zamówienie! Twoja płatność została przetworzona pomyślnie.
+          Rozpoczynamy pracę nad Twoją analizą i skontaktujemy się z Tobą mailowo w ciągu 24h.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button
+            asChild
+            className="flex-1 bg-blue-500 hover:bg-blue-600 text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/30"
+          >
+            <Link href="/">
+              Wróć do strony głównej
+            </Link>
+          </Button>
+          <Button asChild className="flex-1">
+            <Link href="/social-media">
+              Zobacz inne usługi
+            </Link>
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function SuccessPage() {
   return (
@@ -14,37 +69,9 @@ export default function SuccessPage() {
         <Header />
         <main className="flex-1 flex items-center justify-center px-6 py-12">
           <div className="mx-auto max-w-2xl w-full">
-            <Card className="overflow-hidden bg-card border-border shadow-md">
-              <CardHeader className="pb-3 pt-8 text-center">
-                <div className="mb-4 flex justify-center">
-                  <CheckCircle2 className="h-16 w-16 text-green-500" />
-                </div>
-                <CardTitle className="text-3xl font-bold tracking-tight text-foreground">
-                  Płatność zakończona sukcesem
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-8 pt-2 text-center space-y-6">
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.
-                  Rozpoczynamy pracę nad Twoją analizą i skontaktujemy się z Tobą mailowo w ciągu 24h.
-                </p>
-
-                <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild className="h-12 px-8 font-semibold">
-                    <Link href="/">
-                      Wróć do strony głównej
-                      <Home className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="h-12 px-8 font-semibold">
-                    <Link href="/social-media">
-                      Zobacz inne usługi
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <Suspense fallback={<div className="text-center text-muted-foreground">Ładowanie...</div>}>
+              <SuccessContent />
+            </Suspense>
           </div>
         </main>
         <Footer />
