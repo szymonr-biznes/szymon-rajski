@@ -26,6 +26,9 @@ export const socialMediaServices = [
     comingSoon: false,
     slug: "instagram-growth",
     type: "buy",
+    successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.
+      Na podany adres mailowy otrzymasz wiadomość z linkiem do ankiety. Po jej wypełnieniu
+      przystąpimy do pracy nad Twoją analizą i w ciągu 24-48h otrzymasz gotowy raport.`,
     workflowNodes: [
       { id: "1", icon: "form" as const, x: 35, y: 65, color: "#405DE6" },
       { id: "2", icon: "users" as const, x: 105, y: 20, color: "#C13584" },
@@ -64,6 +67,9 @@ export const socialMediaServices = [
     comingSoon: false,
     slug: "instagram-dm",
     type: "buy",
+    successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.
+      Na podany adres mailowy otrzymasz wiadomość z linkiem do szablonu. Proszę na stronie
+      wybrać dogodny termin integracji. Szacowany czas integracji to 15-20 minut.`,
     workflowNodes: [
       { id: "1", icon: "message" as const, x: 35, y: 10, color: "#E1306C" },
       { id: "2", icon: "bolt" as const, x: 115, y: 20, color: "#405DE6" },
@@ -107,6 +113,7 @@ export const businessServices = [
     comingSoon: true,
     slug: "leads-system",
     type: "negotiate",
+    successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.`,
     workflowNodes: [
       { id: "1", icon: "search" as const, x: -15, y: 15, color: "#1B50FF" },
       { id: "2", icon: "circle-pile" as const, x: 55, y: 45, color: "#00D9FF" },
@@ -146,6 +153,7 @@ export const businessServices = [
     comingSoon: true,
     slug: "cold-email",
     type: "negotiate",
+    successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.`,
     workflowNodes: [
       { id: "1", icon: "users" as const, x: 5, y: 75, color: "#FF00F7" },
       { id: "2", icon: "mail-search" as const, x: 75, y: 75, color: "#FF9100" },
@@ -187,6 +195,9 @@ export const businessServices = [
     comingSoon: false,
     slug: "bookings",
     type: "negotiate",
+    successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.
+      Zaczynamy budowę systemu. W kolejnej wiadomosci zamieścimy link do strony w celu
+      śledzenia postępów.`,
     workflowNodes: [
       { id: "1", icon: "globe" as const, x: 0, y: 10, color: "#9100B5" },
       { id: "2", icon: "calendar-check" as const, x: 70, y: 10, color: "#FF9100" },
@@ -228,6 +239,9 @@ export const businessServices = [
     comingSoon: false,
     slug: "websites",
     type: "negotiate",
+    successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.
+      Zaczynamy budowę strony. W kolejnej wiadomosci zamieścimy link do strony w celu
+      śledzenia postępów.`,
     workflowNodes: [
       { id: "1", icon: "search" as const, x: 10, y: 30, color: "#FF9100" },
       { id: "2", icon: "globe" as const, x: 100, y: 50, color: "#9100B5" },

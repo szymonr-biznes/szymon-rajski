@@ -37,8 +37,7 @@ function SuccessContent() {
         )}
 
         <p className="text-sm text-foreground leading-relaxed max-w-md mx-auto">
-          Dziękuję za zamówienie! Twoja płatność została przetworzona pomyślnie.
-          Rozpoczynamy pracę nad Twoją analizą i skontaktujemy się z Tobą mailowo w ciągu 24h.
+          {service?.successMessage || "Dziękuję za zamówienie! Twoja płatność została przetworzona pomyślnie. Rozpoczynamy pracę nad Twoim zamówieniem i skontaktujemy się z Tobą mailowo w ciągu 24h."}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
