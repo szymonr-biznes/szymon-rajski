@@ -110,7 +110,7 @@ export const businessServices = [
       { text: "Prowadzimy komunikację i negocjacje", icon: "message-square-text" },
       { text: "Przekazujemy Ci gotowe leady", icon: "check-circle" }
     ],
-    comingSoon: true,
+    comingSoon: false,
     slug: "leads-system",
     type: "negotiate",
     successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.`,
@@ -150,7 +150,7 @@ export const businessServices = [
       { text: "System dopracowuje strategie pod niego", icon: "puzzle" },
       { text: "Każdy klient dostaje spersonalizowaną ofertę", icon: "mail" }
     ],
-    comingSoon: true,
+    comingSoon: false,
     slug: "cold-email",
     type: "negotiate",
     successMessage: `Dziękujemy za zamówienie! Twoja płatność została przetworzona pomyślnie.`,

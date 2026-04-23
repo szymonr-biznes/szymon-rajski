@@ -52,14 +52,16 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
               Wróć do ofert
             </Link>
 
-            <Card className="overflow-hidden transition-shadow hover:shadow-md flex flex-col bg-card">
-              <CardHeader className="pb-3 px-8 pt-8">
+            <Card className="overflow-hidden transition-shadow hover:shadow-md flex flex-col">
+              <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <CardTitle className="text-2xl font-bold tracking-tight text-foreground">
-                      {service.title}
-                    </CardTitle>
-                    <p className="mt-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <CardTitle className="text-lg">
+                        {service.title}
+                      </CardTitle>
+                    </div>
+                    <p className="mt-1 text-sm text-muted-foreground">
                       {service.shortDescription}
                     </p>
                   </div>
@@ -71,7 +73,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="px-8 pb-8 flex flex-col">
+              <CardContent className="flex-1 flex flex-col">
                 <div className="space-y-6 flex flex-col">
                   <div className="prose prose-sm dark:prose-invert">
                     <p className="text-sm text-foreground/80 leading-relaxed">
@@ -135,10 +137,9 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                         <CheckoutForm slug={service.slug} />
                       </div>
                     ) : (
-                      <Button disabled={service.comingSoon} asChild className="w-full text-sm font-semibold group transition-all">
+                      <Button disabled={service.comingSoon} asChild className="w-full text-sm font-semibold transition-all">
                         <Link href="/contact">
                           Umów się na spotkanie
-                          <ArrowLeft className="ml-2 h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </Button>
                     )}
