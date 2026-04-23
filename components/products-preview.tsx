@@ -12,7 +12,7 @@ const products = [
     categoryIcon: Instagram,
     title: "Instagram Profile Growth",
     description: "Kompletna analiza dla małych twórców chcących zwiększać swoje zasięgi. Otrzymujesz szczegółowy raport wraz z rekomendacjami i gotowymi treściami do publikacji.",
-    href: "/social-media",
+    href: "/social-media/instagram-growth",
     icon: TrendingUp,
     cardVariant: "growth" as const,
   },
@@ -21,7 +21,7 @@ const products = [
     categoryIcon: Instagram,
     title: "Instagram DM Replier",
     description: "Automatyczne odpowiedzi na wiadomości prywatne. Twórcy podpinają usługę i mają zautomatyzowane odpowiedzi dla swoich obserwujących 24/7.",
-    href: "/social-media",
+    href: "/social-media/instagram-dm",
     icon: MessageSquare,
     cardVariant: "dm" as const,
   },
@@ -30,9 +30,9 @@ const products = [
     categoryIcon: Briefcase,
     title: "Outreach & Leads",
     description: "Automatyzacja pozyskiwania klientów dla małych i średnich firm. System identyfikuje potencjalnych klientów i inicjuje kontakt.",
-    href: "/business",
+    href: "/business/leads-system",
     icon: Users,
-    comingSoon: true,
+    comingSoon: false,
     cardVariant: "outreach" as const,
   },
   {
@@ -40,9 +40,9 @@ const products = [
     categoryIcon: Briefcase,
     title: "Cold Email Systems",
     description: "Zaawansowane systemy cold emailingu z personalizacją, sekwencjami i analityką. Zwiększaj konwersję poprzez inteligentne kampanie.",
-    href: "/business",
+    href: "/business/cold-email",
     icon: Mail,
-    comingSoon: true,
+    comingSoon: false,
     cardVariant: "email" as const,
   },
   {
@@ -50,7 +50,7 @@ const products = [
     categoryIcon: Briefcase,
     title: "System Rezerwacji",
     description: "Uniwersalny system rezerwacji dla różnych branż - od salonów kosmetycznych po warsztaty samochodowe. Automatyczne przypomnienia i zarządzanie kalendarzem.",
-    href: "/business",
+    href: "/business/bookings",
     icon: CalendarDays,
     comingSoon: false,
     cardVariant: "booking" as const,
@@ -142,7 +142,7 @@ function AnimatedCard({ product, index }: { product: typeof products[0]; index: 
                   </p>
 
                   <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-blue-500 transition-colors group-hover:text-blue-600">
-                    {product.comingSoon ? "Dowiedz się więcej" : "Zobacz szczegóły"}
+                    Zobacz szczegóły
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                   </div>
                 </div>
