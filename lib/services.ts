@@ -137,7 +137,7 @@ export const businessServices = [
       sposób uporządkowany, konkretny i bez niepotrzebnych napięć.`,
     price: "Od 1999 zł",
     amount: 199900,
-    priceNote: "miesięczne",
+    priceNote: "za system",
     features: [
       { text: "Prowadzenie wielowątkowych rozmów", icon: "messages-square" },
       { text: "Personalizowanie ofert dla klientów", icon: "user-cog" },
