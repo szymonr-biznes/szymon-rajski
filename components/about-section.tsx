@@ -61,7 +61,7 @@ export function AboutSection() {
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed text-pretty">
             Specjalizuję się w automatyzacji procesów, pomagając firmom i twórcom oszczędzać
             czas oraz zwiększać efektywność. Od narzędzi dla Instagrama po zaawansowane
-            systemy outreachu — dostarczam rozwiązania, które działają.
+            systemy outreachu. Dostarczam rozwiązania, które działają.
           </p>
         </div>
 
