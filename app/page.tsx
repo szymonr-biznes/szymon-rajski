@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { NewHero } from "@/components/new-hero"
 import { ProblemsGrid } from "@/components/problems-grid"
-import { UsageGallery } from "@/components/founders-gallery"
+import { UsageGallery } from "@/components/usage-gallery"
 import { TrustEngine } from "@/components/trust-engine"
 import { Testimonials } from "@/components/testimonials"
 import { Comparison } from "@/components/comparison"
