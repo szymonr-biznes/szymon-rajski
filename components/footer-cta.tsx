@@ -3,7 +3,7 @@ import Link from "next/link"
 export function FooterCTA() {
   return (
     <section className="bg-black text-white relative overflow-hidden">
-      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 pt-32 pb-48 md:pb-32 relative z-10 border-l border-white">
+      <div className="max-w-[1400px] w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-auto px-6 lg:px-8 pt-32 pb-48 md:pb-32 relative z-10 border-l border-white">
         {/* Bottom Horizontal Line - Adjusted for mobile stack height */}
         <div className="absolute bottom-[180px] md:bottom-[64px] left-0 w-[2000px] h-[1px] bg-white z-20" />
 

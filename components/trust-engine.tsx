@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 export function TrustEngine() {
   return (
     <section className="bg-black text-white overflow-hidden relative">
-      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 py-32 relative z-10 border-l border-white">
+      <div className="max-w-[1400px] w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-auto px-6 lg:px-8 py-32 relative z-10 border-l border-white">
         
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="max-w-2xl text-left">
