@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 
 const navigation = [
   { name: "Services", href: "#" },
@@ -13,10 +14,29 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { scrollY } = useScroll()
+  const [hidden, setHidden] = useState(false)
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0
+    if (latest > previous && latest > 150) {
+      setHidden(true)
+    } else {
+      setHidden(false)
+    }
+  })
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b border-black">
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-8 py-4 border-l border-black ml-[12px] lg:ml-0">
+    <motion.header 
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" }
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="sticky top-0 z-50 w-full bg-background border-b border-black"
+    >
+      <nav className="mx-auto max-w-[1400px] ml-3 lg:ml-auto flex items-center justify-between px-6 lg:px-8 py-4 border-l border-black">
         {/* Logo - left side */}
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tighter text-foreground">Agency.</span>
@@ -84,6 +104,6 @@ export function Header() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   )
 }
