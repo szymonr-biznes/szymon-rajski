@@ -179,29 +179,31 @@ export function UsageGallery() {
             {[...brands, ...brands].map((brand, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 w-[280px] px-8 py-10 flex items-center justify-center border-r border-black gap-4 group/item"
+                className="flex-shrink-0 w-[180px] md:w-[280px] px-4 md:px-8 py-6 md:py-10 flex items-center justify-center border-r border-black gap-2 md:gap-4 group/item"
               >
                 {brand.id === 'files' ? (
-                  <div className="relative w-12 h-12 flex items-center justify-center">
-                    <div className="absolute -top-1 left-1/2 -translate-x-1/2 bg-blue-500/5 p-1 rounded-sm border border-blue-500/10 transform -rotate-12">
-                      <FileText className="w-4 h-4 text-blue-600" />
-                      <span className="absolute -bottom-1 -right-1 text-[5px] font-bold bg-blue-600 text-white px-0.5 rounded-xs">DOCX</span>
+                  <div className="relative w-8 h-8 md:w-12 md:h-12 flex items-center justify-center">
+                    <div className="absolute -top-1 left-1/2 -translate-x-1/2 bg-blue-500/5 p-0.5 md:p-1 rounded-sm border border-blue-500/10 transform -rotate-12">
+                      <FileText className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
+                      <span className="absolute -bottom-1 -right-1 text-[4px] md:text-[5px] font-bold bg-blue-600 text-white px-0.5 rounded-xs">DOCX</span>
                     </div>
-                    <div className="absolute top-4 -left-1 bg-green-500/5 p-1 rounded-sm border border-green-500/10 transform rotate-12">
-                      <FileSpreadsheet className="w-4 h-4 text-green-600" />
-                      <span className="absolute -bottom-1 -right-1 text-[5px] font-bold bg-green-600 text-white px-0.5 rounded-xs">XLSX</span>
+                    <div className="absolute top-3 md:top-4 -left-1 bg-green-500/5 p-0.5 md:p-1 rounded-sm border border-green-500/10 transform rotate-12">
+                      <FileSpreadsheet className="w-3 h-3 md:w-4 md:h-4 text-green-600" />
+                      <span className="absolute -bottom-1 -right-1 text-[4px] md:text-[5px] font-bold bg-green-600 text-white px-0.5 rounded-xs">XLSX</span>
                     </div>
-                    <div className="absolute top-4 -right-1 bg-red-500/5 p-1 rounded-sm border border-red-500/10 transform -rotate-6">
-                      <FileCode className="w-4 h-4 text-red-600" />
-                      <span className="absolute -bottom-1 -right-1 text-[5px] font-bold bg-red-600 text-white px-0.5 rounded-xs">PDF</span>
+                    <div className="absolute top-3 md:top-4 -right-1 bg-red-500/5 p-0.5 md:p-1 rounded-sm border border-red-500/10 transform -rotate-6">
+                      <FileCode className="w-3 h-3 md:w-4 md:h-4 text-red-600" />
+                      <span className="absolute -bottom-1 -right-1 text-[4px] md:text-[5px] font-bold bg-red-600 text-white px-0.5 rounded-xs">PDF</span>
                     </div>
                   </div>
                 ) : (
-                  <div className={`p-2.5 bg-black/5 rounded-lg group-hover/item:bg-white transition-all duration-300 shadow-sm border border-transparent group-hover/item:border-black/5 ${brand.color}`}>
-                    {brand.icon}
+                  <div className={`p-1.5 md:p-2.5 bg-black/5 rounded-lg group-hover/item:bg-white transition-all duration-300 shadow-sm border border-transparent group-hover/item:border-black/5 ${brand.color}`}>
+                    <div className="w-4 h-4 md:w-6 md:h-6 flex items-center justify-center">
+                      {brand.icon}
+                    </div>
                   </div>
                 )}
-                <span className="text-lg font-bold tracking-tight text-black/60 group-hover/item:text-black transition-colors duration-300">
+                <span className="text-xs md:text-lg font-bold tracking-tight text-black/60 group-hover/item:text-black transition-colors duration-300">
                   {brand.name}
                 </span>
               </div>
