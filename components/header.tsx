@@ -2,36 +2,28 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Social Media", href: "/social-media" },
-  { name: "Biznes", href: "/business" },
-  { name: "Kontakt", href: "/contact" }
+  { name: "Services", href: "#" },
+  { name: "Cases", href: "#" },
+  { name: "Knowledge", href: "#" },
+  { name: "About", href: "#" }
 ]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-card">
-      <nav className="mx-auto flex max-w-7xl items-center px-6 py-4 lg:px-8">
+    <header className="sticky top-0 z-50 w-full bg-background border-b border-black">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between pl-10 lg:pl-16 pr-6 lg:pr-8 py-4">
         {/* Logo - left side */}
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/logo.svg"
-            alt="Szymon Rajski Logo"
-            width={32}
-            height={32}
-            className="rounded-lg"
-          />
-          <span className="text-lg font-semibold text-foreground">Szymon Rajski</span>
+          <span className="text-xl font-bold tracking-tighter text-foreground">Agency.</span>
         </Link>
 
         {/* Desktop Navigation - centered */}
-        <div className="hidden flex-1 justify-center lg:flex lg:items-center lg:gap-8">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -43,8 +35,15 @@ export function Header() {
           ))}
         </div>
 
-        {/* Spacer for balance */}
-        <div className="hidden lg:block lg:w-[180px]" />
+        {/* Action Button - right side */}
+        <div className="hidden lg:flex lg:justify-end">
+          <Link
+            href="#"
+            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-colors"
+          >
+            Let&apos;s talk
+          </Link>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -52,7 +51,7 @@ export function Header() {
           className="ml-auto lg:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          <span className="sr-only">Otwórz menu</span>
+          <span className="sr-only">Open menu</span>
           {mobileMenuOpen ? (
             <X className="h-6 w-6 text-foreground" />
           ) : (
@@ -63,18 +62,25 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-card border-b border-border">
-          <div className="space-y-1 px-6 pb-4 text-center">
+        <div className="lg:hidden bg-background border-b border-border/40">
+          <div className="space-y-1 px-4 pb-4 pt-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-sm text-foreground"
+                className="block py-2 text-base font-medium text-foreground"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="#"
+              className="mt-4 block w-full text-center bg-[#0033FF] text-white px-5 py-3 rounded-sm text-sm font-semibold"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Let&apos;s talk
+            </Link>
           </div>
         </div>
       )}
