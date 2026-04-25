@@ -16,7 +16,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background border-b border-black">
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between pl-10 lg:pl-16 pr-6 lg:pr-8 py-4">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-8 py-4 border-l border-black ml-[12px] lg:ml-0">
         {/* Logo - left side */}
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tighter text-foreground">Agency.</span>

@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 
 export function NewHero() {
   return (
-    <section className="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-48">
-      <div className="mx-auto max-w-[1400px] pl-10 lg:pl-16 pr-6 lg:pr-8 flex flex-col lg:flex-row items-center justify-between relative z-10">
+    <section className="relative overflow-hidden">
+      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 pt-24 pb-32 lg:pt-36 lg:pb-48 flex flex-col lg:flex-row items-center justify-between relative z-10 border-l border-black">
         
         {/* Left Content */}
         <div className="max-w-2xl text-left flex-1">

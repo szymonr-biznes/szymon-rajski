@@ -2,8 +2,8 @@ import Link from "next/link"
 
 export function FoundersGallery() {
   return (
-    <section className="py-24 bg-[#F4F1EA] border-t border-black/10">
-      <div className="mx-auto max-w-[1400px] pl-10 lg:pl-16 pr-6 lg:pr-8">
+    <section className="bg-[#F4F1EA] border-t border-black/10">
+      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 py-24 border-l border-black relative">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">

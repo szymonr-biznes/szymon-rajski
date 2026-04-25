@@ -2,8 +2,8 @@ import Link from "next/link"
 
 export function FooterCTA() {
   return (
-    <section className="bg-black text-white pt-32 pb-16 relative overflow-hidden">
-      <div className="mx-auto max-w-[1400px] pl-10 lg:pl-16 pr-6 lg:pr-8 relative z-10">
+    <section className="bg-black text-white relative overflow-hidden">
+      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 pt-32 pb-16 relative z-10 border-l border-white">
         
         {/* Background blue gradient/glow */}
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-tr from-[#0033FF]/40 to-transparent opacity-50 pointer-events-none transform -translate-x-1/4 translate-y-1/4 blur-3xl rounded-full"></div>

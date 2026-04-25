@@ -25,8 +25,8 @@ const problems = [
 
 export function ProblemsGrid() {
   return (
-    <section className="py-24 bg-[#F4F1EA]">
-      <div className="mx-auto max-w-[1400px] pl-10 lg:pl-16 pr-6 lg:pr-8">
+    <section className="bg-[#F4F1EA]">
+      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 py-24 border-l border-black relative">
         
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">

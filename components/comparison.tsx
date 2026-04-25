@@ -16,8 +16,8 @@ const trustEngine = [
 
 export function Comparison() {
   return (
-    <section className="py-32 bg-[#F4F1EA] overflow-hidden">
-      <div className="mx-auto max-w-[1400px] pl-10 lg:pl-16 pr-6 lg:pr-8 text-center relative">
+    <section className="bg-[#F4F1EA] overflow-hidden">
+      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 py-32 text-center relative border-l border-black">
         
         {/* Background Graphic */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[600px] pointer-events-none opacity-20">

@@ -26,8 +26,8 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-32 bg-[#F4F1EA]">
-      <div className="mx-auto max-w-[1400px] pl-10 lg:pl-16 pr-6 lg:pr-8">
+    <section className="bg-[#F4F1EA]">
+      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 py-32 relative border-l border-black">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Side */}
