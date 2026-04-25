@@ -3,13 +3,15 @@ import Link from "next/link"
 export function FooterCTA() {
   return (
     <section className="bg-black text-white relative overflow-hidden">
-      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 pt-32 pb-16 relative z-10 border-l border-white">
-        
+      <div className="mx-auto lg:mx-auto ml-3 lg:ml-auto max-w-[1400px] px-6 lg:px-8 pt-32 pb-32 relative z-10 border-l border-white">
+        {/* Bottom Horizontal Line - Starts at the vertical line and goes to the right */}
+        <div className="absolute bottom-[64px] left-0 w-[2000px] h-[1px] bg-white z-20" />
+
         {/* Background blue gradient/glow */}
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-tr from-[#0033FF]/40 to-transparent opacity-50 pointer-events-none transform -translate-x-1/4 translate-y-1/4 blur-3xl rounded-full"></div>
 
-        <div className="flex flex-col lg:flex-row items-end justify-between gap-16 border-b border-white/10 pb-24">
-          
+        <div className="flex flex-col lg:flex-row items-end justify-between gap-16 mb-24">
+
           {/* Left Side */}
           <div className="flex-1">
             <h2 className="text-5xl md:text-7xl font-medium tracking-tight leading-[1.1] mb-8">
@@ -47,7 +49,7 @@ export function FooterCTA() {
         {/* Real Footer part inside the black section */}
         <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <span className="text-4xl font-bold tracking-tighter">Agency.</span>
+            <span className="text-4xl font-bold tracking-tighter">Szymon Rajski</span>
           </div>
           <div className="flex gap-8 text-sm text-gray-400 font-medium">
             <Link href="#" className="hover:text-white transition-colors">LinkedIn</Link>
@@ -55,7 +57,7 @@ export function FooterCTA() {
             <Link href="#" className="hover:text-white transition-colors">Instagram</Link>
           </div>
           <div className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Agency. All rights reserved.
+            © {new Date().getFullYear()} Szymon Rajski All rights reserved.
           </div>
         </div>
 
