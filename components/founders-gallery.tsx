@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export function FoundersGallery() {
   return (
-    <section className="bg-[#F4F1EA] border-t border-black/10">
+    <section className="bg-[#F4F1EA] border-t border-black/10 relative overflow-hidden">
       <div className="w-[calc(100%-12px)] lg:w-[calc(100%-32px)] ml-3 lg:ml-8 px-6 lg:px-8 py-24 border-l border-black relative">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">

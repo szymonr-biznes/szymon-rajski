@@ -16,7 +16,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="bg-[#F4F1EA]">
+    <section className="bg-[#F4F1EA] relative overflow-hidden">
       <div className="w-[calc(100%-12px)] lg:w-[calc(100%-32px)] ml-3 lg:ml-8 px-6 lg:px-8 py-32 relative border-l border-black">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           

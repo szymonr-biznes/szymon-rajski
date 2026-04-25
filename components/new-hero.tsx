@@ -7,10 +7,10 @@ export function NewHero() {
   return (
     <section className="relative overflow-hidden">
       <div className="w-[calc(100%-12px)] lg:w-[calc(100%-32px)] ml-3 lg:ml-8 px-6 lg:px-8 pt-24 pb-32 lg:pt-36 lg:pb-48 flex flex-col lg:flex-row items-center justify-between relative z-10 border-l border-black">
-        
+
         {/* Left Content */}
         <div className="max-w-2xl text-left flex-1">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -20,8 +20,8 @@ export function NewHero() {
             future <span className="font-serif italic font-normal">growth</span> for<br />
             B2B founders
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -29,8 +29,8 @@ export function NewHero() {
           >
             We run full-funnel marketing campaigns connected to the truth of what you want to achieve.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -53,7 +53,7 @@ export function NewHero() {
         </div>
 
         {/* Right Graphic - SVG Orbits */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -63,8 +63,7 @@ export function NewHero() {
             {/* Outer Orbit */}
             <ellipse cx="200" cy="200" rx="180" ry="80" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
             <circle cx="380" cy="200" r="4" fill="black" />
-            <text x="390" y="204" fill="black" fontSize="10" className="font-medium tracking-wide rotate-25 origin-center">Growth</text>
-            
+
             {/* Middle Orbit */}
             <ellipse cx="200" cy="200" rx="130" ry="55" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
             <circle cx="330" cy="200" r="4" fill="black" />
@@ -74,7 +73,7 @@ export function NewHero() {
             <ellipse cx="200" cy="200" rx="80" ry="35" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
             <circle cx="280" cy="200" r="4" fill="black" />
             <text x="290" y="204" fill="black" fontSize="10" className="font-medium tracking-wide rotate-25 origin-center">Clarity</text>
-            
+
             {/* Center Star */}
             <path d="M200 190 L203 197 L210 200 L203 203 L200 210 L197 203 L190 200 L197 197 Z" fill="black" />
           </svg>
