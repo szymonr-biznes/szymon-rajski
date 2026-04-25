@@ -6,10 +6,9 @@ import { Menu, X } from "lucide-react"
 import { motion, useScroll, AnimatePresence } from "framer-motion"
 
 const navigation = [
-  { name: "Services", href: "#" },
-  { name: "Cases", href: "#" },
-  { name: "Knowledge", href: "#" },
-  { name: "About", href: "#" }
+  { name: "Social Media", href: "/social-media" },
+  { name: "Biznes", href: "/business" },
+  { name: "Kontakt", href: "/contact" }
 ]
 
 export function Header() {
@@ -20,10 +19,10 @@ export function Header() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY
-    
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      
+
       // Hiding logic
       if (mobileMenuOpen) {
         setHidden(false)

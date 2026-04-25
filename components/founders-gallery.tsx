@@ -3,7 +3,7 @@ import Link from "next/link"
 export function FoundersGallery() {
   return (
     <section className="bg-[#F4F1EA] border-t border-black/10 relative overflow-hidden">
-      <div className="w-[calc(100%-12px)] lg:w-[calc(100%-32px)] ml-3 lg:ml-8 px-6 lg:px-8 py-24 border-l border-black relative">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-24 border-l border-black relative">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">
