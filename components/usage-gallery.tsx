@@ -1,10 +1,33 @@
 "use client"
 
 import { WorkflowDiagram } from "./workflow-diagram"
+import { 
+  Chrome, 
+  Grid2X2, 
+  StickyNote, 
+  Box, 
+  CreditCard, 
+  Linkedin,
+  FileText,
+  FileSpreadsheet,
+  FileCode,
+  Calendar
+} from "lucide-react"
 import { businessServices, socialMediaServices } from "@/lib/services"
 
 const allServices = [...businessServices, ...socialMediaServices]
 const displayServices = [...allServices, ...allServices]
+
+const brands = [
+  { id: 'google', name: 'Google', icon: <Chrome className="w-6 h-6" />, color: 'text-[#4285F4]' },
+  { id: 'microsoft', name: 'Microsoft', icon: <Grid2X2 className="w-6 h-6" />, color: 'text-[#00A4EF]' },
+  { id: 'notion', name: 'Notion', icon: <StickyNote className="w-6 h-6" />, color: 'text-black' },
+  { id: 'dropbox', name: 'DropBox', icon: <Box className="w-6 h-6" />, color: 'text-[#0061FF]' },
+  { id: 'stripe', name: 'Stripe', icon: <CreditCard className="w-6 h-6" />, color: 'text-[#635BFF]' },
+  { id: 'linkedin', name: 'LinkedIn', icon: <Linkedin className="w-6 h-6" />, color: 'text-[#0A66C2]' },
+  { id: 'calendly', name: 'Calendly', icon: <Calendar className="w-6 h-6" />, color: 'text-[#006BFF]' },
+  { id: 'files', name: 'Formaty danych', icon: null, color: '' },
+]
 
 export function UsageGallery() {
   return (
@@ -85,13 +108,33 @@ export function UsageGallery() {
             `}
           </style>
           <div className="flex animate-infinite-scroll-reverse w-max">
-            {[...["ECOM HOUSE", "adsventure", "adspecialist", "audiencly", "beilmann", "The Optimized Agency"], ...["ECOM HOUSE", "adsventure", "adspecialist", "audiencly", "beilmann", "The Optimized Agency"]].map((brand, idx) => (
+            {[...brands, ...brands].map((brand, idx) => (
               <div 
                 key={idx} 
-                className="flex-shrink-0 w-[250px] px-8 py-10 flex items-center justify-center border-r border-black"
+                className="flex-shrink-0 w-[280px] px-8 py-10 flex items-center justify-center border-r border-black gap-4 group/item"
               >
-                <span className="text-xl font-bold tracking-tighter text-black/40 grayscale hover:grayscale-0 transition-all duration-300">
-                  {brand}
+                {brand.id === 'files' ? (
+                  <div className="relative w-12 h-12 flex items-center justify-center">
+                    <div className="absolute -top-1 left-1/2 -translate-x-1/2 bg-blue-500/5 p-1 rounded-sm border border-blue-500/10 transform -rotate-12">
+                      <FileText className="w-4 h-4 text-blue-600" />
+                      <span className="absolute -bottom-1 -right-1 text-[5px] font-bold bg-blue-600 text-white px-0.5 rounded-xs">DOCX</span>
+                    </div>
+                    <div className="absolute top-4 -left-1 bg-green-500/5 p-1 rounded-sm border border-green-500/10 transform rotate-12">
+                      <FileSpreadsheet className="w-4 h-4 text-green-600" />
+                      <span className="absolute -bottom-1 -right-1 text-[5px] font-bold bg-green-600 text-white px-0.5 rounded-xs">XLSX</span>
+                    </div>
+                    <div className="absolute top-4 -right-1 bg-red-500/5 p-1 rounded-sm border border-red-500/10 transform -rotate-6">
+                      <FileCode className="w-4 h-4 text-red-600" />
+                      <span className="absolute -bottom-1 -right-1 text-[5px] font-bold bg-red-600 text-white px-0.5 rounded-xs">PDF</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={`p-2.5 bg-black/5 rounded-lg group-hover/item:bg-white transition-all duration-300 shadow-sm border border-transparent group-hover/item:border-black/5 ${brand.color}`}>
+                    {brand.icon}
+                  </div>
+                )}
+                <span className="text-lg font-bold tracking-tight text-black/60 group-hover/item:text-black transition-colors duration-300">
+                  {brand.name}
                 </span>
               </div>
             ))}
