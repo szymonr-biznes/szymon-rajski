@@ -1,4 +1,4 @@
-import { X } from "lucide-react"
+import { Kanban } from "lucide-react"
 import Link from "next/link"
 
 const problems = [
@@ -46,8 +46,8 @@ export function ProblemsGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {problems.map((problem, idx) => (
             <div key={idx} className="bg-white p-10 flex flex-col items-start gap-4 border border-black/5 rounded-sm">
-              <div className="text-red-500 mb-2">
-                <X className="w-5 h-5 stroke-[3]" />
+              <div className="text-orange-500 mb-2">
+                <Kanban className="w-5 h-5 stroke-[3]" />
               </div>
               <h3 className="text-lg font-semibold leading-tight text-foreground">
                 {problem.title}

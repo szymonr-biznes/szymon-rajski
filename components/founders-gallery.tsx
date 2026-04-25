@@ -1,22 +1,16 @@
 import Link from "next/link"
 
-export function FoundersGallery() {
+export function UsageGallery() {
   return (
-    <section className="bg-[#F4F1EA] border-t border-black/10 relative overflow-hidden">
+    <section className="bg-[#F4F1EA] relative overflow-hidden">
+      <div className="absolute top-0 left-3 lg:left-8 right-0 border-t border-black" />
       <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-24 border-l border-black relative">
-        
+
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">
-            Proven with 30+<br />
-            founders that trusted us<br />
-            in <span className="font-serif italic font-normal">guiding</span> their growth
+            Sprawdzone systemy<br />
+            wdrożone w <span className="font-serif italic font-normal">realnych</span> biznesach
           </h2>
-          <Link
-            href="#cases"
-            className="bg-black hover:bg-gray-900 text-white px-4 py-3 rounded-sm text-sm font-semibold transition-colors shrink-0"
-          >
-            Explore Cases
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -24,7 +18,7 @@ export function FoundersGallery() {
             <div key={item} className="flex flex-col gap-2 group cursor-pointer">
               {/* Green square placeholder */}
               <div className="aspect-[4/5] bg-green-500 rounded-sm w-full transition-transform duration-300 group-hover:scale-[1.02]"></div>
-              
+
               {/* Blue label */}
               <div className="bg-[#0033FF] text-white py-3 px-4 rounded-sm text-center font-medium text-sm transition-colors group-hover:bg-[#002BE6]">
                 Founder Name

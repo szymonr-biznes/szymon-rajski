@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { NewHero } from "@/components/new-hero"
 import { ProblemsGrid } from "@/components/problems-grid"
-import { FoundersGallery } from "@/components/founders-gallery"
+import { UsageGallery } from "@/components/founders-gallery"
 import { TrustEngine } from "@/components/trust-engine"
 import { Testimonials } from "@/components/testimonials"
 import { Comparison } from "@/components/comparison"
@@ -14,7 +14,7 @@ export default function HomePage() {
       <main className="flex-1 relative z-10">
         <NewHero />
         <ProblemsGrid />
-        <FoundersGallery />
+        <UsageGallery />
         <TrustEngine />
         <Testimonials />
         <Comparison />
