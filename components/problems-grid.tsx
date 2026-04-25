@@ -10,23 +10,15 @@ const problems = [
     description: "When budgets tighten, you stop marketing because it feels like a cost center rather than a predictable revenue generator."
   },
   {
-    title: "Your channels are too full of noise.",
-    description: "You're struggling to stand out in a crowded market where everyone sounds the same and buyers are increasingly skeptical."
-  },
-  {
-    title: "You've tried content, ads, email outreach - but remain in agony.",
-    description: "You've invested time and money in multiple channels without seeing a unified strategy or a clear return on investment."
-  },
-  {
-    title: "You struggle to close the deals you actually want.",
-    description: "You're getting meetings, but they're not with your ideal customers, or you're constantly competing on price."
+    title: "Your sales team is starving for qualified leads.",
+    description: "Instead of focusing on closing, your high-value sales talent is stuck doing manual prospecting and dealing with low-quality leads."
   }
 ]
 
 export function ProblemsGrid() {
   return (
-    <section className="bg-[#F4F1EA] flex justify-end">
-      <div className="w-full ml-3 lg:ml-0 max-w-[calc(100%-12px)] lg:max-w-[calc(50%+700px)] px-6 lg:px-8 py-24 border-l border-black relative">
+    <section className="bg-[#F4F1EA]">
+      <div className="w-[calc(100%-12px)] lg:w-[calc(100%-32px)] ml-3 lg:ml-8 px-6 lg:px-8 py-24 border-l border-black relative">
         
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">
@@ -44,21 +36,11 @@ export function ProblemsGrid() {
               <h3 className="text-lg font-semibold leading-tight text-foreground">
                 {problem.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {problem.description}
               </p>
             </div>
           ))}
-
-          {/* Call to action card */}
-          <div className="bg-[#0033FF] p-10 flex flex-col items-start justify-center gap-6">
-            <h3 className="text-xl md:text-2xl font-medium text-white leading-tight">
-              Sound alike? Don&apos;t Worry, what we believe
-            </h3>
-            <button className="bg-white text-[#0033FF] px-6 py-3 rounded-sm text-sm font-semibold hover:bg-gray-100 transition-colors">
-              Click here to find out
-            </button>
-          </div>
         </div>
 
       </div>

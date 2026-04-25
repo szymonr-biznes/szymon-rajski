@@ -60,7 +60,7 @@ export function Header() {
         isDark ? "bg-black border-b border-white" : "bg-[#F4F1EA] border-b border-black"
       }`}
     >
-      <nav className={`max-w-[1400px] w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-auto flex items-center justify-between px-6 lg:px-8 py-4 border-l transition-colors duration-300 ${
+      <nav className={`w-full ml-3 lg:ml-8 flex items-center justify-between px-6 lg:px-8 py-4 border-l transition-colors duration-300 ${
         isDark ? "border-white" : "border-black"
       }`}>
         {/* Logo - left side */}
