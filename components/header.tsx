@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import { motion, useScroll, AnimatePresence } from "framer-motion"
 
 const navigation = [
   { name: "Services", href: "#" },
@@ -18,20 +18,26 @@ export function Header() {
   const [hidden, setHidden] = useState(false)
   const [isDark, setIsDark] = useState(false)
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0
-    if (latest > previous && latest > 150) {
-      setHidden(true)
-    } else {
-      setHidden(false)
-    }
-  })
-
   useEffect(() => {
+    let lastScrollY = window.scrollY
+    
     const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Hiding logic
+      if (mobileMenuOpen) {
+        setHidden(false)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        setHidden(true)
+      } else {
+        setHidden(false)
+      }
+      lastScrollY = currentScrollY
+
+      // Dark mode detection
       const sections = document.querySelectorAll('section')
       let currentIsDark = false
-      
+
       sections.forEach(section => {
         const rect = section.getBoundingClientRect()
         if (rect.top <= 40 && rect.bottom >= 40) {
@@ -43,31 +49,28 @@ export function Header() {
       setIsDark(currentIsDark)
     }
 
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll() // Initial check
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [mobileMenuOpen])
 
   return (
-    <motion.header 
+    <motion.header
       variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" }
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
-        isDark ? "bg-black border-b border-white" : "bg-[#F4F1EA] border-b border-black"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${isDark ? "bg-black border-b border-white" : "bg-[#F4F1EA] border-b border-black"
+        }`}
     >
-      <nav className={`max-w-[1400px] w-[calc(100%-12px)] lg:w-[calc(100%-32px)] ml-3 lg:ml-8 flex items-center justify-between px-6 lg:px-8 py-4 border-l transition-colors duration-300 ${
-        isDark ? "border-white" : "border-black"
-      }`}>
+      <nav className={`max-w-[1400px] w-[calc(100%-12px)] lg:w-[calc(100%-32px)] ml-3 lg:ml-8 flex items-center justify-between px-6 lg:px-8 py-4 border-l transition-colors duration-300 ${isDark ? "border-white" : "border-black"
+        }`}>
         {/* Logo - left side */}
         <Link href="/" className="flex items-center gap-2">
-          <span className={`text-xl font-bold tracking-tighter transition-colors duration-300 ${
-            isDark ? "text-white" : "text-black"
-          }`}>Agency.</span>
+          <span className={`text-xl font-bold tracking-tighter transition-colors duration-300 ${isDark ? "text-white" : "text-black"
+            }`}>Szymon Rajski</span>
         </Link>
 
         {/* Desktop Navigation - centered */}
@@ -76,9 +79,8 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium transition-colors duration-300 ${
-                isDark ? "text-gray-400 hover:text-white" : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors duration-300 ${isDark ? "text-gray-400 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                }`}
             >
               {item.name}
             </Link>
@@ -111,33 +113,42 @@ export function Header() {
       </nav>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className={`lg:hidden border-b transition-colors duration-300 ${
-          isDark ? "bg-black border-white/10" : "bg-[#F4F1EA] border-border/40"
-        }`}>
-          <div className="space-y-1 px-4 pb-4 pt-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                  isDark ? "text-white hover:bg-white/5" : "text-foreground hover:bg-black/5"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Link
-              href="#"
-              className="mt-4 block w-full text-center bg-[#0033FF] text-white px-5 py-3 rounded-sm text-sm font-semibold"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Let&apos;s talk
-            </Link>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`lg:hidden overflow-hidden transition-colors duration-300 ${isDark ? "bg-black" : "bg-[#F4F1EA]"
+              }`}
+          >
+            <div className={`ml-3 border-l px-6 pb-8 pt-4 transition-colors duration-300 ${isDark ? "border-white" : "border-black"
+              }`}>
+              <div className="space-y-4">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`block text-2xl font-medium transition-colors duration-300 ${isDark ? "text-white" : "text-black"
+                      }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <Link
+                  href="#"
+                  className="mt-8 block w-full text-center bg-[#0033FF] text-white px-5 py-4 rounded-sm text-base font-semibold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Let&apos;s talk
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   )
 }
