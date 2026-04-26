@@ -1,18 +1,7 @@
 "use client"
 
 import { WorkflowDiagram } from "./workflow-diagram"
-import {
-  Chrome,
-  Grid2X2,
-  StickyNote,
-  Box,
-  CreditCard,
-  Linkedin,
-  FileText,
-  FileSpreadsheet,
-  FileCode,
-  Calendar
-} from "lucide-react"
+import { FileText, FileSpreadsheet, FileCode } from "lucide-react"
 import { businessServices, socialMediaServices } from "@/lib/services"
 
 const allServices = [...businessServices, ...socialMediaServices]
@@ -91,6 +80,41 @@ const brands = [
       </svg>
     ),
     color: 'text-[#006BFF]'
+  },
+  {
+    id: 'meta',
+    name: 'Meta',
+    icon: (
+      <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+        <defs>
+          <linearGradient id="ig_g1" x1="54.92" y1="48.55" x2="229.06" y2="45.93" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="rgb(0,100,225)" />
+            <stop offset="40%" stopColor="rgb(0,100,225)" />
+            <stop offset="83%" stopColor="rgb(0,115,238)" />
+            <stop offset="100%" stopColor="rgb(0,130,251)" />
+          </linearGradient>
+          <linearGradient id="ig_g2" x1="36.43" y1="100.27" x2="36.43" y2="38.35" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="rgb(0,130,251)" />
+            <stop offset="100%" stopColor="rgb(0,100,224)" />
+          </linearGradient>
+        </defs>
+        <g transform="translate(3.95 3.95) scale(2.81 2.81)">
+          <path
+            d="M9.721 54.533c0 3.437.754 6.075 1.74 7.671 1.293 2.091 3.221 2.976 5.186 2.976 2.535 0 4.854-.629 9.324-6.81 3.58-4.954 7.799-11.909 10.638-16.269l4.807-7.386c3.339-5.13 7.205-10.832 11.637-14.697 3.618-3.155 7.521-4.907 11.449-4.907 6.594 0 12.876 3.821 17.683 10.989C87.446 33.949 90 43.836 90 54.039c0 6.066-1.196 10.522-3.23 14.043-1.966 3.405-5.796 6.807-12.241 6.807v-9.709c5.518 0 6.895-5.07 6.895-10.873 0-8.269-1.928-17.445-6.175-24.002-3.014-4.651-6.92-7.493-11.217-7.493-4.648 0-8.388 3.505-12.591 9.756-2.235 3.321-4.529 7.368-7.105 11.934l-2.836 5.023c-5.696 10.1-7.139 12.4-9.987 16.197-4.992 6.648-9.255 9.167-14.866 9.167-6.657 0-10.867-2.883-13.474-7.227C1.045 64.123 0 59.478 0 54.186L9.721 54.533z"
+            fill="rgb(0,129,251)"
+          />
+          <path
+            d="M7.665 26.785c4.457-6.87 10.889-11.674 18.265-11.674 4.272 0 8.519 1.264 12.954 4.886 4.851 3.959 10.022 10.479 16.472 21.223l2.313 3.856c5.584 9.302 8.76 14.087 10.619 16.344 2.391 2.898 4.066 3.762 6.241 3.762 5.518 0 6.895-5.07 6.895-10.873L90 54.039c0 6.066-1.196 10.522-3.23 14.043-1.965 3.405-5.796 6.807-12.241 6.807-4.006 0-7.555-.87-11.48-4.573-3.017-2.842-6.544-7.89-9.258-12.428L45.72 44.405c-4.05-6.767-7.765-11.812-9.915-14.097-2.313-2.457-5.286-5.424-10.031-5.424-3.84 0-7.101 2.695-9.831 6.817L7.665 26.785z"
+            fill="url(#ig_g1)"
+          />
+          <path
+            d="M25.774 24.885c-3.84 0-7.101 2.695-9.831 6.817-3.859 5.825-6.222 14.5-6.222 22.832 0 3.437.754 6.075 1.74 7.671l-8.288 5.458C1.045 64.123 0 59.478 0 54.186c0-9.624 2.642-19.655 7.665-27.401C12.122 19.915 18.554 15.111 25.93 15.111L25.774 24.885z"
+            fill="url(#ig_g2)"
+          />
+        </g>
+      </svg>
+    ),
+    color: 'text-[#0668E1]'
   },
   { id: 'files', name: 'Dokumenty', icon: null, color: '' },
 ]

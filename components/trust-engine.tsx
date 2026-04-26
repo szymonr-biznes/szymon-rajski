@@ -1,189 +1,111 @@
 "use client"
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import Link from "next/link"
-import { useRef, useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Plus } from "lucide-react"
+import Link from "next/link"
 
 const STEPS = [
   {
+    number: "01",
     label: "Strategy & Content",
-    title: (
-      <>
-        Guiding your <span className="font-serif italic font-normal">growth</span>
-        <br />beyond the known
-        <br />using our Trust Engine
-      </>
-    ),
-    desc: "We tell your unique story and turn your expertise into content that is worth sharing. This engineers trust at scale, positioning you as a respected authority long before the first contact.",
+    title: "WEBSITES & DIGITAL EXPERIENCES",
+    desc: "We focus on the intersection of high-end design and technical complexity – where our approach creates the most value for digital products.",
+    bgColor: "bg-black",
+    textColor: "text-white",
+    borderColor: "border-white/10",
   },
   {
+    number: "02",
     label: "ABM Ads",
-    title: (
-      <>
-        Account-Based
-        <br />Marketing <span className="font-serif italic font-normal">Ads</span>
-      </>
-    ),
-    desc: "Stop leaving your growth to the luck of an algorithm. We use ABM to guarantee your best content actually reaches your dream clients — keeping you consistently top-of-mind.",
+    title: "APPS, PLATFORMS & REAL-TIME SYSTEMS",
+    desc: "Building scalable digital solutions that solve complex business problems through custom software and real-time data processing.",
+    bgColor: "bg-[#0c1a16]", 
+    textColor: "text-white",
+    borderColor: "border-emerald-900/30",
   },
   {
+    number: "03",
     label: "Data Outreach",
-    title: (
-      <>
-        Outreach based on
-        <br />real <span className="font-serif italic font-normal">data signals</span>
-      </>
-    ),
-    desc: "We replace generic cold mails with precise outreach based on real data signals. Because the prospect already knows your brand, the conversation is warm from the start.",
+    title: "E-COMMERCE & PRODUCT STORYTELLING",
+    desc: "Beyond the standard storefront. We build premium shopping experiences where brand narrative meets conversion optimization.",
+    bgColor: "bg-[#e5e5e7]", 
+    textColor: "text-black",
+    borderColor: "border-black/5",
   },
 ]
 
-function OrbitSVG({ progress }: { progress: any }) {
-  const cx = 200
-  const cy = 200
-
-  // Mapowanie scrolla na rysowanie pierścieni
-  const ring1Progress = useTransform(progress, [0, 0.33], [0, 1])
-  const ring2Progress = useTransform(progress, [0.33, 0.66], [0, 1])
-  const ring3Progress = useTransform(progress, [0.66, 1], [0, 1])
-
-  const rings = [
-    { r: 50, color: "#99b3ff", progress: ring1Progress },
-    { r: 90, color: "#4d79ff", progress: ring2Progress },
-    { r: 130, color: "#0033FF", progress: ring3Progress },
-  ]
-
-  return (
-    <svg viewBox="0 0 400 400" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="orbitGlow">
-          <feGaussianBlur stdDeviation="4" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      {rings.map(({ r, color, progress: pValue }, i) => (
-        <g key={i}>
-          {/* Tło pierścienia */}
-          <circle
-            cx={cx} cy={cy} r={r}
-            fill="none"
-            stroke="rgba(255,255,255,0.06)"
-            strokeWidth="1.5"
-          />
-          {/* Animowany postęp pierścienia */}
-          <motion.circle
-            cx={cx} cy={cy} r={r}
-            fill="none"
-            stroke={color}
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            style={{ pathLength: pValue }}
-            transform={`rotate(-90 ${cx} ${cy})`}
-            filter="url(#orbitGlow)"
-          />
-        </g>
-      ))}
-
-      <path d="M200 191 L207 200 L200 209 L193 200 Z" fill="white" filter="url(#orbitGlow)" />
-      <text
-        x="200" y="183"
-        fill="rgba(255,255,255,0.25)"
-        fontSize="7" textAnchor="middle"
-        fontFamily="monospace" letterSpacing="2"
-      >
-        TRUST ENGINE
-      </text>
-    </svg>
-  )
-}
-
 export function TrustEngine() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  })
-
-  // calculate maximal vertical translation based on container height
-  const [maxTranslate, setMaxTranslate] = useState(0)
-  useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
-    const update = () => {
-      const total = el.offsetHeight - window.innerHeight
-      setMaxTranslate(total > 0 ? total : 0)
-    }
-    update()
-    window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
-  }, [])
-
-  const translateY = useTransform(scrollYProgress, [0, 1], [0, maxTranslate])
-
   return (
-    <section ref={containerRef} className="bg-black text-white relative">
-      {/* Container z borderem po lewej */}
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white">
-        <div className="flex flex-col lg:flex-row items-start relative">
-
-          {/* LEWA KOLUMNA: Scrolluje się naturalnie */}
-          <div className="w-full lg:w-1/2 px-6 lg:px-12">
-            {STEPS.map((step, i) => (
-              <div key={i} className="min-h-screen flex flex-col justify-center py-24">
-                <span className="text-[10px] font-mono px-2 py-1 rounded-sm tracking-widest uppercase border border-[#333] text-[#555] inline-block w-fit mb-8">
-                  {step.label}
-                </span>
-                <h2 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.1]">
-                  {step.title}
-                </h2>
-                <p className="mt-6 text-sm text-gray-400 max-w-md leading-relaxed border-l border-gray-800 pl-4">
-                  {step.desc}
-                </p>
-                <div className="mt-8">
-                  <Link
-                    href="#engine"
-                    className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-sm font-semibold transition-colors inline-flex items-center gap-3 w-fit"
-                  >
-                    <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
-                      <Plus className="w-3.5 h-3.5" />
-                    </div>
-                    Discover our solutions
-                  </Link>
-                </div>
-              </div>
-            ))}
-
-            {/* Stopka sekcji rozszerzająca wysokość scrolla */}
-            <div className="py-64 border-t border-white/10">
-              <h3 className="text-3xl md:text-5xl font-medium tracking-tight">Founder-Led</h3>
-              <p className="mt-6 text-sm text-gray-400 max-w-md leading-relaxed">
-                Everything we build is based on deep experience in the field, led by founders who understand the reality of growing a modern business.
-              </p>
+    <section className="bg-black text-white relative">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white/20">
+        <div className="flex flex-col lg:flex-row relative">
+          
+          {/* LEFT COLUMN: Sticky Title */}
+          <div className="w-full lg:w-1/2 lg:sticky lg:top-0 lg:h-screen flex items-center px-6 lg:px-12 py-16 lg:py-0">
+            <div className="max-w-xl">
+              <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.05]">
+                Guiding your growth<br />
+                beyond the known<br />
+                using our <span className="text-[#0033FF]">Trust Engine</span>
+              </h2>
             </div>
           </div>
 
-          {/* PRAWA KOLUMNA: Animacja przewijana w dół razem ze stroną */}
-          <motion.div
-            className="hidden lg:block w-1/2"
-            style={{
-              y: translateY,
-              position: "relative",
-              height: "100vh",
-            }}
-          >
-            <div className="h-full flex items-center justify-center p-12">
-              <div className="w-full max-w-[450px] aspect-square relative">
-                <OrbitSVG progress={scrollYProgress} />
-              </div>
-            </div>
-          </motion.div>
+          {/* RIGHT COLUMN: Stacking Cards */}
+          <div className="w-full lg:w-1/2 px-4 lg:px-10 pb-[20vh] relative">
+            {STEPS.map((step, i) => (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, margin: "-10%" }}
+                className={`sticky top-20 lg:top-32 w-full min-h-[60vh] lg:h-[75vh] ${step.bgColor} ${step.textColor} rounded-[2.5rem] p-8 lg:p-14 shadow-[0_-30px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden border ${step.borderColor} flex flex-col justify-between group mb-[50vh] last:mb-0`}
+                style={{
+                  zIndex: i + 1,
+                }}
+              >
+                {/* Large index number in background */}
+                <div className="absolute top-6 right-8 lg:top-10 lg:right-12 text-8xl lg:text-[10rem] font-medium tracking-tighter opacity-[0.03] lg:opacity-[0.05] group-hover:opacity-10 transition-opacity">
+                  {step.number}
+                </div>
 
+                <div className="relative z-10 space-y-8 lg:space-y-12">
+                  <span className="text-[10px] font-mono px-3 py-1 rounded-full tracking-widest uppercase border border-current/20 inline-block">
+                    {step.label}
+                  </span>
+                  <h3 className="text-3xl lg:text-5xl font-medium leading-[1.1] max-w-[15ch]">
+                    {step.title}
+                  </h3>
+                </div>
+
+                <div className="relative z-10 space-y-10">
+                  <p className="text-base lg:text-lg opacity-60 max-w-md leading-relaxed">
+                    {step.desc}
+                  </p>
+                  <Link
+                    href="#contact"
+                    className="inline-flex items-center gap-4 group/btn"
+                  >
+                    <div className="w-11 h-11 rounded-full border border-current/20 flex items-center justify-center group-hover/btn:bg-current group-hover/btn:text-inherit transition-all duration-300">
+                      <Plus className="w-5 h-5 transition-transform duration-300 group-hover/btn:rotate-90" />
+                    </div>
+                    <span className="text-sm font-semibold uppercase tracking-widest">Start project</span>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white/20 px-6 lg:px-12 py-32 lg:py-48">
+        <div className="max-w-2xl">
+          <h3 className="text-3xl md:text-5xl font-medium tracking-tight">Founder-Led</h3>
+          <p className="mt-8 text-base lg:text-lg text-gray-400 leading-relaxed max-w-lg">
+            Everything we build is based on deep experience in the field, led by founders who understand the reality of growing a modern business.
+          </p>
         </div>
       </div>
     </section>
