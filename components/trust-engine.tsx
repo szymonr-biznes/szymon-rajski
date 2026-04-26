@@ -19,7 +19,7 @@ const STEPS = [
     label: "ABM Ads",
     title: "APPS, PLATFORMS & REAL-TIME SYSTEMS",
     desc: "Building scalable digital solutions that solve complex business problems through custom software and real-time data processing.",
-    bgColor: "bg-[#0c1a16]", 
+    bgColor: "bg-[#0c1a16]",
     textColor: "text-white",
     borderColor: "border-emerald-900/30",
   },
@@ -28,7 +28,7 @@ const STEPS = [
     label: "Data Outreach",
     title: "E-COMMERCE & PRODUCT STORYTELLING",
     desc: "Beyond the standard storefront. We build premium shopping experiences where brand narrative meets conversion optimization.",
-    bgColor: "bg-[#e5e5e7]", 
+    bgColor: "bg-[#e5e5e7]",
     textColor: "text-black",
     borderColor: "border-black/5",
   },
@@ -37,9 +37,9 @@ const STEPS = [
 export function TrustEngine() {
   return (
     <section className="bg-black text-white relative">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white/20">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white pt-32 lg:pt-48 pb-32 lg:pb-48">
         <div className="flex flex-col lg:flex-row relative">
-          
+
           {/* LEFT COLUMN: Sticky Title */}
           <div className="w-full lg:w-1/2 lg:sticky lg:top-0 lg:h-screen flex items-center px-6 lg:px-12 py-16 lg:py-0">
             <div className="max-w-xl">
@@ -54,8 +54,8 @@ export function TrustEngine() {
           {/* RIGHT COLUMN: Stacking Cards */}
           <div className="w-full lg:w-1/2 px-4 lg:px-10 pb-[20vh] relative">
             {STEPS.map((step, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -97,15 +97,6 @@ export function TrustEngine() {
             ))}
           </div>
 
-        </div>
-      </div>
-
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white/20 px-6 lg:px-12 py-32 lg:py-48">
-        <div className="max-w-2xl">
-          <h3 className="text-3xl md:text-5xl font-medium tracking-tight">Founder-Led</h3>
-          <p className="mt-8 text-base lg:text-lg text-gray-400 leading-relaxed max-w-lg">
-            Everything we build is based on deep experience in the field, led by founders who understand the reality of growing a modern business.
-          </p>
         </div>
       </div>
     </section>
