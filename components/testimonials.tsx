@@ -10,6 +10,7 @@ const testimonials1 = [
     role: "Twórca na Instagramie",
     content: `Moje rolki zyskały więcej wyświetleń dzięki kompletnej analizie
       mojego profilu i konkurencji przez co mój rozwój przyśpieszył w ciągu kilku tygodni!`,
+    image: "https://randomuser.me/api/portraits/women/44.jpg"
   },
   {
     name: "Mateusz",
@@ -17,6 +18,7 @@ const testimonials1 = [
     content: `Miałem problem z oferowaniem moich usług prywatnie, więc zgłosiłem się
      po profesjonalną stronę. Od tamtego czasu pozyskałem wielu nowych ludzi oraz nawiązałem
      kilkanaście współprac z markami fitness.`,
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     name: "Jagoda",
@@ -24,6 +26,7 @@ const testimonials1 = [
     content: `Jako wieloletnia blogerka kulinarna, zmagalam sie z brakiem obsługi moich 
       klientów w sieci. Dopiero niezawodny system sprawił że byłam w stanie potroić
       sprzedaż moich poradników i przepisów w sieci bez straty mojego czasu.`,
+    image: "https://randomuser.me/api/portraits/women/68.jpg"
   },
   {
     name: "Ania",
@@ -31,6 +34,7 @@ const testimonials1 = [
     content: `Miałam problem z odpisywaniem na pytania od moich obserwatorów.
       System do obsługi prywatnych wiadomości sprawił, że mam więcej czasu na tworzenie
       nowych treści a moi fani są kierowani do moich szczegółowych ofert na bieżąco!`,
+    image: "https://randomuser.me/api/portraits/women/65.jpg"
   }
 ]
 
@@ -41,6 +45,7 @@ const testimonials2 = [
     content: `Mój zespół potrzebował niezawodnego systemu do kontaktu z klientami dlatego
       umówiłem się na konsultację aby poznać proces tworzenia i integracji. Po tygodniu
       przeszliśmy do wdrożenia systemu u nas w firmie i działamy bez przestojów.`,
+    image: "https://randomuser.me/api/portraits/men/45.jpg"
   },
   {
     name: "Grzegorz",
@@ -48,6 +53,7 @@ const testimonials2 = [
     content: `Współpraca z agencją całkowicie odmieniła nasze podejście do inbound marketingu.
       Wreszcie mamy przewidywalny plan sprzedaży i możemy planować rozwój w oparciu o twarde
       dane a nie domysły.`,
+    image: "https://randomuser.me/api/portraits/men/22.jpg"
   },
   {
     name: "Adam",
@@ -55,6 +61,7 @@ const testimonials2 = [
     content: `Potrzebowaliśmy systemu do analizy rynku mieszkań w polskich miastach. Teraz
       mamy automatyczny system do wycen oraz popytu w danych lokalizacjach przez co możemy mieć
       konkurencyjne oferty na bieżąco.`,
+    image: "https://randomuser.me/api/portraits/men/85.jpg"
   },
   {
     name: "Martyna",
@@ -62,6 +69,7 @@ const testimonials2 = [
     content: `Nasz stary system do filtracji CV nie działał poprawnie i często się zacinał,
       przez co traciliśmy wielu cennych kandydatów. Teraz nawet nieszablonowe CV przechodzą
       przez nasz system i są oceniane pod kątem kwalifikacji a nie według sztywnych schematów.`,
+    image: "https://randomuser.me/api/portraits/women/24.jpg"
   }
 ]
 
@@ -71,7 +79,7 @@ function TestimonialCard({ t }: { t: any }) {
       <div className="bg-white p-6 rounded-sm border border-black/5 shadow-sm h-full">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden relative">
-            <Image src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${t.name.replace(' ', '')}`} alt={t.name} fill className="object-cover" />
+            <Image src={t.image} alt={t.name} fill className="object-cover" />
           </div>
           <div>
             <p className="font-bold text-sm text-foreground">{t.name}</p>
@@ -88,13 +96,13 @@ function TestimonialCard({ t }: { t: any }) {
 
 export function Testimonials() {
   return (
-    <section className="bg-[#F4F1EA] relative overflow-hidden h-[800px]">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-24 lg:py-0 h-full relative border-l border-black">
+    <section className="bg-[#F4F1EA] relative overflow-hidden h-auto lg:h-[800px]">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-24 lg:py-0 h-full relative border-l border-black after:absolute after:bottom-0 after:left-0 after:w-[100vw] after:h-[1px] after:bg-black">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full">
 
           {/* Left Side */}
           <div className="max-w-xl z-10 lg:pl-4">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-foreground leading-[1.05] mb-6">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
               Co mówią liderzy i twórcy <br className="hidden md:block" />
               o współpracy z <span className="font-serif italic font-normal">nami</span>
             </h2>
@@ -112,13 +120,13 @@ export function Testimonials() {
           </div>
 
           {/* Right Side - Two Carousels */}
-          <div className="relative h-[800px] overflow-hidden flex gap-4 -mx-6 lg:mx-0 px-6 lg:px-0">
+          <div className="relative h-[500px] lg:h-[650px] overflow-hidden flex flex-col md:flex-row gap-4 -mx-6 lg:mx-0 px-6 lg:px-0">
             {/* gradient overlays for smooth fading */}
             <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#F4F1EA] to-transparent z-10 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#F4F1EA] to-transparent z-10 pointer-events-none"></div>
 
             {/* Carousel 1 (Scroll Down) */}
-            <div className="flex-1 relative">
+            <div className="flex-1 relative overflow-hidden">
               <motion.div
                 className="flex flex-col absolute top-0 left-0 w-full"
                 animate={{ y: ["-50%", "0%"] }}
@@ -131,7 +139,7 @@ export function Testimonials() {
             </div>
 
             {/* Carousel 2 (Scroll Up) */}
-            <div className="flex-1 relative">
+            <div className="flex-1 relative overflow-hidden">
               <motion.div
                 className="flex flex-col absolute top-0 left-0 w-full"
                 animate={{ y: ["0%", "-50%"] }}
