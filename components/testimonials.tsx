@@ -116,7 +116,7 @@ export function Testimonials() {
                 <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
                   <Plus className="w-3.5 h-3.5" />
                 </div>
-                Zobacz case study
+                Zobacz rozwiązania
               </Link>
               <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
                 <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">

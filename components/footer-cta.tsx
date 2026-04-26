@@ -1,6 +1,12 @@
 import Link from "next/link"
 import { Plus } from "lucide-react"
 
+const ADVANTAGES = [
+  "Zaczynamy od spotkania, w którym przedstawiasz swoje wymagania.",
+  "Rozpoczynamy współpracę bez żadnych pośredników na całym etapie trwania projektu.",
+  "Zapewniam wsparcie i wprowadzanie zmian w projekcie na życzenie."
+]
+
 export function FooterCTA() {
   return (
     <section className="bg-black text-white relative overflow-hidden">
@@ -12,13 +18,13 @@ export function FooterCTA() {
         {/* Background blue gradient/glow */}
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-tr from-[#0033FF]/40 to-transparent opacity-50 pointer-events-none transform -translate-x-1/4 translate-y-1/4 blur-3xl rounded-full"></div>
 
-        <div className="flex flex-col lg:flex-row items-end justify-between gap-16 mb-24">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-16 mb-24">
 
           {/* Left Side */}
           <div className="flex-1">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.1] mb-8">
-              Talk to an <span className="font-serif italic font-normal">expert</span>,<br />
-              not sales
+              Rozmawiasz z <span className="font-serif italic font-normal">ekspertem</span>,<br />
+              nie z kolejnym <span className="font-serif italic font-normal">sprzedawcą</span>
             </h2>
             <Link
               href="#contact"
@@ -31,21 +37,19 @@ export function FooterCTA() {
             </Link>
           </div>
 
-          {/* Right Side - Images */}
-          <div className="flex gap-4 items-end">
-            <div className="flex flex-col gap-2">
-              <div className="w-[160px] h-[200px] bg-green-500 rounded-sm border border-white/10"></div>
-              <div>
-                <p className="text-xs font-semibold">Expert 1</p>
-                <p className="text-[10px] text-gray-400">Strategy Lead</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="w-[140px] h-[180px] bg-green-500 rounded-sm border border-white/10"></div>
-              <div>
-                <p className="text-xs font-semibold">Expert 2</p>
-                <p className="text-[10px] text-gray-400">Growth Partner</p>
-              </div>
+          {/* Right Side - Advantages */}
+          <div className="flex-1 w-full max-w-md bg-white/5 p-8 rounded-sm border border-white/10 backdrop-blur-sm">
+            <div className="space-y-8">
+              {ADVANTAGES.map((a, idx) => (
+                <div key={idx} className="flex gap-4 items-start">
+                  <div className="w-6 h-6 rounded-full bg-[#0033FF]/20 flex items-center justify-center flex-shrink-0 mt-1 border border-[#0033FF]/40">
+                    <span className="text-[10px] font-bold text-[#0033FF]">{idx + 1}</span>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 leading-relaxed">{a}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
