@@ -92,7 +92,7 @@ export function Header() {
             href="#"
             className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-colors"
           >
-            Let&apos;s talk
+            Umów spotkanie
           </Link>
         </div>
 
@@ -141,7 +141,7 @@ export function Header() {
                   className="mt-8 block w-full text-center bg-[#0033FF] text-white px-5 py-4 rounded-sm text-base font-semibold"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Let&apos;s talk
+                  Umów spotkanie
                 </Link>
               </div>
             </div>

@@ -47,7 +47,7 @@ export function NewHero() {
               href="#contact"
               className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-4 py-3 rounded-sm text-sm font-semibold transition-colors flex items-center gap-2"
             >
-              Let&apos;s talk
+              Umów spotkanie
             </Link>
           </motion.div>
         </div>
