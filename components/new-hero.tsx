@@ -2,11 +2,12 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { Plus } from "lucide-react"
 
 export function NewHero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 pt-24 pb-32 lg:pt-36 lg:pb-48 flex flex-col lg:flex-row items-center justify-between relative z-10 border-l border-black">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 pt-16 pb-16 lg:pt-24 lg:pb-24 flex flex-col lg:flex-row items-center justify-between relative z-10 border-l border-black">
 
         {/* Left Content */}
         <div className="max-w-2xl text-left flex-1">
@@ -37,14 +38,20 @@ export function NewHero() {
           >
             <Link
               href="#cases"
-              className="bg-black hover:bg-gray-900 text-white px-4 py-3 rounded-sm text-sm font-semibold transition-colors flex items-center gap-2"
+              className="bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-sm text-sm font-semibold transition-colors flex items-center gap-3"
             >
+              <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
+                <Plus className="w-3.5 h-3.5" />
+              </div>
               Dla twórców
             </Link>
             <Link
               href="#contact"
-              className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-4 py-3 rounded-sm text-sm font-semibold transition-colors flex items-center gap-2"
+              className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-sm font-semibold transition-colors flex items-center gap-3"
             >
+              <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                <Plus className="w-3.5 h-3.5" />
+              </div>
               Dla biznesu
             </Link>
           </motion.div>

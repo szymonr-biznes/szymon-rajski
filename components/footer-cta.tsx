@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Plus } from "lucide-react"
 
 export function FooterCTA() {
   return (
@@ -15,14 +16,17 @@ export function FooterCTA() {
 
           {/* Left Side */}
           <div className="flex-1">
-            <h2 className="text-5xl md:text-7xl font-medium tracking-tight leading-[1.1] mb-8">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.1] mb-8">
               Talk to an <span className="font-serif italic font-normal">expert</span>,<br />
               not sales
             </h2>
             <Link
               href="#contact"
-              className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-8 py-4 rounded-sm text-sm font-semibold transition-colors inline-block"
+              className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-8 py-4 rounded-sm text-sm font-semibold transition-colors inline-flex items-center gap-3 w-fit"
             >
+              <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                <Plus className="w-3.5 h-3.5" />
+              </div>
               Umów spotkanie
             </Link>
           </div>

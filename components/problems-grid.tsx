@@ -1,4 +1,4 @@
-import { Kanban } from "lucide-react"
+import { Kanban, Plus } from "lucide-react"
 import Link from "next/link"
 
 const problems = [
@@ -68,8 +68,11 @@ export function ProblemsGrid() {
 
             <Link
               href="/business"
-              className="bg-white text-[#0033FF] px-6 py-3 rounded-sm text-sm font-bold transition-all hover:bg-gray-100 flex items-center gap-2"
+              className="bg-white text-[#0033FF] px-6 py-3 rounded-sm text-sm font-bold transition-all hover:bg-gray-100 flex items-center gap-3 w-fit"
             >
+              <div className="w-5 h-5 rounded-[4px] bg-[#0033FF]/10 flex items-center justify-center">
+                <Plus className="w-3.5 h-3.5" />
+              </div>
               Zobacz rozwiązania
             </Link>
           </div>

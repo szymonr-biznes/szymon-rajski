@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Plus } from "lucide-react"
 import { motion, useScroll, AnimatePresence } from "framer-motion"
 
 const navigation = [
@@ -78,10 +78,11 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium transition-colors duration-300 ${isDark ? "text-gray-400 hover:text-white" : "text-muted-foreground hover:text-foreground"
+              className={`relative text-sm font-medium transition-colors duration-300 group ${isDark ? "text-gray-400 hover:text-white" : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               {item.name}
+              <span className={`absolute left-0 -bottom-1 w-full h-[1.5px] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${isDark ? "bg-white" : "bg-black"}`}></span>
             </Link>
           ))}
         </div>
@@ -90,8 +91,11 @@ export function Header() {
         <div className="hidden lg:flex lg:justify-end">
           <Link
             href="#"
-            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-colors"
+            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-colors flex items-center gap-3"
           >
+            <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+              <Plus className="w-3.5 h-3.5" />
+            </div>
             Umów spotkanie
           </Link>
         </div>
@@ -129,18 +133,22 @@ export function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block text-2xl font-medium transition-colors duration-300 ${isDark ? "text-white" : "text-black"
+                    className={`block w-fit relative text-2xl font-medium transition-colors duration-300 group ${isDark ? "text-white" : "text-black"
                       }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
+                    <span className={`absolute left-0 -bottom-1 w-full h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${isDark ? "bg-white" : "bg-black"}`}></span>
                   </Link>
                 ))}
                 <Link
                   href="#"
-                  className="mt-8 block w-full text-center bg-[#0033FF] text-white px-5 py-4 rounded-sm text-base font-semibold"
+                  className="mt-8 flex items-center justify-center gap-3 w-full text-center bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-4 rounded-sm text-base font-semibold transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
+                  <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                    <Plus className="w-3.5 h-3.5" />
+                  </div>
                   Umów spotkanie
                 </Link>
               </div>

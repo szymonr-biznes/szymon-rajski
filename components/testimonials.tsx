@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { Plus } from "lucide-react"
 import Image from "next/image"
 
 const testimonials1 = [
@@ -50,7 +51,7 @@ const testimonials2 = [
   {
     name: "Grzegorz",
     role: "CEO firmy outsourcingowej",
-    content: `Współpraca z agencją całkowicie odmieniła nasze podejście do inbound marketingu.
+    content: `Nasza współpraca odmieniła podejście mojej firmy do inbound marketingu.
       Wreszcie mamy przewidywalny plan sprzedaży i możemy planować rozwój w oparciu o twarde
       dane a nie domysły.`,
     image: "https://randomuser.me/api/portraits/men/22.jpg"
@@ -107,14 +108,21 @@ export function Testimonials() {
               o współpracy <span className="font-serif italic font-normal">ze mną</span>
             </h2>
             <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-8 max-w-md">
-              Nie wynajmujesz po prostu agencji. Wychodzimy poza zwykłe świadczenie usług, by inżynieryjnie podejść do Twojego wzrostu z tą samą obsesją, jaką stosujemy we własnym biznesie.
+              Zamiast kolejnego nudnego pakietu usług, otrzymujesz specjalnie zaprojektowany
+              pod Ciebie system z możliwością przyszłych integracji i rozbudowy na życzenie.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link href="#cases" className="bg-black hover:bg-black/80 text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-2 rounded-sm">
-                <span className="text-white/60">+</span> Zobacz case study
+              <Link href="#cases" className="bg-black hover:bg-black/80 text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
+                <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
+                  <Plus className="w-3.5 h-3.5" />
+                </div>
+                Zobacz case study
               </Link>
-              <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-2 rounded-sm">
-                <span className="text-white/60">+</span> Porozmawiajmy
+              <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
+                <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                  <Plus className="w-3.5 h-3.5" />
+                </div>
+                Porozmawiajmy
               </Link>
             </div>
           </div>

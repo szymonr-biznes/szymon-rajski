@@ -34,7 +34,7 @@ export function Comparison() {
             na <span className="font-serif italic font-normal">ręcznych działaniach</span>
           </h2>
           <p className="text-sm text-muted-foreground max-w-md mx-auto mb-16">
-            Buduję systemy, które łączą dane, procesy i sprzedaż w jeden niezawodny mechanizm.
+            Moje rozwiązania łączą dane, procesy i sprzedaż w jeden niezawodny mechanizm.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto text-left">
