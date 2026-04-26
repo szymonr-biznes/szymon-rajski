@@ -16,9 +16,8 @@ export function NewHero() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-medium tracking-tight text-foreground leading-[1.1]"
           >
-            Engineering<br />
-            future <span className="font-serif italic font-normal">growth</span> for<br />
-            B2B founders
+            Skaluj biznes<br />
+            bez <span className="font-serif italic font-normal">żadnych</span> granic
           </motion.h1>
 
           <motion.p
@@ -27,7 +26,7 @@ export function NewHero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed"
           >
-            We run full-funnel marketing campaigns connected to the truth of what you want to achieve.
+            Buduję w pełni zautomatyzowane systemy, które pracują dla Ciebie 24/7.
           </motion.p>
 
           <motion.div
@@ -40,14 +39,13 @@ export function NewHero() {
               href="#cases"
               className="bg-black hover:bg-gray-900 text-white px-4 py-3 rounded-sm text-sm font-semibold transition-colors flex items-center gap-2"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-              Client results
+              Dla twórców
             </Link>
             <Link
               href="#contact"
               className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-4 py-3 rounded-sm text-sm font-semibold transition-colors flex items-center gap-2"
             >
-              Umów spotkanie
+              Dla biznesu
             </Link>
           </motion.div>
         </div>

@@ -104,7 +104,7 @@ export function Testimonials() {
           <div className="max-w-xl z-10 lg:pl-4">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
               Co mówią liderzy i twórcy <br className="hidden md:block" />
-              o współpracy z <span className="font-serif italic font-normal">nami</span>
+              o współpracy <span className="font-serif italic font-normal">ze mną</span>
             </h2>
             <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-8 max-w-md">
               Nie wynajmujesz po prostu agencji. Wychodzimy poza zwykłe świadczenie usług, by inżynieryjnie podejść do Twojego wzrostu z tą samą obsesją, jaką stosujemy we własnym biznesie.

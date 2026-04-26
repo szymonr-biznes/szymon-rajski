@@ -144,17 +144,10 @@ export function UsageGallery() {
                   {/* Description Area */}
                   <div className="w-[40%] md:w-[45%] p-3 md:p-6 flex flex-col border-l border-black/5 bg-white/20">
                     <div className="flex-1 flex flex-col justify-center">
-                      <p className="text-[8px] md:text-[10px] tracking-widest text-black/40 font-bold mb-1 md:mb-2">System</p>
+                      <p className="text-[8px] md:text-[10px] tracking-widest text-black/40 font-bold mb-1 md:mb-2">{service.title}</p>
                       <p className="text-[10px] md:text-sm text-black/70 leading-relaxed font-medium">
                         {service.shortDescription}
                       </p>
-                    </div>
-
-                    {/* Title Badge - Moved to Right Column */}
-                    <div className="mt-4">
-                      <div className="border-[3px] md:border-[6px] border-[#0033FF] bg-[#2E51A3] text-white py-1.5 px-3 md:py-2 md:px-4 rounded-sm text-[8px] md:text-[10px] font-black tracking-widest shadow-xl flex items-center justify-center text-center leading-tight">
-                        {service.title}
-                      </div>
                     </div>
                   </div>
                 </div>
