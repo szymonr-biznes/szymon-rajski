@@ -98,8 +98,8 @@ const brands = [
 export function UsageGallery() {
   return (
     <section className="bg-[#F4F1EA] relative overflow-hidden">
-      <div className="absolute top-0 left-3 lg:left-8 right-0 border-t border-black" />
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 pt-24 pb-0 border-l border-black relative">
+      <div className="absolute top-0 left-3 lg:left-16 right-0 border-t border-black" />
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 pt-24 pb-0 border-l border-black relative">
 
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">
@@ -110,7 +110,7 @@ export function UsageGallery() {
           </h2>
         </div>
 
-        <div className="relative overflow-hidden group/carousel -mr-3 lg:-mr-8">
+        <div className="relative overflow-hidden group/carousel -mr-3 lg:-mr-16">
           <style>
             {`
               @keyframes scroll {
@@ -156,7 +156,7 @@ export function UsageGallery() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden -mr-3 lg:-mr-8 border-t border-black mt-8 bg-white/5">
+        <div className="relative overflow-hidden -mr-3 lg:-mr-16 border-t border-black mt-8 bg-white/5">
           <style>
             {`
               @keyframes scroll-reverse {

@@ -33,7 +33,7 @@ export function ProblemsGrid() {
   return (
     <section className="bg-[#F4F1EA] relative overflow-hidden">
       {/* Container with symmetric fixed margins */}
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-24 border-l border-black relative">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 py-24 border-l border-black relative">
 
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">

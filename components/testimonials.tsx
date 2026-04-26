@@ -98,7 +98,7 @@ function TestimonialCard({ t }: { t: any }) {
 export function Testimonials() {
   return (
     <section className="bg-[#F4F1EA] relative overflow-hidden h-auto lg:h-[800px]">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-24 lg:py-0 h-full relative border-l border-black after:absolute after:bottom-0 after:left-0 after:w-[100vw] after:h-[1px] after:bg-black">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 py-24 lg:py-0 h-full relative border-l border-black after:absolute after:bottom-0 after:left-0 after:w-[100vw] after:h-[1px] after:bg-black">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full">
 
           {/* Left Side */}

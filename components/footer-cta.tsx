@@ -4,7 +4,7 @@ import { Plus } from "lucide-react"
 export function FooterCTA() {
   return (
     <section className="bg-black text-white relative overflow-hidden">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 pt-32 pb-48 md:pb-32 relative z-10 border-l border-white">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 pt-32 pb-48 md:pb-32 relative z-10 border-l border-white">
 
         {/* Bottom Horizontal Line - Adjusted for mobile stack height */}
         <div className="absolute bottom-[180px] md:bottom-[64px] left-0 w-[2000px] h-[1px] bg-white z-20" />

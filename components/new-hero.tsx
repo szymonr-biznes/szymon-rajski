@@ -7,7 +7,7 @@ import { Plus } from "lucide-react"
 export function NewHero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 pt-16 pb-16 lg:pt-24 lg:pb-24 flex flex-col lg:flex-row items-center justify-between relative z-10 border-l border-black">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 pt-16 pb-16 lg:pt-24 lg:pb-24 flex flex-col lg:flex-row items-center justify-between relative z-10 border-l border-black">
 
         {/* Left Content */}
         <div className="max-w-2xl text-left flex-1">

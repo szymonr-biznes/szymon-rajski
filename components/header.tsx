@@ -64,7 +64,7 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${isDark ? "bg-black border-b border-white" : "bg-[#F4F1EA] border-b border-black"
         }`}
     >
-      <nav className={`w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 flex items-center justify-between px-6 lg:px-8 py-4 border-l transition-colors duration-300 ${isDark ? "border-white" : "border-black"
+      <nav className={`w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 flex items-center justify-between px-6 lg:px-8 py-4 border-l transition-colors duration-300 ${isDark ? "border-white" : "border-black"
         }`}>
         {/* Logo - left side */}
         <Link href="/" className="flex items-center gap-2">
