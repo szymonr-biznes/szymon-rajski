@@ -1,52 +1,147 @@
+"use client";
+
+import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 
-const testimonials = [
+const testimonials1 = [
   {
-    name: "John Smith",
-    role: "CEO at TechCorp",
-    content: "Working with the agency transformed our entire approach to inbound marketing. We finally have a predictable pipeline.",
+    name: "Karolina",
+    role: "Twórca na Instagramie",
+    content: `Moje rolki zyskały więcej wyświetleń dzięki kompletnej analizie
+      mojego profilu i konkurencji przez co mój rozwój przyśpieszył w ciągu kilku tygodni!`,
   },
   {
-    name: "Emma Watson",
-    role: "Director of Marketing, CloudScale",
-    content: "A breath of fresh air compared to typical agencies. They truly operate as an extension of our own team.",
+    name: "Mateusz",
+    role: "Trener personalny i dietetyk",
+    content: `Miałem problem z oferowaniem moich usług prywatnie, więc zgłosiłem się
+     po profesjonalną stronę. Od tamtego czasu pozyskałem wielu nowych ludzi oraz nawiązałem
+     kilkanaście współprac z markami fitness.`,
+  },
+  {
+    name: "Jagoda",
+    role: "Food blogerka",
+    content: `Jako wieloletnia blogerka kulinarna, zmagalam sie z brakiem obsługi moich 
+      klientów w sieci. Dopiero niezawodny system sprawił że byłam w stanie potroić
+      sprzedaż moich poradników i przepisów w sieci bez straty mojego czasu.`,
+  },
+  {
+    name: "Ania",
+    role: "Moda i lifestyle",
+    content: `Miałam problem z odpisywaniem na pytania od moich obserwatorów.
+      System do obsługi prywatnych wiadomości sprawił, że mam więcej czasu na tworzenie
+      nowych treści a moi fani są kierowani do moich szczegółowych ofert na bieżąco!`,
   }
 ]
 
+const testimonials2 = [
+  {
+    name: "Andrzej",
+    role: "Właściciel agencji marketingowej",
+    content: `Mój zespół potrzebował niezawodnego systemu do kontaktu z klientami dlatego
+      umówiłem się na konsultację aby poznać proces tworzenia i integracji. Po tygodniu
+      przeszliśmy do wdrożenia systemu u nas w firmie i działamy bez przestojów.`,
+  },
+  {
+    name: "Grzegorz",
+    role: "CEO firmy outsourcingowej",
+    content: `Współpraca z agencją całkowicie odmieniła nasze podejście do inbound marketingu.
+      Wreszcie mamy przewidywalny plan sprzedaży i możemy planować rozwój w oparciu o twarde
+      dane a nie domysły.`,
+  },
+  {
+    name: "Adam",
+    role: "Firma developerska",
+    content: `Potrzebowaliśmy systemu do analizy rynku mieszkań w polskich miastach. Teraz
+      mamy automatyczny system do wycen oraz popytu w danych lokalizacjach przez co możemy mieć
+      konkurencyjne oferty na bieżąco.`,
+  },
+  {
+    name: "Martyna",
+    role: "Departament HR",
+    content: `Nasz stary system do filtracji CV nie działał poprawnie i często się zacinał,
+      przez co traciliśmy wielu cennych kandydatów. Teraz nawet nieszablonowe CV przechodzą
+      przez nasz system i są oceniane pod kątem kwalifikacji a nie według sztywnych schematów.`,
+  }
+]
+
+function TestimonialCard({ t }: { t: any }) {
+  return (
+    <div className="pb-4">
+      <div className="bg-white p-6 rounded-sm border border-black/5 shadow-sm h-full">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden relative">
+            <Image src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${t.name.replace(' ', '')}`} alt={t.name} fill className="object-cover" />
+          </div>
+          <div>
+            <p className="font-bold text-sm text-foreground">{t.name}</p>
+            <p className="text-xs text-muted-foreground">{t.role}</p>
+          </div>
+        </div>
+        <p className="text-sm font-medium leading-relaxed text-foreground/80">
+          {t.content}
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export function Testimonials() {
   return (
-    <section className="bg-[#F4F1EA] relative overflow-hidden">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-32 relative border-l border-black">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
+    <section className="bg-[#F4F1EA] relative overflow-hidden h-[800px]">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-3 lg:mx-8 px-6 lg:px-8 py-24 lg:py-0 h-full relative border-l border-black">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full">
+
           {/* Left Side */}
-          <div className="max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
-              What <span className="font-serif italic font-normal">founders</span> say<br />
-              about our partnership
+          <div className="max-w-xl z-10 lg:pl-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-foreground leading-[1.05] mb-6">
+              Co mówią liderzy i twórcy <br className="hidden md:block" />
+              o współpracy z <span className="font-serif italic font-normal">nami</span>
             </h2>
-            <div className="space-y-12">
-              {testimonials.map((t, i) => (
-                <div key={i} className="border-l-2 border-black/10 pl-6 py-2">
-                  <p className="text-lg text-foreground/80 italic leading-relaxed mb-4">
-                    &quot;{t.content}&quot;
-                  </p>
-                  <div>
-                    <p className="font-bold text-foreground">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.role}</p>
-                  </div>
-                </div>
-              ))}
+            <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-8 max-w-md">
+              Nie wynajmujesz po prostu agencji. Wychodzimy poza zwykłe świadczenie usług, by inżynieryjnie podejść do Twojego wzrostu z tą samą obsesją, jaką stosujemy we własnym biznesie.
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link href="#cases" className="bg-black hover:bg-black/80 text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-2 rounded-sm">
+                <span className="text-white/60">+</span> Zobacz case study
+              </Link>
+              <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-2 rounded-sm">
+                <span className="text-white/60">+</span> Porozmawiajmy
+              </Link>
             </div>
           </div>
 
-          {/* Right Side - Video Placeholder */}
-          <div className="relative aspect-video bg-black/5 rounded-sm overflow-hidden border border-black/5 flex items-center justify-center group cursor-pointer">
-            <div className="w-16 h-16 bg-[#0033FF] rounded-full flex items-center justify-center text-white transition-transform group-hover:scale-110">
-              <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1"></div>
+          {/* Right Side - Two Carousels */}
+          <div className="relative h-[800px] overflow-hidden flex gap-4 -mx-6 lg:mx-0 px-6 lg:px-0">
+            {/* gradient overlays for smooth fading */}
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#F4F1EA] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#F4F1EA] to-transparent z-10 pointer-events-none"></div>
+
+            {/* Carousel 1 (Scroll Down) */}
+            <div className="flex-1 relative">
+              <motion.div
+                className="flex flex-col absolute top-0 left-0 w-full"
+                animate={{ y: ["-50%", "0%"] }}
+                transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+              >
+                {[...testimonials1, ...testimonials1].map((t, i) => (
+                  <TestimonialCard key={`col1-${i}`} t={t} />
+                ))}
+              </motion.div>
             </div>
-            <p className="absolute bottom-6 left-6 text-xs font-bold tracking-widest text-black/40">WATCH TESTIMONIAL</p>
+
+            {/* Carousel 2 (Scroll Up) */}
+            <div className="flex-1 relative">
+              <motion.div
+                className="flex flex-col absolute top-0 left-0 w-full"
+                animate={{ y: ["0%", "-50%"] }}
+                transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+              >
+                {[...testimonials2, ...testimonials2].map((t, i) => (
+                  <TestimonialCard key={`col2-${i}`} t={t} />
+                ))}
+              </motion.div>
+            </div>
           </div>
 
         </div>
