@@ -128,7 +128,7 @@ export function TrustEngine() {
   return (
     <section ref={containerRef} className="bg-black text-white relative">
       {/* Container z borderem po lewej */}
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-auto border-l border-white/20">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-64px)] mx-auto border-l border-white">
         <div className="flex flex-col lg:flex-row items-start relative">
 
           {/* LEWA KOLUMNA: Scrolluje się naturalnie */}
