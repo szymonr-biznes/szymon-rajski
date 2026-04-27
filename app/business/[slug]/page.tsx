@@ -61,17 +61,15 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
               <div className="lg:text-right bg-white/50 p-6 md:p-8 rounded-sm border border-black/10 backdrop-blur-sm min-w-0 md:min-w-[280px] w-full md:w-auto">
                 <div className="text-3xl md:text-4xl font-bold mb-1">{service.price}</div>
                 <div className="text-xs tracking-widest text-foreground/50 mb-6">{service.priceNote}</div>
-                {(service as any).type !== "buy" && (
-                  <Link
-                    href="#order"
-                    className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20"
-                  >
-                    <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
-                      <Plus className="w-3.5 h-3.5" />
-                    </div>
-                    Rozpocznij teraz
-                  </Link>
-                )}
+                <Link
+                  href="#order"
+                  className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20"
+                >
+                  <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                    <Plus className="w-3.5 h-3.5" />
+                  </div>
+                  Rozpocznij teraz
+                </Link>
               </div>
             </div>
           </div>
