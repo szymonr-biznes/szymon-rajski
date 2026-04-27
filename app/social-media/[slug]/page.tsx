@@ -64,7 +64,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
 
               <div className="lg:text-right bg-white/50 p-8 rounded-sm border border-black/10 backdrop-blur-sm min-w-[280px]">
                 <div className="text-3xl md:text-4xl font-bold mb-1">{service.price}</div>
-                <div className="text-xs uppercase tracking-widest text-foreground/50 mb-6">{service.priceNote}</div>
+                <div className="text-xs tracking-widest text-foreground/50 mb-6">{service.priceNote}</div>
                 {(service as any).type !== "buy" && (
                   <Link
                     href="#order"
@@ -137,7 +137,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
           <div id="order" className="w-[calc(100%-12px)] lg:w-[calc(100%-128px)] ml-3 lg:mx-16 border-l border-black py-20 lg:py-32 px-6 lg:px-12 bg-white/30 backdrop-blur-sm pb-20 md:pb-32">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
-                Gotowy na <span className="font-serif italic font-normal">automatyzację?</span>
+                Gotowy na współpracę?
               </h2>
               <div className="bg-white p-8 lg:p-12 border border-black shadow-2xl text-left">
                 {(service as any).type === "buy" ? (

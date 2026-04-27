@@ -40,7 +40,7 @@ export default function BusinessPage() {
                       </div>
                       <div className="text-right">
                         <div className="text-lg font-bold">{service.price}</div>
-                        <div className="text-[10px] opacity-50 uppercase tracking-wider">{service.priceNote}</div>
+                        <div className="text-[10px] opacity-50 tracking-wider">{service.priceNote}</div>
                       </div>
                     </div>
                     <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-4 leading-tight">
