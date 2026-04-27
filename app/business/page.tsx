@@ -17,10 +17,11 @@ export default function BusinessPage() {
         <section className="relative overflow-hidden">
           <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 px-6 lg:px-8 pt-28 pb-12 lg:pt-32 lg:pb-24 border-l border-black relative">
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-medium tracking-tight text-foreground leading-[1.1]">
-              Systemy dla <span className="font-serif italic font-normal">Biznesu</span>
+              Biznes
             </h1>
             <p className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Zautomatyzuj powtarzalne procesy i odzyskaj czas na to, co <span className="font-serif italic font-normal">naprawdę</span> ważne w Twojej firmie.
+              Zautomatyzuj powtarzalne procesy i zwiększ efektywność pracy, eliminując
+              zbędne zadania oraz ograniczając ryzyko błędów.
             </p>
           </div>
 
