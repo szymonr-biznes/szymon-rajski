@@ -113,7 +113,7 @@ export default function CheckoutForm({ slug }: { slug: string }) {
         )}
       </Button>
 
-      <p className="text-[10px] text-center text-muted-foreground/60 tracking-tight">
+      <p className="text-[11px] text-center text-muted-foreground/100 tracking-tight">
         Zostaniesz przekierowany do bezpiecznej płatności Stripe
       </p>
     </form>

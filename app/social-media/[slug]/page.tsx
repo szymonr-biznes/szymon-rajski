@@ -108,7 +108,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                   </ul>
                 </div>
               )}
-
+            </div>
           </div>
 
           {/* Checkout/Contact Section */}
