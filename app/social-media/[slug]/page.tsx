@@ -51,11 +51,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                   Instagram
                 </div>
                 <h1 className="text-2xl md:text-5xl lg:text-6xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
-                  {service.title.split(' ').map((word, i) => (
-                    <span key={i}>
-                      {i % 2 === 1 ? <span className="font-serif italic font-normal">{word}</span> : word}{' '}
-                    </span>
-                  ))}
+                  {service.title}
                 </h1>
                 <p className="text-sm md:text-xl text-foreground/70 leading-relaxed max-w-2xl">
                   {service.fullDescription}
@@ -136,7 +132,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
           {/* Checkout/Contact Section */}
           <div id="order" className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black py-20 lg:py-32 px-6 lg:px-12 pb-20 md:pb-32 relative">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
+              <h2 className="text-2xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8">
                 Gotowy na współpracę?
               </h2>
               <div className="bg-white/50 backdrop-blur-sm p-6 md:p-12 rounded-sm border border-black/10 text-left">
