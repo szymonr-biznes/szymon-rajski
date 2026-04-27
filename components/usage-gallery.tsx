@@ -2,10 +2,7 @@
 
 import { WorkflowDiagram } from "./workflow-diagram"
 import { FileText, FileSpreadsheet, FileCode } from "lucide-react"
-import { businessServices, socialMediaServices } from "@/lib/services"
-
-const allServices = [...businessServices, ...socialMediaServices]
-const displayServices = [...allServices, ...allServices]
+import { businessServices } from "@/lib/services"
 
 const brands = [
   {
@@ -150,7 +147,7 @@ export function UsageGallery() {
             `}
           </style>
           <div className="flex animate-infinite-scroll w-max">
-            {displayServices.map((service, idx) => (
+            {[...businessServices, ...businessServices].map((service, idx) => (
               <div
                 key={`${service.id}-${idx}`}
                 className="flex-shrink-0 w-[300px] md:w-[500px] aspect-[4/3] md:aspect-[3/2] pr-4 group cursor-pointer relative"
