@@ -112,13 +112,13 @@ export function Testimonials() {
               pod Ciebie system z możliwością przyszłych integracji i rozbudowy na życzenie.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link href="#cases" className="bg-black hover:bg-black/80 text-white px-4 py-2 md:py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
+              <Link href="#cases" className="bg-black hover:bg-black/80 text-white px-5 py-3 text-xs md:text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
                 <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
                   <Plus className="w-3.5 h-3.5" />
                 </div>
                 Zobacz rozwiązania
               </Link>
-              <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-4 py-2 md:py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
+              <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 text-xs md:text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
                 <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
                   <Plus className="w-3.5 h-3.5" />
                 </div>

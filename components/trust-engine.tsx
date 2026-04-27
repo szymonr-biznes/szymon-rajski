@@ -185,7 +185,7 @@ export function TrustEngine() {
                         ) : (
                           <Link
                             href="#contact"
-                            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-4 py-2 md:px-6 md:py-3 rounded-sm text-sm font-bold transition-all inline-flex items-center gap-3 w-fit shadow-lg shadow-[#0033FF]/20"
+                            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all inline-flex items-center gap-3 w-fit shadow-lg shadow-[#0033FF]/20"
                           >
                             <Plus className="w-4 h-4" />
                             Zobacz ofertę

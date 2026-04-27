@@ -143,7 +143,7 @@ export function Header() {
                 ))}
                 <Link
                   href="#"
-                  className="mt-8 flex items-center justify-center gap-3 w-full text-center bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-sm font-semibold transition-colors"
+                  className="mt-8 flex items-center justify-center gap-3 w-full text-center bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-semibold transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">

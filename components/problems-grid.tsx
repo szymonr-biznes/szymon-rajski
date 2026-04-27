@@ -68,7 +68,7 @@ export function ProblemsGrid() {
 
             <Link
               href="/business"
-              className="bg-white text-[#0033FF] px-5 py-2.5 rounded-sm text-sm font-bold transition-all hover:bg-gray-100 flex items-center gap-3 w-fit"
+              className="bg-white text-[#0033FF] px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all hover:bg-gray-100 flex items-center gap-3 w-fit"
             >
               <div className="w-5 h-5 rounded-[4px] bg-[#0033FF]/10 flex items-center justify-center">
                 <Plus className="w-3.5 h-3.5" />
