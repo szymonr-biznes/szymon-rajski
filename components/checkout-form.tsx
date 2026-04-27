@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -98,12 +98,14 @@ export default function CheckoutForm({ slug }: { slug: string }) {
       <Button
         type="submit"
         disabled={loading}
-        className="w-full relative overflow-hidden"
-        style={{ cursor: 'pointer' }}
+        className="w-full bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-6 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20"
       >
-        <span style={{ cursor: 'pointer' }} className={`flex items-center justify-center gap-2 transition-all duration-300 ${loading ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`}>
+        <div className={`flex items-center justify-center gap-3 transition-all duration-300 ${loading ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`}>
+          <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+            <Plus className="w-3.5 h-3.5" />
+          </div>
           Kup teraz
-        </span>
+        </div>
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center">
             <Loader2 className="h-5 w-5 animate-spin" />

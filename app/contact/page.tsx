@@ -1,8 +1,6 @@
 import { Mail, Linkedin } from "lucide-react"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { ParallaxBackground } from "@/components/parallax-background"
-import { Card, CardContent } from "@/components/ui/card"
+import { FooterCTA } from "@/components/footer-cta"
 
 export const metadata = {
   title: "Kontakt | Szymon Rajski",
@@ -11,79 +9,53 @@ export const metadata = {
 
 export default function KontaktPage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <ParallaxBackground />
+    <div className="flex min-h-screen flex-col bg-[#F4F1EA] relative">
       <Header />
-      <main className="flex-1">
-        <section className="py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Kontakt
-              </h1>
-              <p className="mt-4 text-muted-foreground">
-                Masz pytania? Skontaktuj się ze mną
-              </p>
+      <main className="flex-1 relative z-10">
+        <section className="relative overflow-hidden">
+          <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 px-6 lg:px-8 pt-28 pb-12 lg:pt-32 lg:pb-24 border-l border-black relative">
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-medium tracking-tight text-foreground leading-[1.1]">
+              Zróbmy coś <span className="font-serif italic font-normal">razem</span>
+            </h1>
+            <p className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">
+              Masz pytania dotyczące automatyzacji lub chcesz omówić swój projekt? Skontaktuj się ze mną bezpośrednio.
+            </p>
+          </div>
+
+          <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black border-t border-black pb-20 md:pb-32">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+              <a
+                href="mailto:szymonr.biznes@gmail.com"
+                className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
+              >
+                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Email</p>
+                <div className="text-xl md:text-2xl font-medium break-words">szymonr.biznes@gmail.com</div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/szymon-rajski-73177a21a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
+              >
+                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">LinkedIn</p>
+                <div className="text-xl md:text-2xl font-medium">Szymon Rajski</div>
+              </a>
+
+              <a
+                href="https://instagram.com/_rajo_rajo_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-8 lg:p-12 border-b border-black group hover:bg-black hover:text-white transition-colors duration-500"
+              >
+                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Instagram</p>
+                <div className="text-xl md:text-2xl font-medium">@_rajo_rajo_</div>
+              </a>
             </div>
-
-            <Card className="mx-auto mt-12 max-w-lg">
-              <CardContent className="p-4">
-                <div className="space-y-2">
-                  <a
-                    href="mailto:szymonr.biznes@gmail.com"
-                    className="flex items-center gap-3 rounded-lg border border-border p-2 transition-colors hover:bg-muted/50"
-                  >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                      <Mail className="h-4 w-4 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Email</p>
-                      <p className="text-sm font-medium text-foreground">szymonr.biznes@gmail.com</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/szymon-rajski-73177a21a"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 rounded-lg border border-border p-2 transition-colors hover:bg-muted/50"
-                  >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                      <Linkedin className="h-4 w-4 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground">LinkedIn</p>
-                      <p className="text-sm font-medium text-foreground">Szymon Rajski</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://instagram.com/_rajo_rajo_"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 rounded-lg border border-border p-2 transition-colors hover:bg-muted/50"
-                  >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                      <svg
-                        className="h-4 w-4 text-primary"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Instagram</p>
-                      <p className="text-sm font-medium text-foreground">@_rajo_rajo_</p>
-                    </div>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </section>
       </main>
-      <Footer />
+      <FooterCTA />
     </div>
   )
 }

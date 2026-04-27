@@ -1,16 +1,11 @@
 import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { FooterCTA } from "@/components/footer-cta"
 import { socialMediaServices, businessServices } from "@/lib/services"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ArrowLeft, ShieldCheck, Zap, CreditCard, Star, Clock, Heart } from "lucide-react"
+import { Plus, ArrowLeft, ShieldCheck, Zap, CreditCard } from "lucide-react"
 import Link from "next/link"
-import { WorkflowDiagram } from "@/components/workflow-diagram"
-import { SocialMediaBackground } from "@/components/social-media-background"
-import { ParallaxBackground } from "@/components/parallax-background"
-import { DynamicIcon } from "@/components/dynamic-icon"
 import CheckoutForm from "@/components/checkout-form"
+import { DynamicIcon } from "@/components/dynamic-icon"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -27,7 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function DetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const isSocialMedia = socialMediaServices.some(s => s.slug === slug)
   const allServices = [...socialMediaServices, ...businessServices]
   const service = allServices.find((s) => s.slug === slug)
 
@@ -36,122 +30,144 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      {isSocialMedia ? <SocialMediaBackground /> : <ParallaxBackground />}
+    <div className="flex min-h-screen flex-col bg-[#F4F1EA] relative">
+      <Header />
 
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <Header />
-
-        <main className="flex-1 py-12 px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl">
+      <main className="flex-1 relative z-10">
+        <section className="relative overflow-hidden">
+          {/* Hero Section of Service */}
+          <div className="w-[calc(100%-12px)] lg:w-[calc(100%-128px)] ml-3 lg:mx-16 px-6 lg:px-8 pt-32 pb-12 lg:pt-48 lg:pb-24 border-l border-black relative">
             <Link
               href="/business"
-              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors bg-background/50 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border shadow-sm"
+              className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-foreground/50 hover:text-foreground mb-12 transition-colors group"
             >
-              <ArrowLeft className="mr-2 h-4 w-4" />
+              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
               Wróć do ofert
             </Link>
 
-            <Card className="overflow-hidden transition-shadow hover:shadow-md flex flex-col">
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <CardTitle className="text-lg">
-                        {service.title}
-                      </CardTitle>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {service.shortDescription}
-                    </p>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <p className="text-xl font-bold text-foreground">{service.price}</p>
-                    {service.priceNote && (
-                      <p className="text-xs text-muted-foreground">{service.priceNote}</p>
-                    )}
-                  </div>
+            <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+              <div className="max-w-3xl">
+                <div className="bg-black text-white px-3 py-1.5 rounded-sm text-[10px] font-bold tracking-widest uppercase mb-6 inline-block">
+                  Biznes
                 </div>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="space-y-6 flex flex-col">
-                  <div className="prose prose-sm dark:prose-invert">
-                    <p className="text-sm text-foreground/80 leading-relaxed">
-                      {service.fullDescription}
-                    </p>
-                  </div>
+                <h1 className="text-2xl md:text-5xl lg:text-6xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
+                  {service.title.split(' ').map((word, i) => (
+                    <span key={i}>
+                      {i % 2 === 1 ? <span className="font-serif italic font-normal">{word}</span> : word}{' '}
+                    </span>
+                  ))}
+                </h1>
+                <p className="text-sm md:text-xl text-foreground/70 leading-relaxed max-w-2xl">
+                  {service.fullDescription}
+                </p>
+              </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-                    {/* Column 1: Co otrzymujesz */}
-                    <div className="space-y-4 bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border border-green-100 dark:border-green-900/50">
-                      <p className="text-sm font-medium text-foreground">Co otrzymujesz:</p>
-                      <ul className="space-y-3">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground">
-                            <DynamicIcon name={feature.icon} className="h-4 w-4 text-primary/70 shrink-0" />
-                            <span className="leading-relaxed">{feature.text}</span>
-                          </li>
-                        ))}
-                      </ul>
+              <div className="lg:text-right bg-white/50 p-8 rounded-sm border border-black/10 backdrop-blur-sm min-w-[280px]">
+                <div className="text-3xl md:text-4xl font-bold mb-1">{service.price}</div>
+                <div className="text-xs uppercase tracking-widest text-foreground/50 mb-6">{service.priceNote}</div>
+                {(service as any).type !== "buy" && (
+                  <Link
+                    href="#order"
+                    className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20"
+                  >
+                    <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                      <Plus className="w-3.5 h-3.5" />
                     </div>
-
-                    {/* Column 2: Jak działamy */}
-                    {service.howItWorks && service.howItWorks.length > 0 ? (
-                      <div className="space-y-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-100 dark:border-blue-900/50">
-                        <p className="text-sm font-medium text-foreground">Jak działamy:</p>
-                        <ul className="space-y-3">
-                          {service.howItWorks.map((step, idx) => (
-                            <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground">
-                              <DynamicIcon name={step.icon} className="h-4 w-4 text-primary/70 shrink-0" />
-                              <span className="leading-relaxed">{step.text}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ) : <div />}
-
-                    {/* Column 3: Dodatkowe informacje */}
-                    <div className="space-y-4 bg-muted/30 p-6 rounded-xl border border-border flex flex-col">
-                      <p className="text-sm font-medium text-foreground">Dodatkowe informacje:</p>
-                      <div className="space-y-4 flex-1">
-                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <ShieldCheck className="h-4 w-4 text-primary/70 shrink-0" />
-                          <span>Bezpieczna płatność</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <Zap className="h-4 w-4 text-primary/70 shrink-0" />
-                          <span>Błyskawiczna realizacja</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                          <CreditCard className="h-4 w-4 text-primary/70 shrink-0" />
-                          <span>Faktura VAT na życzenie</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-6">
-                    {(service as any).type === "buy" ? (
-                      <div className="bg-muted/20 p-6 rounded-xl border border-border">
-                        <h3 className="text-lg font-semibold mb-4">Złóż zamówienie</h3>
-                        <CheckoutForm slug={service.slug} />
-                      </div>
-                    ) : (
-                      <Button disabled={service.comingSoon} asChild className="w-full text-sm font-semibold transition-all">
-                        <Link href="/contact">
-                          Umów się na spotkanie
-                        </Link>
-                      </Button>
-                    )}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                    Rozpocznij teraz
+                  </Link>
+                )}
+              </div>
+            </div>
           </div>
-        </main>
 
-        <Footer />
-      </div>
+          {/* Features Grid */}
+          <div className="w-[calc(100%-12px)] lg:w-[calc(100%-128px)] ml-3 lg:mx-16 border-l border-black border-t border-black">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+              <div className="p-8 lg:p-12 border-b md:border-r border-black">
+                <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Co otrzymujesz</h3>
+                <ul className="space-y-6">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-4">
+                      <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center shrink-0 mt-0.5">
+                        <DynamicIcon name={feature.icon} className="h-3 w-3" />
+                      </div>
+                      <span className="text-sm md:text-base opacity-70 leading-relaxed">{feature.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {service.howItWorks && service.howItWorks.length > 0 && (
+                <div className="p-8 lg:p-12 border-b lg:border-r border-black">
+                  <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Jak działamy</h3>
+                  <ul className="space-y-6">
+                    {service.howItWorks.map((step, idx) => (
+                      <li key={idx} className="flex items-start gap-4">
+                        <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">
+                          {idx + 1}
+                        </div>
+                        <span className="text-sm md:text-base opacity-70 leading-relaxed">{step.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="p-8 lg:p-12 border-b border-black">
+                <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Bezpieczeństwo</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <ShieldCheck className="h-5 w-5 opacity-50" />
+                    <span className="text-sm font-medium">Gwarancja jakości i bezpieczeństwa</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Zap className="h-5 w-5 opacity-50" />
+                    <span className="text-sm font-medium">Błyskawiczna implementacja systemu</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <CreditCard className="h-5 w-5 opacity-50" />
+                    <span className="text-sm font-medium">Faktura VAT na każdą usługę</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Checkout/Contact Section */}
+          <div id="order" className="w-[calc(100%-12px)] lg:w-[calc(100%-128px)] ml-3 lg:mx-16 border-l border-black py-20 lg:py-32 px-6 lg:px-12 bg-white/30 backdrop-blur-sm pb-20 md:pb-32">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
+                Gotowy na <span className="font-serif italic font-normal">automatyzację?</span>
+              </h2>
+              <div className="bg-white p-8 lg:p-12 border border-black shadow-2xl text-left">
+                {(service as any).type === "buy" ? (
+                  <>
+                    <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Zamówienie</h3>
+                    <CheckoutForm slug={service.slug} />
+                  </>
+                ) : (
+                  <div className="text-center py-8">
+                    <p className="text-lg opacity-70 mb-8">
+                      Ta usługa wymaga indywidualnego podejścia. Umów się na bezpłatną konsultację, aby omówić szczegóły wdrożenia.
+                    </p>
+                    <Link
+                      href="/contact"
+                      className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20"
+                    >
+                      <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                        <Plus className="w-3.5 h-3.5" />
+                      </div>
+                      Umów się na spotkanie
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <FooterCTA />
     </div>
   )
 }
