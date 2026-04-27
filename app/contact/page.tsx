@@ -23,13 +23,21 @@ export default function KontaktPage() {
           </div>
 
           <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black border-t border-black pb-20 md:pb-32">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               <a
                 href="mailto:szymonr.biznes@gmail.com"
                 className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
               >
                 <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Email</p>
                 <div className="text-xl md:text-2xl font-medium break-words">szymonr.biznes@gmail.com</div>
+              </a>
+
+              <a
+                href="tel:506455883"
+                className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
+              >
+                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Telefon</p>
+                <div className="text-xl md:text-2xl font-medium">506 455 883</div>
               </a>
 
               <a
