@@ -19,7 +19,7 @@ const trustEngine = [
 export function Comparison() {
   return (
     <section className="bg-[#F4F1EA] relative overflow-hidden">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 py-32 text-center relative border-l border-black">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 py-20 md:py-32 text-center relative border-l border-black">
 
         {/* Background Graphic */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[600px] pointer-events-none opacity-20">
@@ -29,7 +29,7 @@ export function Comparison() {
         </div>
 
         <div className="relative z-10">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground leading-[1.1] mb-4">
+          <h2 className="text-2xl md:text-5xl font-medium tracking-tight text-foreground leading-[1.1] mb-4">
             Przestań polegać<br />
             na <span className="font-serif italic font-normal">ręcznych działaniach</span>
           </h2>

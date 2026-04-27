@@ -133,7 +133,7 @@ export function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block w-fit relative text-2xl font-medium transition-colors duration-300 group ${isDark ? "text-white" : "text-black"
+                    className={`block w-fit relative text-lg font-medium transition-colors duration-300 group ${isDark ? "text-white" : "text-black"
                       }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -143,7 +143,7 @@ export function Header() {
                 ))}
                 <Link
                   href="#"
-                  className="mt-8 flex items-center justify-center gap-3 w-full text-center bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-4 rounded-sm text-base font-semibold transition-colors"
+                  className="mt-8 flex items-center justify-center gap-3 w-full text-center bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-sm font-semibold transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">

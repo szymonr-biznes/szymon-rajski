@@ -63,18 +63,18 @@ export function TrustEngine() {
 
   return (
     <section className="bg-black text-white relative">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white pt-32 lg:pt-48 pb-32 lg:pb-48">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-auto border-l border-white pt-20 lg:pt-48 pb-20 lg:pb-48">
         <div className="flex flex-col lg:flex-row relative items-center">
 
           {/* LEFT COLUMN: Sticky Title */}
-          <div className="w-full lg:w-1/2 lg:sticky lg:top-0 lg:h-screen flex items-center px-6 lg:px-12 py-16 lg:py-0">
+          <div className="w-full lg:w-1/2 lg:sticky lg:top-0 lg:h-screen flex items-center px-6 lg:px-12 py-12 lg:py-0">
             <div className="max-w-xl">
-              <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.05]">
+              <h2 className="text-2xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.05]">
                 Zwiększaj zasięgi<br />
                 i zautomatyzuj swoje<br />
                 <span className="text-[#0033FF]">social media</span>
               </h2>
-              <p className="mt-6 text-gray-400 text-lg max-w-md leading-relaxed">
+              <p className="mt-6 text-gray-400 text-base md:text-lg max-w-md leading-relaxed">
                 Odkryj unikalne systemy dla twórców internetowych, które napędzą Twój
                 wzrost oraz pozwolą Ci oferować swoje usługi na zupełnie nowym poziomie.
               </p>
@@ -157,11 +157,11 @@ export function TrustEngine() {
                         ease: [0.32, 0.72, 0, 1]
                       }}
                       style={{ transformStyle: "preserve-3d" }}
-                      className={`absolute inset-0 w-full h-full ${step.bgColor} ${step.textColor} rounded-sm p-8 lg:p-14 shadow-2xl border ${step.borderColor} flex flex-col justify-between group cursor-pointer`}
+                      className={`absolute inset-0 w-full h-full ${step.bgColor} ${step.textColor} rounded-sm p-6 md:p-14 shadow-2xl border ${step.borderColor} flex flex-col justify-between group cursor-pointer`}
                       onClick={nextStep}
                     >
                       {/* Large index number in background */}
-                      <div className="absolute top-6 right-8 lg:top-10 lg:right-12 text-8xl lg:text-[10rem] font-medium tracking-tighter opacity-[0.03] lg:opacity-[0.05] group-hover:opacity-10 transition-opacity pointer-events-none">
+                      <div className="absolute top-6 right-8 lg:top-10 lg:right-12 text-6xl md:text-8xl lg:text-[10rem] font-medium tracking-tighter opacity-[0.03] lg:opacity-[0.05] group-hover:opacity-10 transition-opacity pointer-events-none">
                         {step.number}
                       </div>
 
@@ -169,13 +169,13 @@ export function TrustEngine() {
                         <div className="bg-black text-white px-3 py-1.5 rounded-sm text-[10px] font-bold tracking-widest uppercase inline-block border border-white/10">
                           {step.label}
                         </div>
-                        <h3 className="text-3xl lg:text-5xl font-medium leading-[1.1] max-w-[15ch]">
+                        <h3 className="text-xl md:text-4xl lg:text-5xl font-medium leading-[1.1] max-w-[15ch]">
                           {step.title}
                         </h3>
                       </div>
 
                       <div className="relative z-10 space-y-8">
-                        <p className="text-sm lg:text-base opacity-70 max-w-md leading-relaxed">
+                        <p className="text-xs md:text-sm lg:text-base opacity-70 max-w-md leading-relaxed">
                           {step.desc}
                         </p>
                         {!step.isAvailable ? (
@@ -185,7 +185,7 @@ export function TrustEngine() {
                         ) : (
                           <Link
                             href="#contact"
-                            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-6 py-3 rounded-sm text-sm font-bold transition-all inline-flex items-center gap-3 w-fit shadow-lg shadow-[#0033FF]/20"
+                            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-4 py-2 md:px-6 md:py-3 rounded-sm text-sm font-bold transition-all inline-flex items-center gap-3 w-fit shadow-lg shadow-[#0033FF]/20"
                           >
                             <Plus className="w-4 h-4" />
                             Zobacz ofertę

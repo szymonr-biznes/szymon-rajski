@@ -120,10 +120,10 @@ export function UsageGallery() {
   return (
     <section className="bg-[#F4F1EA] relative overflow-hidden">
       <div className="absolute top-0 left-3 lg:left-16 right-0 border-t border-black" />
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 pt-24 pb-0 border-l border-black relative">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 pt-16 md:pt-24 pb-0 border-l border-black relative">
 
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">
+          <h2 className="text-2xl md:text-5xl font-medium tracking-tight text-foreground max-w-2xl leading-[1.1]">
             Sprawdzone systemy<br />
             wdrożone w <span className="font-serif italic font-normal">realnych</span> biznesach.
             Łatwa integracja<br />
@@ -163,7 +163,7 @@ export function UsageGallery() {
                   </div>
 
                   {/* Description Area */}
-                  <div className="w-[40%] md:w-[45%] p-3 md:p-6 flex flex-col border-l border-black/5 bg-white/20">
+                  <div className="w-[40%] md:w-[45%] p-4 md:p-6 flex flex-col border-l border-black/5 bg-white/20">
                     <div className="flex-1 flex flex-col justify-center">
                       <p className="text-[8px] md:text-[10px] tracking-widest text-black/40 font-bold mb-1 md:mb-2">{service.title}</p>
                       <p className="text-[10px] md:text-sm text-black/70 leading-relaxed font-medium">
@@ -193,7 +193,7 @@ export function UsageGallery() {
             {[...brands, ...brands].map((brand, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 w-[180px] md:w-[280px] px-4 md:px-8 py-6 md:py-10 flex items-center justify-center border-r border-black gap-2 md:gap-4 group/item"
+                className="flex-shrink-0 w-[180px] md:w-[280px] px-4 md:px-8 py-4 md:py-10 flex items-center justify-center border-r border-black gap-2 md:gap-4 group/item"
               >
                 {brand.id === 'files' ? (
                   <div className="relative w-8 h-8 md:w-12 md:h-12 flex items-center justify-center">

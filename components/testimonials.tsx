@@ -98,27 +98,27 @@ function TestimonialCard({ t }: { t: any }) {
 export function Testimonials() {
   return (
     <section className="bg-[#F4F1EA] relative overflow-hidden h-auto lg:h-[800px]">
-      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 py-24 lg:py-0 h-full relative border-l border-black after:absolute after:bottom-0 after:left-0 after:w-[100vw] after:h-[1px] after:bg-black">
+      <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 py-16 md:py-24 lg:py-0 h-full relative border-l border-black after:absolute after:bottom-0 after:left-0 after:w-[100vw] after:h-[1px] after:bg-black">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full">
 
           {/* Left Side */}
           <div className="max-w-xl z-10 lg:pl-4">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
+            <h2 className="text-2xl md:text-5xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
               Co mówią liderzy i twórcy <br className="hidden md:block" />
               o współpracy <span className="font-serif italic font-normal">ze mną</span>
             </h2>
-            <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-8 max-w-md">
+            <p className="text-sm md:text-lg text-foreground/80 leading-relaxed mb-8 max-w-md">
               Zamiast kolejnego nudnego pakietu usług, otrzymujesz specjalnie zaprojektowany
               pod Ciebie system z możliwością przyszłych integracji i rozbudowy na życzenie.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link href="#cases" className="bg-black hover:bg-black/80 text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
+              <Link href="#cases" className="bg-black hover:bg-black/80 text-white px-4 py-2 md:py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
                 <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
                   <Plus className="w-3.5 h-3.5" />
                 </div>
                 Zobacz rozwiązania
               </Link>
-              <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
+              <Link href="#contact" className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-4 py-2 md:py-3 text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
                 <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
                   <Plus className="w-3.5 h-3.5" />
                 </div>
