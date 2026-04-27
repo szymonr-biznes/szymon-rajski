@@ -94,8 +94,8 @@ export function TrustEngine() {
           </div>
 
           {/* RIGHT COLUMN: Revolving Door Carousel */}
-          <div className="w-full lg:w-1/2 px-4 lg:px-10 h-[600px] lg:h-[80vh] flex items-center justify-center relative perspective-[1500px]">
-            <div className="relative w-full h-[500px] lg:h-[600px] max-w-[500px]">
+          <div className="w-full lg:w-1/2 px-4 lg:px-10 h-[500px] lg:h-[80vh] flex items-center justify-center relative perspective-[1500px]">
+            <div className="relative w-full h-[420px] lg:h-[600px] max-w-[500px]">
               <AnimatePresence mode="popLayout">
                 {STEPS.map((step, i) => {
                   const isActive = i === activeIndex
@@ -157,15 +157,15 @@ export function TrustEngine() {
                         ease: [0.32, 0.72, 0, 1]
                       }}
                       style={{ transformStyle: "preserve-3d" }}
-                      className={`absolute inset-0 w-full h-full ${step.bgColor} ${step.textColor} rounded-sm p-6 md:p-14 shadow-2xl border ${step.borderColor} flex flex-col justify-between group cursor-pointer`}
+                      className={`absolute inset-0 w-full h-full ${step.bgColor} ${step.textColor} rounded-sm p-6 md:p-14 shadow-2xl border ${step.borderColor} flex flex-col justify-center gap-y-8 md:gap-y-12 group cursor-pointer`}
                       onClick={nextStep}
                     >
                       {/* Large index number in background */}
-                      <div className="absolute top-6 right-8 lg:top-10 lg:right-12 text-6xl md:text-8xl lg:text-[10rem] font-medium tracking-tighter opacity-[0.03] lg:opacity-[0.05] group-hover:opacity-10 transition-opacity pointer-events-none">
+                      <div className="absolute top-6 right-8 lg:top-10 lg:right-12 text-6xl md:text-8xl lg:text-[10rem] font-medium tracking-tighter opacity-[0.2] lg:opacity-[0.2] group-hover:opacity-10 transition-opacity pointer-events-none">
                         {step.number}
                       </div>
 
-                      <div className="relative z-10 space-y-6">
+                      <div className="relative z-10 space-y-3 md:space-y-6">
                         <div className="bg-black text-white px-3 py-1.5 rounded-sm text-[10px] font-bold tracking-widest uppercase inline-block border border-white/10">
                           {step.label}
                         </div>
@@ -174,7 +174,7 @@ export function TrustEngine() {
                         </h3>
                       </div>
 
-                      <div className="relative z-10 space-y-8">
+                      <div className="relative z-10 space-y-4 md:space-y-8">
                         <p className="text-xs md:text-sm lg:text-base opacity-70 max-w-md leading-relaxed">
                           {step.desc}
                         </p>
