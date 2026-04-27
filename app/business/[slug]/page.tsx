@@ -62,7 +62,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                 </p>
               </div>
 
-              <div className="lg:text-right bg-white/50 p-8 rounded-sm border border-black/10 backdrop-blur-sm min-w-[280px]">
+              <div className="lg:text-right bg-white/50 p-6 md:p-8 rounded-sm border border-black/10 backdrop-blur-sm min-w-0 md:min-w-[280px] w-full md:w-auto">
                 <div className="text-3xl md:text-4xl font-bold mb-1">{service.price}</div>
                 <div className="text-xs tracking-widest text-foreground/50 mb-6">{service.priceNote}</div>
                 {(service as any).type !== "buy" && (
@@ -134,20 +134,20 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* Checkout/Contact Section */}
-          <div id="order" className="w-[calc(100%-12px)] lg:w-[calc(100%-128px)] ml-3 lg:mx-16 border-l border-black py-20 lg:py-32 px-6 lg:px-12 bg-white/30 backdrop-blur-sm pb-20 md:pb-32">
+          <div id="order" className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black py-20 lg:py-32 px-6 lg:px-12 pb-20 md:pb-32 relative">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
                 Gotowy na współpracę?
               </h2>
-              <div className="bg-white p-8 lg:p-12 border border-black shadow-2xl text-left">
+              <div className="bg-white/50 backdrop-blur-sm p-6 md:p-12 rounded-sm border border-black/10 text-left">
                 {(service as any).type === "buy" ? (
                   <>
                     <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Zamówienie</h3>
                     <CheckoutForm slug={service.slug} />
                   </>
                 ) : (
-                  <div className="text-center py-8">
-                    <p className="text-lg opacity-70 mb-8">
+                  <div className="text-center py-4">
+                    <p className="text-base md:text-lg opacity-70 mb-8">
                       Ta usługa wymaga indywidualnego podejścia. Umów się na bezpłatną konsultację, aby omówić szczegóły wdrożenia.
                     </p>
                     <Link
