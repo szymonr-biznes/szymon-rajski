@@ -77,8 +77,8 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* Features Grid */}
-          <div className="w-[calc(100%-12px)] lg:w-[calc(100%-128px)] ml-3 lg:mx-16 border-l border-black border-t border-black">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+          <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black border-t border-black">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               <div className="p-8 lg:p-12 border-b md:border-r border-black">
                 <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Co otrzymujesz</h3>
                 <ul className="space-y-6">
@@ -108,24 +108,6 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                   </ul>
                 </div>
               )}
-
-              <div className="p-8 lg:p-12 border-b border-black">
-                <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Bezpieczeństwo</h3>
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <ShieldCheck className="h-5 w-5 opacity-50" />
-                    <span className="text-sm font-medium">Gwarancja jakości i bezpieczeństwa</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Zap className="h-5 w-5 opacity-50" />
-                    <span className="text-sm font-medium">Błyskawiczna implementacja systemu</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <CreditCard className="h-5 w-5 opacity-50" />
-                    <span className="text-sm font-medium">Faktura VAT na każdą usługę</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
