@@ -61,11 +61,6 @@ export function FooterCTA() {
             <div className="text-xs text-gray-500 order-2 md:order-1">
               © {new Date().getFullYear()} Szymon Rajski All rights reserved.
             </div>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-xs text-gray-400 font-medium order-1 md:order-2">
-              <Link href="#" className="hover:text-white transition-colors">LinkedIn</Link>
-              <Link href="#" className="hover:text-white transition-colors">Twitter</Link>
-              <Link href="#" className="hover:text-white transition-colors">Instagram</Link>
-            </div>
           </div>
         </div>
 
