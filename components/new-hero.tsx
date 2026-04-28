@@ -67,20 +67,21 @@ export function NewHero() {
           <svg viewBox="0 0 400 400" className="w-full h-full text-black/20" style={{ transform: 'rotate(-25deg)' }}>
             {/* Outer Orbit */}
             <ellipse cx="200" cy="200" rx="180" ry="80" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
-            <circle cx="380" cy="200" r="4" fill="black" />
+            <circle cx="220" cy="120" r="4" fill="black" />
+            <text x="157" y="106" fill="black" fontSize="10" className="font-medium tracking-wide rotate-25 origin-center">Elastyczne</text>
 
             {/* Middle Orbit */}
             <ellipse cx="200" cy="200" rx="130" ry="55" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
-            <circle cx="330" cy="200" r="4" fill="black" />
-            <text x="340" y="204" fill="black" fontSize="10" className="font-medium tracking-wide rotate-25 origin-center">Agility</text>
+            <circle cx="100" cy="235" r="4" fill="black" />
+            <text x="104" y="260" fill="black" fontSize="10" className="font-medium tracking-wide rotate-25 origin-center">Szybkie</text>
 
             {/* Inner Orbit */}
             <ellipse cx="200" cy="200" rx="80" ry="35" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
-            <circle cx="280" cy="200" r="4" fill="black" />
-            <text x="290" y="204" fill="black" fontSize="10" className="font-medium tracking-wide rotate-25 origin-center">Clarity</text>
+            <circle cx="277" cy="210" r="4" fill="black" />
+            <text x="243" y="165" fill="black" fontSize="10" className="font-medium tracking-wide rotate-25 origin-center">Niezawodne</text>
 
             {/* Center Star */}
-            <path d="M200 190 L203 197 L210 200 L203 203 L200 210 L197 203 L190 200 L197 197 Z" fill="black" />
+            <path d="M200 190 L203 197 L210 200 L203 203 L200 210 L197 203 L190 200 L197 197 Z" fill="#22C55E" />
           </svg>
         </motion.div>
 
