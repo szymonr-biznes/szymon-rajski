@@ -2,9 +2,10 @@ import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { FooterCTA } from "@/components/footer-cta"
 import { socialMediaServices, businessServices } from "@/lib/services"
-import { Plus, ArrowLeft, SquarePlus } from "lucide-react"
+import { Plus, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import CheckoutForm from "@/components/checkout-form"
+import { ScrollButton } from "@/components/scroll-button"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -60,15 +61,11 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
               <div className="lg:text-right bg-white/50 p-6 md:p-8 rounded-sm border border-black/10 backdrop-blur-sm min-w-0 md:min-w-[280px] w-full md:w-auto">
                 <div className="text-3xl md:text-4xl font-bold mb-1">{service.price}</div>
                 <div className="text-xs tracking-widest text-foreground/50 mb-6">{service.priceNote}</div>
-                <Link
-                  href="#order"
-                  className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20"
-                >
-                  <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
-                    <Plus className="w-3.5 h-3.5" />
-                  </div>
-                  Rozpocznij teraz
-                </Link>
+                <ScrollButton
+                  targetId="order"
+                  label="Rozpocznij teraz"
+                  className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20 w-full md:w-auto cursor-pointer"
+                />
               </div>
             </div>
           </div>
@@ -81,8 +78,8 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                 <ul className="space-y-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-4">
-                      <div className="w-6 h-6 flex items-center justify-center shrink-0 mt-0.5">
-                        <SquarePlus className="h-6 w-6 text-green-500" />
+                      <div className="w-6 h-6 rounded-sm bg-green-500 flex items-center justify-center shrink-0 mt-0.5">
+                        <Plus className="h-4 w-4 text-white" />
                       </div>
                       <span className="text-sm md:text-base opacity-70 leading-relaxed">{feature.text}</span>
                     </li>

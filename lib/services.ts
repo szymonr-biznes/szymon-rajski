@@ -223,7 +223,7 @@ export const businessServices = [
     amount: 29900,
     priceNote: "za stronę",
     features: [
-      { text: "Strona która sprzedaje", icon: "palette" },
+      { text: "Strona, która sprzedaje", icon: "palette" },
       { text: "Optymalizacja pod urządzenia mobilne", icon: "smartphone" },
       { text: "Szybkie ładowanie strony", icon: "zap" },
       { text: "Łatwa nawigacja", icon: "navigation" },
