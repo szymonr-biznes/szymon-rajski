@@ -118,7 +118,6 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
               <div className="bg-white/50 backdrop-blur-sm p-6 md:p-12 rounded-sm border border-black/10 text-left">
                 {(service as any).type === "buy" ? (
                   <>
-                    <h3 className="text-xl font-bold mb-8 uppercase tracking-widest text-xs opacity-50">Zamówienie</h3>
                     <CheckoutForm slug={service.slug} />
                   </>
                 ) : (

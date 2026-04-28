@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { Loader2, Plus } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
@@ -79,7 +78,7 @@ export default function CheckoutForm({ slug }: { slug: string }) {
           <Label htmlFor="email" className="text-sm text-muted-foreground">Email</Label>
           <Input
             id="email"
-            placeholder="Twój adres email do kontaktu"
+            placeholder="Twój adres email"
             type="email"
             value={form.email}
             onChange={e => setForm((p: typeof form) => ({ ...p, email: e.target.value }))}
@@ -95,23 +94,22 @@ export default function CheckoutForm({ slug }: { slug: string }) {
         </div>
       )}
 
-      <Button
+      <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-6 rounded-sm text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#0033FF]/20"
+        className="w-full bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
       >
-        <div className={`flex items-center justify-center gap-3 transition-all duration-300 ${loading ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`}>
-          <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
-            <Plus className="w-3.5 h-3.5" />
-          </div>
-          Kup teraz
-        </div>
-        {loading && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Loader2 className="h-5 w-5 animate-spin" />
-          </div>
+        {loading ? (
+          <Loader2 className="h-5 w-5 animate-spin" />
+        ) : (
+          <>
+            <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+              <Plus className="w-3.5 h-3.5" />
+            </div>
+            Kup teraz
+          </>
         )}
-      </Button>
+      </button>
 
       <p className="text-[11px] text-center text-muted-foreground/100 tracking-tight">
         Zostaniesz przekierowany do bezpiecznej płatności Stripe

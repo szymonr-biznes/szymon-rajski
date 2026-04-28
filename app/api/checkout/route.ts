@@ -27,8 +27,7 @@ export async function POST(req: NextRequest) {
             currency: 'pln',
             unit_amount: service.amount,
             product_data: {
-              name: service.title,
-              description: service.shortDescription,
+              name: service.title
             },
           },
         },
