@@ -53,7 +53,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                 <h1 className="text-2xl md:text-5xl lg:text-6xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
                   {service.title}
                 </h1>
-                <p className="text-sm md:text-xl text-foreground/70 leading-relaxed max-w-2xl">
+                <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl">
                   {service.fullDescription}
                 </p>
               </div>
