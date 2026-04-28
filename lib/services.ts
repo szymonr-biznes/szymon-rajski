@@ -100,15 +100,17 @@ export const businessServices = [
     features: [
       { text: "Automatyczne wyszukiwanie leadów", icon: "search" },
       { text: "Sekwencje follow-up", icon: "list-restart" },
-      { text: "Integracja z LinkedIn i email", icon: "link" },
+      { text: "Integracja z email, LinkedIn i inne", icon: "link" },
       { text: "Raporty konwersji", icon: "bar-chart-3" },
       { text: "Dodatki na żądanie", icon: "plus-circle" }
     ],
     howItWorks: [
-      { text: "Wyznaczamy Twoją grupę docelową", icon: "target" },
-      { text: "System wyszukuje idealne osoby", icon: "users" },
-      { text: "Prowadzimy komunikację i negocjacje", icon: "message-square-text" },
-      { text: "Przekazujemy Ci gotowe leady", icon: "check-circle" }
+      { text: "Analizujemy Twoją branżę i grupę docelową", icon: "target" },
+      { text: "Zbieramy obszerne dane firm i osób", icon: "check-circle" },
+      { text: "Integrujemy system z uwzględnieniem filtrów", icon: "users" },
+      { text: "Dostarczamy Ci bazę leadów", icon: "check-circle" },
+      { text: "Tworzymy follow-up do osób decyzyjnych", icon: "check-circle" },
+      { text: "Zmiana kryteriów w każdej chwili", icon: "check-circle" }
     ],
     comingSoon: false,
     slug: "leads-system",
@@ -142,12 +144,14 @@ export const businessServices = [
       { text: "Prowadzenie wielowątkowych rozmów", icon: "messages-square" },
       { text: "Personalizowanie ofert dla klientów", icon: "user-cog" },
       { text: "Szczegółowa analiza zachowań", icon: "activity" },
+      { text: "Wiadomości o ludzkim charakterze", icon: "mail" },
       { text: "Raporty skuteczności", icon: "trending-up" },
       { text: "Dodatki na żądanie", icon: "plus-circle" }
     ],
     howItWorks: [
       { text: "Analizujemy zachowanie każdego klienta", icon: "brain-circuit" },
-      { text: "System dopracowuje strategie pod niego", icon: "puzzle" },
+      { text: "Optymalizujemy system pod Twój biznes", icon: "settings" },
+      { text: "System dopasowuje styl rozmowy do klienta", icon: "puzzle" },
       { text: "Każdy klient dostaje spersonalizowaną ofertę", icon: "mail" }
     ],
     comingSoon: false,
@@ -188,7 +192,7 @@ export const businessServices = [
     ],
     howItWorks: [
       { text: "Tworzymy stronę internetową z systemem rezerwacji", icon: "layout" },
-      { text: "Integrujemy płatności online", icon: "wallet" },
+      { text: "Integrujemy płatności", icon: "wallet" },
       { text: "Integrujemy zapisy wizyt z Twoim systemem", icon: "calendar-check" },
       { text: "Ustawiamy automatyczne przypomnienia dla klientów", icon: "bell" }
     ],
@@ -219,21 +223,21 @@ export const businessServices = [
     fullDescription: `Profesjonalna strona internetowa z nowoczesnym designem 
      i intuicyjną obsługą na smartfony i komputery, która sprawi, że Twoi klienci
      znajdą potrzebne informacje i zamówią Twoje usługi w szybki sposób.`,
-    price: "Od 299 zł",
-    amount: 29900,
+    price: "Od 2499 zł",
+    amount: 249900,
     priceNote: "za stronę",
     features: [
       { text: "Strona, która sprzedaje", icon: "palette" },
-      { text: "Optymalizacja pod urządzenia mobilne", icon: "smartphone" },
-      { text: "Certyfikat SSL", icon: "zap" },
-      { text: "Integracja płatności", icon: "navigation" },
+      { text: "Responsywna na urządzenia mobilne", icon: "smartphone" },
+      { text: "Własna szyfrowana domena", icon: "zap" },
+      { text: "Obsługa płatności online, w tym systemu Blik", icon: "navigation" },
       { text: "Modyfikacje na żądanie", icon: "pen-tool" }
     ],
     howItWorks: [
-      { text: "Wybierasz kolorystykę i treść", icon: "paint-bucket" },
-      { text: "Tworzymy stronę internetową", icon: "monitor" },
-      { text: "Otrzymujesz własną domenę", icon: "globe" },
-      { text: "Przesyłamy link do gotowej strony", icon: "link" },
+      { text: "Projektujemy stronę", icon: "paint-bucket" },
+      { text: "Dodajemy treść, galerie i opinie", icon: "monitor" },
+      { text: "Integrujemy płatności, umawianie na wizyty i inne", icon: "globe" },
+      { text: "Otrzymujesz gotową stronę", icon: "link" },
       { text: "Modyfikacje wprowadzamy na bieżąco", icon: "refresh-cw" }
     ],
     comingSoon: false,
