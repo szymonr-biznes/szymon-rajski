@@ -10,6 +10,7 @@ const STEPS = [
     number: "01",
     label: "Instagram",
     title: "Instagram Profile Growth",
+    path: "/social-media/instagram-growth",
     desc: `Dzięki zaawansowanym algorytmom przygotowujemy specjalny raport
       dla twórców, chcących zwiększyć swoje zasięgi oraz nawiązać zyskowne
       współprace z branżowymi markami.`,
@@ -22,6 +23,7 @@ const STEPS = [
     number: "02",
     label: "Instagram",
     title: "Instagram DM Replier",
+    path: "/social-media/instagram-dm",
     desc: `Dla twórców mających dziesiątki zapytań lub ofert w DM, którym ciężko
       jest odpisywać manualnie. Tworzymy system, który obsługuje Twoich obersujących
       za Ciebie zgodnie z Twoimi wytycznymi.`,
@@ -34,6 +36,7 @@ const STEPS = [
     number: "03",
     label: "TikTok",
     title: "TikTok Partership Agent",
+    path: "/social-media/tiktok-partnership-agent",
     desc: `Dla twórców chcących zarabiać ze współpracy dzięki najlepszym ofertom
       na podstawie analizy aktualnych trendów w internecie.`,
     bgColor: "bg-gradient-to-br from-[#E1306C] via-[#FD1D1D] to-[#F56040]",
@@ -183,11 +186,10 @@ export function TrustEngine() {
                             Wkrótce
                           </div>
                         ) : (
-                          <Link
-                            href="#contact"
-                            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-bold transition-all inline-flex items-center gap-3 w-fit shadow-lg shadow-[#0033FF]/20"
-                          >
-                            <Plus className="w-4 h-4" />
+                          <Link href={step.path} className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-semibold transition-colors flex items-center gap-3 w-fit">
+                            <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
+                              <Plus className="w-3.5 h-3.5" />
+                            </div>
                             Zobacz ofertę
                           </Link>
                         )}
