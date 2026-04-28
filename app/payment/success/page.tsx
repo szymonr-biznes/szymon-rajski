@@ -45,16 +45,16 @@ function SuccessContent() {
         <div className="flex flex-col gap-3 pt-4">
           <Link
             href="/"
-            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-all flex items-center justify-center gap-3 cursor-pointer"
+            className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-3 cursor-pointer"
           >
             <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
               <Plus className="w-3.5 h-3.5" />
             </div>
-            Wróć do strony głównej
+            Strona główna
           </Link>
           <Link
             href="/social-media"
-            className="bg-black hover:bg-gray-900 text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-all flex items-center justify-center gap-3 cursor-pointer"
+            className="bg-black hover:bg-gray-900 text-white px-5 py-2.5 rounded-sm text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-3 cursor-pointer"
           >
             <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
               <Plus className="w-3.5 h-3.5" />

@@ -97,7 +97,7 @@ export default function CheckoutForm({ slug }: { slug: string }) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+        className="w-full bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
       >
         {loading ? (
           <Loader2 className="h-5 w-5 animate-spin" />
