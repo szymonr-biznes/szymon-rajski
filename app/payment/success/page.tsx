@@ -74,7 +74,7 @@ export default function SuccessPage() {
       <main className="flex-1 relative z-10">
         <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 pt-32 pb-24 border-l border-black min-h-[calc(100vh-200px)] flex flex-col justify-center">
           <div className="w-full">
-            <Suspense fallback={<div className="text-center text-muted-foreground italic font-serif">Ładowanie...</div>}>
+            <Suspense fallback={<div className="text-center text-muted-foreground font-serif">Ładowanie...</div>}>
               <SuccessContent />
             </Suspense>
           </div>

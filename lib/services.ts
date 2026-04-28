@@ -7,8 +7,8 @@ export const socialMediaServices = [
       Analizujemy Twoje zasięgi, engagement, konkurencje i wiele więcej.
       Otrzymujesz gotowy plan wraz z konkretnymi rekomendacjami, jak
       zwiększać swoją obecność na platformie.`,
-    price: "5 zł",
-    amount: 500,
+    price: "99 zł",
+    amount: 9900,
     priceNote: "analiza",
     features: [
       { text: "Analiza konta", icon: "line-chart" },

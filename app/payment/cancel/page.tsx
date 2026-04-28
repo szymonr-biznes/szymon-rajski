@@ -12,7 +12,7 @@ import { socialMediaServices, businessServices } from '@/lib/services';
 function CancelContent() {
   const searchParams = useSearchParams();
   const serviceSlug = searchParams.get('service');
-  
+
   const allServices = [...socialMediaServices, ...businessServices];
   const service = allServices.find(s => s.slug === serviceSlug) || (process.env.NODE_ENV === 'development' ? allServices[0] : null);
 
@@ -27,7 +27,7 @@ function CancelContent() {
             <XCircle className="h-8 w-8 text-red-500 animate-in zoom-in duration-700" />
           </div>
         </div>
-        
+
         {service && (
           <div className="space-y-1">
             <p className="text-[11px] text-center text-muted-foreground/100 tracking-tight">
@@ -73,7 +73,7 @@ export default function CancelPage() {
       <main className="flex-1 relative z-10">
         <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 pt-32 pb-24 border-l border-black min-h-[calc(100vh-200px)] flex flex-col justify-center">
           <div className="w-full">
-            <Suspense fallback={<div className="text-center text-muted-foreground italic font-serif">Ładowanie...</div>}>
+            <Suspense fallback={<div className="text-center text-muted-foreground font-serif">Ładowanie...</div>}>
               <CancelContent />
             </Suspense>
           </div>
