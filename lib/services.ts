@@ -225,8 +225,8 @@ export const businessServices = [
     features: [
       { text: "Strona, która sprzedaje", icon: "palette" },
       { text: "Optymalizacja pod urządzenia mobilne", icon: "smartphone" },
-      { text: "Szybkie ładowanie strony", icon: "zap" },
-      { text: "Łatwa nawigacja", icon: "navigation" },
+      { text: "Certyfikat SSL", icon: "zap" },
+      { text: "Integracja płatności", icon: "navigation" },
       { text: "Modyfikacje na żądanie", icon: "pen-tool" }
     ],
     howItWorks: [
