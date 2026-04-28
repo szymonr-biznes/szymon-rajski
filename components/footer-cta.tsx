@@ -27,7 +27,7 @@ export function FooterCTA() {
               nie z kolejnym <span className="font-serif italic font-normal">sprzedawcą</span>
             </h2>
             <Link
-              href="#contact"
+              href="/contact"
               className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-semibold transition-colors flex items-center gap-3 w-fit"
             >
               <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">

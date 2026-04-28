@@ -90,7 +90,7 @@ export function Header() {
         {/* Action Button - right side */}
         <div className="hidden lg:flex lg:justify-end">
           <Link
-            href="#"
+            href="/contact"
             className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-sm font-semibold transition-colors flex items-center gap-3"
           >
             <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
@@ -142,7 +142,7 @@ export function Header() {
                   </Link>
                 ))}
                 <Link
-                  href="#"
+                  href="/contact"
                   className="mt-8 flex items-center justify-center gap-3 w-full text-center bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-semibold transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
