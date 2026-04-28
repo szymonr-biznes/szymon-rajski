@@ -2,10 +2,9 @@ import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { FooterCTA } from "@/components/footer-cta"
 import { socialMediaServices, businessServices } from "@/lib/services"
-import { Plus, ArrowLeft, ShieldCheck, Zap, CreditCard } from "lucide-react"
+import { Plus, ArrowLeft, SquarePlus } from "lucide-react"
 import Link from "next/link"
 import CheckoutForm from "@/components/checkout-form"
-import { DynamicIcon } from "@/components/dynamic-icon"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -82,8 +81,8 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                 <ul className="space-y-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-4">
-                      <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center shrink-0 mt-0.5">
-                        <DynamicIcon name={feature.icon} className="h-3 w-3" />
+                      <div className="w-6 h-6 flex items-center justify-center shrink-0 mt-0.5">
+                        <SquarePlus className="h-6 w-6 text-green-500" />
                       </div>
                       <span className="text-sm md:text-base opacity-70 leading-relaxed">{feature.text}</span>
                     </li>
@@ -97,7 +96,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ slug: 
                   <ul className="space-y-6">
                     {service.howItWorks.map((step, idx) => (
                       <li key={idx} className="flex items-start gap-4">
-                        <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">
+                        <div className="w-6 h-6 rounded-sm bg-black text-white flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">
                           {idx + 1}
                         </div>
                         <span className="text-sm md:text-base opacity-70 leading-relaxed">{step.text}</span>
