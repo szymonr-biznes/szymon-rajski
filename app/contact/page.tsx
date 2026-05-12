@@ -8,19 +8,24 @@ import { FooterCTA } from "@/components/footer-cta";
 export default function KontaktPage() {
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ "namespace": "spotkanie-projektowe" });
+      const cal = await getCalApi();
       cal("ui", {
-        "hideEventTypeDetails": false,
-        "layout": "month_view",
-        "cssVarsPerTheme": {
-          "dark": {
-            "cal-brand": "#292929"
-          },
-          "light": {
-            "cal-brand": "#292929"
+        "styles": {
+          "branding": {
+            "brandColor": "#0033FF"
           }
-        }
-      });
+        },
+        "cssVarsPerTheme": {
+          "light": {
+            "cal-brand": "#0033FF"
+          },
+          "dark": {
+            "cal-brand": "#0033FF"
+          }
+        },
+        "hideEventTypeDetails": false,
+        "layout": "month_view"
+      } as any);
     })();
   }, [])
 
@@ -40,7 +45,6 @@ export default function KontaktPage() {
 
           <div className="border-l border-t lg:border-r border-black ml-3 lg:mx-16 bg-[#F4F1EA] pt-18 px-4">
             <Cal
-              namespace="spotkanie-projektowe"
               calLink="szymon-rajski-k6egws/spotkanie-projektowe"
               style={{ width: "100%", height: "100%" }}
               config={{
