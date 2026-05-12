@@ -1,13 +1,29 @@
-import { Mail, Linkedin } from "lucide-react"
-import { Header } from "@/components/header"
-import { FooterCTA } from "@/components/footer-cta"
+"use client";
 
-export const metadata = {
-  title: "Kontakt | Szymon Rajski",
-  description: "Skontaktuj się z nami - email, Instagram",
-}
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
+import { Header } from "@/components/header";
+import { FooterCTA } from "@/components/footer-cta";
 
 export default function KontaktPage() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ "namespace": "spotkanie-projektowe" });
+      cal("ui", {
+        "hideEventTypeDetails": false,
+        "layout": "month_view",
+        "cssVarsPerTheme": {
+          "dark": {
+            "cal-brand": "#292929"
+          },
+          "light": {
+            "cal-brand": "#292929"
+          }
+        }
+      });
+    })();
+  }, [])
+
   return (
     <div className="flex min-h-screen flex-col bg-[#F4F1EA] relative">
       <Header />
@@ -22,46 +38,47 @@ export default function KontaktPage() {
             </p>
           </div>
 
-          <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black border-t border-black pb-20 md:pb-32">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-              <a
-                className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
-              >
-                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Email</p>
-                <div className="text-xl md:text-2xl font-medium break-words">szymonr.biznes@gmail.com</div>
-              </a>
+          <div className="border-l border-t border-r border-black ml-3 lg:mx-16 bg-[#F4F1EA] pt-18">
+            <Cal
+              namespace="spotkanie-projektowe"
+              calLink="szymon-rajski-k6egws/spotkanie-projektowe"
+              style={{ width: "100%", height: "100%" }}
+              config={{
+                layout: "month_view",
+                theme: "light",
+                locale: "pl"
+              }}
+            />
+          </div>
 
-              <a
-                className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
-              >
-                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Telefon</p>
-                <div className="text-xl md:text-2xl font-medium">+48 506 455 883</div>
-              </a>
+          <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black pb-20 md:pb-32">
+            <div className="border-r border-t border-black">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <a href="mailto:szymonr.biznes@gmail.com" className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                  <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Email</p>
+                  <div className="text-xl md:text-2xl font-medium break-words">szymonr.biznes@gmail.com</div>
+                </a>
 
-              <a
-                href="https://www.linkedin.com/in/szymon-rajski-73177a21a"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
-              >
-                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">LinkedIn</p>
-                <div className="text-xl md:text-2xl font-medium">Szymon Rajski</div>
-              </a>
+                <a href="tel:+48506455883" className="p-8 lg:p-12 border-b border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                  <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Telefon</p>
+                  <div className="text-xl md:text-2xl font-medium">+48 506 455 883</div>
+                </a>
 
-              <a
-                href="https://instagram.com/_rajo_rajo_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500"
-              >
-                <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Instagram</p>
-                <div className="text-xl md:text-2xl font-medium">@_rajo_rajo_</div>
-              </a>
+                <a href="https://www.linkedin.com/in/szymon-rajski-73177a21a" target="_blank" rel="noopener noreferrer" className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                  <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">LinkedIn</p>
+                  <div className="text-xl md:text-2xl font-medium">Szymon Rajski</div>
+                </a>
+
+                <a href="https://instagram.com/_rajo_rajo_" target="_blank" rel="noopener noreferrer" className="p-8 lg:p-12 border-b border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                  <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Instagram</p>
+                  <div className="text-xl md:text-2xl font-medium">@_rajo_rajo_</div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
       </main>
       <FooterCTA />
     </div>
-  )
+  );
 }
