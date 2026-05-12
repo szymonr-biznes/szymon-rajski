@@ -54,22 +54,22 @@ export default function KontaktPage() {
           <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black pb-20 md:pb-32">
             <div className="lg:border-r border-t border-black">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                <a href="mailto:szymonr.biznes@gmail.com" className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                <a href="mailto:szymonr.biznes@gmail.com" className="p-8 lg:p-12 border-b md:border-r border-black group lg:hover:bg-black lg:hover:text-white transition-colors duration-500">
                   <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Email</p>
                   <div className="text-xl md:text-2xl font-medium break-words">szymonr.biznes@gmail.com</div>
                 </a>
 
-                <a href="tel:+48506455883" className="p-8 lg:p-12 border-b border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                <a href="tel:+48506455883" className="p-8 lg:p-12 border-b border-black group lg:hover:bg-black lg:hover:text-white transition-colors duration-500">
                   <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Telefon</p>
                   <div className="text-xl md:text-2xl font-medium">+48 506 455 883</div>
                 </a>
 
-                <a href="https://www.linkedin.com/in/szymon-rajski-73177a21a" target="_blank" rel="noopener noreferrer" className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                <a href="https://www.linkedin.com/in/szymon-rajski-73177a21a" target="_blank" rel="noopener noreferrer" className="p-8 lg:p-12 border-b md:border-r border-black group lg:hover:bg-black lg:hover:text-white transition-colors duration-500">
                   <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">LinkedIn</p>
                   <div className="text-xl md:text-2xl font-medium">Szymon Rajski</div>
                 </a>
 
-                <a href="https://instagram.com/_rajo_rajo_" target="_blank" rel="noopener noreferrer" className="p-8 lg:p-12 border-b border-black group hover:bg-black hover:text-white transition-colors duration-500">
+                <a href="https://instagram.com/_rajo_rajo_" target="_blank" rel="noopener noreferrer" className="p-8 lg:p-12 border-b border-black group lg:hover:bg-black lg:hover:text-white transition-colors duration-500">
                   <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Instagram</p>
                   <div className="text-xl md:text-2xl font-medium">@_rajo_rajo_</div>
                 </a>
