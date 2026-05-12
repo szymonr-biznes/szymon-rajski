@@ -38,7 +38,7 @@ export default function KontaktPage() {
             </p>
           </div>
 
-          <div className="border-l border-t border-r border-black ml-3 lg:mx-16 bg-[#F4F1EA] pt-18">
+          <div className="border-l border-t lg:border-r border-black ml-3 lg:mx-16 bg-[#F4F1EA] pt-18 px-4">
             <Cal
               namespace="spotkanie-projektowe"
               calLink="szymon-rajski-k6egws/spotkanie-projektowe"
@@ -52,7 +52,7 @@ export default function KontaktPage() {
           </div>
 
           <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 border-l border-black pb-20 md:pb-32">
-            <div className="border-r border-t border-black">
+            <div className="lg:border-r border-t border-black">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                 <a href="mailto:szymonr.biznes@gmail.com" className="p-8 lg:p-12 border-b md:border-r border-black group hover:bg-black hover:text-white transition-colors duration-500">
                   <p className="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-50 group-hover:opacity-100">Email</p>
