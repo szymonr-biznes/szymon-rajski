@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Plus } from "lucide-react"
 
 export const metadata = {
-  title: "Dla Twórców | Szymon Rajski",
+  title: "Twórcy | Szymon Rajski",
   description: "Narzędzia automatyzacji dla twórców i influencerów",
 }
 
@@ -17,7 +17,7 @@ export default function CreatorsPage() {
         <section className="relative overflow-hidden">
           <div className="w-auto ml-3 lg:w-[calc(100%-128px)] lg:mx-16 px-6 lg:px-8 pt-28 pb-12 lg:pt-32 lg:pb-24 border-l border-black relative">
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-medium tracking-tight text-foreground leading-[1.1]">
-              Dla Twórców
+              Twórcy
             </h1>
             <p className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">
               Zwiększ zasięgi i bądź na bieżąco ze swoimi obserwującymi dzięki inteligentnym systemom automatyzacji zaprojektowanym dla twórców.

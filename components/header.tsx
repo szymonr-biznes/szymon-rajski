@@ -6,8 +6,8 @@ import { Menu, X, Plus } from "lucide-react"
 import { motion, useScroll, AnimatePresence } from "framer-motion"
 
 const navigation = [
-  { name: "Dla Biznesu", href: "/business" },
-  { name: "Dla Twórców", href: "/creators" },
+  { name: "Biznes", href: "/business" },
+  { name: "Twórcy", href: "/creators" },
   { name: "Kontakt", href: "/contact" }
 ]
 
