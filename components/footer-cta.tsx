@@ -13,7 +13,7 @@ export function FooterCTA() {
       <div className="w-[calc(100%-24px)] lg:w-[calc(100%-128px)] mx-3 lg:mx-16 px-6 lg:px-8 pt-20 pb-48 md:pb-32 relative z-10 border-l border-white">
 
         {/* Bottom Horizontal Line - Adjusted for mobile stack height */}
-        <div className="absolute bottom-[180px] md:bottom-[64px] left-0 w-[2000px] h-[1px] bg-white z-20" />
+        <div className="absolute bottom-[180px] md:bottom-[64px] left-0 w-[2000px] border-t border-white z-20" />
 
         {/* Background blue gradient/glow */}
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-tr from-[#0033FF]/40 to-transparent opacity-50 pointer-events-none transform -translate-x-1/4 translate-y-1/4 blur-3xl rounded-full"></div>
