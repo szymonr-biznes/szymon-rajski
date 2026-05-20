@@ -8,7 +8,7 @@ import { FloatingCards } from "./floating-cards"
 
 const products = [
   {
-    category: "Twórcy",
+    category: "Dla Twórców",
     categoryIcon: Instagram,
     title: "Instagram Profile Growth",
     description: "Kompletna analiza dla małych twórców chcących zwiększać swoje zasięgi. Otrzymujesz szczegółowy raport wraz z rekomendacjami i gotowymi treściami do publikacji.",
@@ -17,7 +17,7 @@ const products = [
     cardVariant: "growth" as const,
   },
   {
-    category: "Twórcy",
+    category: "Dla Twórców",
     categoryIcon: Instagram,
     title: "Instagram DM Replier",
     description: "Automatyczne odpowiedzi na wiadomości prywatne. Twórcy podpinają usługę i mają zautomatyzowane odpowiedzi dla swoich obserwujących 24/7.",
@@ -26,7 +26,7 @@ const products = [
     cardVariant: "dm" as const,
   },
   {
-    category: "Biznes",
+    category: "Dla Biznesu",
     categoryIcon: Briefcase,
     title: "Outreach & Leads",
     description: "Automatyzacja pozyskiwania klientów dla małych i średnich firm. System identyfikuje potencjalnych klientów i inicjuje kontakt.",
@@ -36,7 +36,7 @@ const products = [
     cardVariant: "outreach" as const,
   },
   {
-    category: "Biznes",
+    category: "Dla Biznesu",
     categoryIcon: Briefcase,
     title: "Cold Email Systems",
     description: "Zaawansowane systemy cold emailingu z personalizacją, sekwencjami i analityką. Zwiększaj konwersję poprzez inteligentne kampanie.",
@@ -46,7 +46,7 @@ const products = [
     cardVariant: "email" as const,
   },
   {
-    category: "Biznes",
+    category: "Dla Biznesu",
     categoryIcon: Briefcase,
     title: "System Rezerwacji",
     description: "Uniwersalny system rezerwacji dla różnych branż - od salonów kosmetycznych po warsztaty samochodowe. Automatyczne przypomnienia i zarządzanie kalendarzem.",

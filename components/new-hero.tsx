@@ -43,7 +43,7 @@ export function NewHero() {
               <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
                 <Plus className="w-3.5 h-3.5" />
               </div>
-              Twórcy
+              Dla twórców
             </Link>
             <Link
               href="/business"
@@ -52,7 +52,7 @@ export function NewHero() {
               <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
                 <Plus className="w-3.5 h-3.5" />
               </div>
-              Biznes
+              Dla biznesu
             </Link>
           </motion.div>
         </div>
