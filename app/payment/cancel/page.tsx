@@ -43,7 +43,7 @@ function CancelContent() {
 
         <div className="flex flex-col gap-3 pt-4">
           <Link
-            href={service ? `/${socialMediaServices.some(s => s.slug === service.slug) ? 'social-media' : 'business'}/${service.slug}` : "/"}
+            href={service ? `/${socialMediaServices.some(s => s.slug === service.slug) ? 'creators' : 'business'}/${service.slug}` : "/"}
             className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-2.5 rounded-sm text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-3 cursor-pointer"
           >
             <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">

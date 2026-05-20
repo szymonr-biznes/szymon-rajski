@@ -112,7 +112,7 @@ export function Testimonials() {
               pod Ciebie system z możliwością przyszłych integracji i rozbudowy na życzenie.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link href="/social-media" className="bg-black hover:bg-black/80 text-white px-5 py-3 text-xs md:text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
+              <Link href="/creators" className="bg-black hover:bg-black/80 text-white px-5 py-3 text-xs md:text-sm font-semibold transition-colors flex items-center gap-3 rounded-sm">
                 <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
                   <Plus className="w-3.5 h-3.5" />
                 </div>

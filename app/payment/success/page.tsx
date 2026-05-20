@@ -53,7 +53,7 @@ function SuccessContent() {
             Strona główna
           </Link>
           <Link
-            href="/social-media"
+            href="/creators"
             className="bg-black hover:bg-gray-900 text-white px-5 py-2.5 rounded-sm text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-3 cursor-pointer"
           >
             <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">

@@ -37,7 +37,7 @@ export function NewHero() {
             className="mt-8 flex items-center gap-4"
           >
             <Link
-              href="/social-media"
+              href="/creators"
               className="bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-sm text-xs md:text-sm font-semibold transition-colors flex items-center gap-3"
             >
               <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">

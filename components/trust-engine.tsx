@@ -10,7 +10,7 @@ const STEPS = [
     number: "01",
     label: "Instagram",
     title: "Instagram Profile Growth",
-    path: "/social-media/instagram-growth",
+    path: "/creators/instagram-growth",
     desc: `Dzięki zaawansowanym algorytmom przygotowujemy specjalny raport
       dla twórców, chcących zwiększyć swoje zasięgi oraz nawiązać zyskowne
       współprace z branżowymi markami.`,
@@ -23,7 +23,7 @@ const STEPS = [
     number: "02",
     label: "Instagram",
     title: "Instagram DM Replier",
-    path: "/social-media/instagram-dm",
+    path: "/creators/instagram-dm",
     desc: `Dla twórców mających dziesiątki zapytań lub ofert w DM, którym ciężko
       jest odpisywać manualnie. Tworzymy system, który obsługuje Twoich obersujących
       za Ciebie zgodnie z Twoimi wytycznymi.`,
@@ -36,7 +36,7 @@ const STEPS = [
     number: "03",
     label: "TikTok",
     title: "TikTok Partership Agent",
-    path: "/social-media/tiktok-partnership-agent",
+    path: "/creators/tiktok-partnership-agent",
     desc: `Dla twórców chcących zarabiać ze współpracy dzięki najlepszym ofertom
       na podstawie analizy aktualnych trendów w internecie.`,
     bgColor: "bg-gradient-to-br from-[#E1306C] via-[#FD1D1D] to-[#F56040]",

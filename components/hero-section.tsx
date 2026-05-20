@@ -34,7 +34,7 @@ export function HeroSection() {
               }`}
           >
             <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/30" asChild>
-              <Link href="/social-media">
+              <Link href="/creators">
                 Zobacz ofertę
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
