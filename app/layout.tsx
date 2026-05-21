@@ -16,9 +16,6 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Szymon Rajski | Automatyzacja dla biznesu i twórców',
   description: "Zastąp powtarzalne procesy zautomatyzowanymi systemami i nowoczesnymi aplikacjami webowymi. Zoptymalizuj koszty operacyjne i zapewnij firmie stały dopływ klientów.",
-  icons: {
-    icon: '/logo.ico',
-  },
   openGraph: {
     title: 'Szymon Rajski | Automatyzacja dla biznesu i twórców',
     description: "Zastąp powtarzalne procesy zautomatyzowanymi systemami i nowoczesnymi aplikacjami webowymi. Zoptymalizuj koszty operacyjne i zapewnij firmie stały dopływ klientów.",
