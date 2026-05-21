@@ -27,8 +27,8 @@ export function NewHero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed"
           >
-            Buduję szybkie aplikacje internetowe i zautomatyzowane systemy B2B,
-            które przejmują powtarzalne zadania i napędzają Twoją sprzedaż 24/7.
+            Poznaj rozwiązania dopasowane do Twojej firmy i zobacz,
+            jak technologia przejmuje codzienne obowiązki.
           </motion.p>
 
           <motion.div

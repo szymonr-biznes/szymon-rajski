@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Szymon Rajski | Automatyzacja dla biznesu i twórców',
-  description: 'Oszczędzaj czas i zwiększaj efektywność z naszymi narzędziami automatyzacji - Instagram, outreach, cold email i więcej.',
+  description: "Zastąp powtarzalne procesy zautomatyzowanymi systemami i nowoczesnymi aplikacjami webowymi. Zoptymalizuj koszty operacyjne i zapewnij firmie stały dopływ klientów.",
   icons: {
     icon: '/logo.ico',
   },
