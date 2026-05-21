@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X, Plus } from "lucide-react"
 import { motion, useScroll, AnimatePresence } from "framer-motion"
 
@@ -68,6 +69,13 @@ export function Header() {
         }`}>
         {/* Logo - left side */}
         <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={28}
+            height={28}
+            className={`transition-all duration-300 ${isDark ? "invert" : ""}`}
+          />
           <span className={`text-xl font-bold tracking-tighter transition-colors duration-300 ${isDark ? "text-white" : "text-black"
             }`}>Szymon Rajski</span>
         </Link>

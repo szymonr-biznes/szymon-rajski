@@ -24,8 +24,8 @@ const testimonials1 = [
   {
     name: "Jagoda",
     role: "Food blogerka",
-    content: `Jako wieloletnia blogerka kulinarna, zmagalam sie z brakiem obsługi moich 
-      klientów w sieci. Dopiero niezawodny system sprawił że byłam w stanie potroić
+    content: `Jako wieloletnia blogerka kulinarna, zmagałam się z brakiem obsługi moich 
+      klientów w sieci. Dopiero niezawodny system sprawił, że byłam w stanie potroić
       sprzedaż moich poradników i przepisów w sieci bez straty mojego czasu.`,
     image: "https://randomuser.me/api/portraits/women/68.jpg"
   },
@@ -58,7 +58,7 @@ const testimonials2 = [
   },
   {
     name: "Adam",
-    role: "Firma developerska",
+    role: "Firma deweloperska",
     content: `Potrzebowaliśmy systemu do analizy rynku mieszkań w polskich miastach. Teraz
       mamy automatyczny system do wycen oraz popytu w danych lokalizacjach przez co możemy mieć
       konkurencyjne oferty na bieżąco.`,

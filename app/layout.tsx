@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: 'Szymon Rajski | Automatyzacja dla biznesu i twórców',
   description: 'Oszczędzaj czas i zwiększaj efektywność z naszymi narzędziami automatyzacji - Instagram, outreach, cold email i więcej.',
   icons: {
-    icon: '/icon.ico',
+    icon: '/logo.ico',
   },
 }
 
