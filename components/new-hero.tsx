@@ -38,22 +38,22 @@ export function NewHero() {
             className="mt-8 flex items-center gap-4"
           >
             <Link
-              href="/creators"
+              href="/business"
               className="bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-sm text-xs md:text-sm font-semibold transition-colors flex items-center gap-3"
             >
               <div className="w-5 h-5 rounded-[4px] bg-white/10 flex items-center justify-center">
                 <Plus className="w-3.5 h-3.5" />
               </div>
-              Dla twórców
+              Dla biznesu
             </Link>
             <Link
-              href="/business"
+              href="/creators"
               className="bg-[#0033FF] hover:bg-[#002BE6] text-white px-5 py-3 rounded-sm text-xs md:text-sm font-semibold transition-colors flex items-center gap-3"
             >
               <div className="w-5 h-5 rounded-[4px] bg-white/20 flex items-center justify-center">
                 <Plus className="w-3.5 h-3.5" />
               </div>
-              Dla biznesu
+              Dla twórców
             </Link>
           </motion.div>
         </div>

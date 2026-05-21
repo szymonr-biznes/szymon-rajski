@@ -19,6 +19,14 @@ export const metadata: Metadata = {
   icons: {
     icon: '/logo.ico',
   },
+  openGraph: {
+    title: 'Szymon Rajski | Automatyzacja dla biznesu i twórców',
+    description: "Zastąp powtarzalne procesy zautomatyzowanymi systemami i nowoczesnymi aplikacjami webowymi. Zoptymalizuj koszty operacyjne i zapewnij firmie stały dopływ klientów.",
+    url: 'https://szymonrajski.dev',
+    siteName: 'Szymon Rajski',
+    locale: 'pl_PL',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
